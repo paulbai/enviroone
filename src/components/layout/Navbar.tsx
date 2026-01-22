@@ -130,9 +130,13 @@ export const Navbar = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.5 }}
                             >
-                                <Button variant="primary" onClick={() => setIsMobileMenuOpen(false)} href="/donate">
+                                <Link
+                                    href="/donate"
+                                    className="inline-flex items-center justify-center font-medium transition-all duration-300 rounded-full px-12 py-[18px] text-[16px] tracking-wide neu-btn"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                >
                                     Donate to Impact
-                                </Button>
+                                </Link>
                             </motion.div>
                         </nav>
                     </motion.div>

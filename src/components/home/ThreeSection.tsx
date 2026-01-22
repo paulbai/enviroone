@@ -17,7 +17,7 @@ export const ThreeSection = () => {
                     whileInView={{ opacity: 0.1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1.5, ease: "circOut" }}
-                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-display font-bold text-[400px] md:text-[600px] leading-none pointer-events-none select-none"
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-display font-bold text-[200px] md:text-[400px] lg:text-[600px] leading-none pointer-events-none select-none"
                 >
                     3
                 </motion.div>

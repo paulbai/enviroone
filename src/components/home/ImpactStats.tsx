@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import { Section } from "@/components/ui/Section";
 import { cn } from "@/lib/utils";
@@ -10,22 +10,28 @@ import { Droplet, Sprout, BookOpen, Users, MapPin, Heart, Sun, Leaf, Activity } 
 const CountUp = ({ to, duration = 2, suffix = "" }: { to: number; duration?: number; suffix?: string }) => {
     const ref = useRef<HTMLSpanElement>(null);
     const motionValue = useMotionValue(0);
-    const springValue = useSpring(motionValue, { duration: duration, bounce: 0 });
+    const springValue = useSpring(motionValue, { duration: duration * 1000, bounce: 0 });
     const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        if (isInView) {
+        setMounted(true);
+    }, []);
+
+    useEffect(() => {
+        if (isInView && mounted) {
             motionValue.set(to);
         }
-    }, [isInView, to, motionValue]);
+    }, [isInView, to, motionValue, mounted]);
 
     useEffect(() => {
-        springValue.on("change", (latest) => {
-            if (ref.current) {
+        const unsubscribe = springValue.on("change", (latest) => {
+            if (ref.current && mounted) {
                 ref.current.textContent = Math.floor(latest).toLocaleString() + suffix;
             }
         });
-    }, [springValue, suffix]);
+        return () => unsubscribe();
+    }, [springValue, suffix, mounted]);
 
     return <span ref={ref} className="tabular-nums">0{suffix}</span>;
 };
