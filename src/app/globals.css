@@ -1,26 +1,121 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-forest: #2C5F2D;
+  --color-forest-dark: #1A3C28;
+  /* Eco-Futurism */
+  --color-terracotta: #C76F43;
+  --color-muddy-brown: #4A3B2A;
+  /* Eco-Futurism */
+  --color-water: #4A9FCC;
+  /* Updated to #b2d3c2 as requested */
+  --color-cream: #b2d3c2;
+  --color-warm-gray: #8B8578;
+  --color-charcoal: #2E2E2E;
+  --color-golden: #E8A547;
+  --color-electric-lime: #CCFF00;
+  /* Eco-Futurism */
+  --font-mono: var(--font-roboto-mono), monospace;
+
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-dm-sans), system-ui, sans-serif;
+  --font-serif: var(--font-lora), serif;
+
+  --spacing-container: 1200px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Global Styles */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Grain Overlay */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.1;
+  /* 8-12% opacity per PRD */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Scrollbar styling for a premium feel */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-warm-gray);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-terracotta);
+}
+
+/* Utility for text selection */
+::selection {
+  background-color: var(--color-forest);
+  color: var(--color-cream);
+}
+
+/* Neumorphism Utilities */
+.neu-flat {
+  background: var(--color-cream);
+  box-shadow: 20px 20px 60px #d0cdc6, -20px -20px 60px #ffffff;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.neu-flat-sm {
+  background: var(--color-cream);
+  box-shadow: 5px 5px 10px #d0cdc6, -5px -5px 10px #ffffff;
+  border-radius: 12px;
+}
+
+.neu-pressed {
+  background: linear-gradient(145deg, #ddd9d1, #ffffff);
+  box-shadow: inset 20px 20px 60px #d0cdc6, inset -20px -20px 60px #ffffff;
+  border-radius: 30px;
+}
+
+.neu-icon {
+  background: var(--color-cream);
+  box-shadow: 5px 5px 10px #dedbd4, -5px -5px 10px #ffffff;
+  border-radius: 16px;
+  /* e.g. for icon containers */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.neu-btn {
+  background: linear-gradient(145deg, #ffffff, #ddd9d1);
+  box-shadow: 6px 6px 12px #d0cdc6, -6px -6px 12px #ffffff;
+  border-radius: 50px;
+  color: var(--color-forest-dark);
+  transition: all 0.3s ease;
+}
+
+.neu-btn:hover {
+  background: linear-gradient(145deg, #ddd9d1, #ffffff);
+  box-shadow: 8px 8px 16px #d0cdc6, -8px -8px 16px #ffffff;
+  transform: translateY(-2px);
+}
+
+.neu-btn:active {
+  box-shadow: inset 4px 4px 8px #d0cdc6, inset -4px -4px 8px #ffffff;
+  transform: translateY(0);
 }

@@ -1,0 +1,74 @@
+"use client";
+
+import React from "react";
+import { Section } from "@/components/ui/Section";
+import { motion } from "framer-motion";
+
+export const MissionSection = () => {
+    return (
+        <Section className="bg-cream text-charcoal">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+                {/* Mission */}
+                <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                >
+                    <h2 className="text-4xl font-display font-bold text-forest mb-6">Our Mission</h2>
+                    <div className="prose prose-lg text-charcoal/80">
+                        <p className="mb-4">
+                            EnviroOne is a 501 (c)(3) non-profit company organized in 2007 to promote sustainable environmental and agricultural activities in the US and the world.
+                            There are numerous aid programs to lift the underprivileged out of poverty. Yet, many of these programs have not fully achieved their intended purposes.
+                        </p>
+                        <p className="font-medium text-forest/90 italic border-l-4 border-golden pl-4 py-2 bg-golden/10 rounded-r-lg">
+                            "Our mission is to demonstrate that a systems approach that integrates the three main components of human development (health/environment, food, and knowledge) is not only needed to improve the lives of people successfully, but also achievable."
+                        </p>
+                        <p className="mt-4">
+                            This is a paradigm shift from the current piecemeal approach to human development. It is the basis of our “All It Takes Is Three” strategy.
+                        </p>
+                    </div>
+                </motion.div>
+
+                {/* Goals & Objectives */}
+                <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                >
+                    <h2 className="text-4xl font-display font-bold text-forest mb-6">Goals & Objectives</h2>
+                    <p className="text-charcoal/80 mb-6">
+                        To achieve our goal of reducing poverty and improving human development in a sustainable manner, we focus on several objectives:
+                    </p>
+
+                    <ul className="space-y-4">
+                        <li className="flex gap-4">
+                            <span className="w-2 h-2 mt-2.5 rounded-full bg-terracotta flex-shrink-0" />
+                            <span className="text-charcoal/80">
+                                <strong>Empowering Farmers:</strong> Educating on modern techniques and helping them move from subsistence to large-scale farming as a business.
+                            </span>
+                        </li>
+                        <li className="flex gap-4">
+                            <span className="w-2 h-2 mt-2.5 rounded-full bg-terracotta flex-shrink-0" />
+                            <span className="text-charcoal/80">
+                                <strong>Capacity Building:</strong> Programs that empower rural communities with livelihood and entrepreneurship skills in regenerative agriculture and medicinal cultivation.
+                            </span>
+                        </li>
+                        <li className="flex gap-4">
+                            <span className="w-2 h-2 mt-2.5 rounded-full bg-terracotta flex-shrink-0" />
+                            <span className="text-charcoal/80">
+                                <strong>Clean Water Access:</strong> Drilling water wells and conducting water quality studies to improve health and environment.
+                            </span>
+                        </li>
+                        <li className="flex gap-4">
+                            <span className="w-2 h-2 mt-2.5 rounded-full bg-terracotta flex-shrink-0" />
+                            <span className="text-charcoal/80">
+                                <strong>Sustainable Energy:</strong> Empowering communities with cheap, sustainable solar energy solutions.
+                            </span>
+                        </li>
+                    </ul>
+                </motion.div>
+            </div>
+        </Section>
+    );
+};
