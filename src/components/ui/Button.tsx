@@ -55,7 +55,6 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 <Link
                     href={href}
                     className={cn(commonClasses, "relative z-50 cursor-pointer")}
-                    onClick={onClick as React.MouseEventHandler<HTMLAnchorElement>}
                     {...(props as any)}
                 >
                     {content}
