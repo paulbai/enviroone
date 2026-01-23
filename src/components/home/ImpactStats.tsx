@@ -11,7 +11,7 @@ const CountUp = ({ to, duration = 2, suffix = "" }: { to: number; duration?: num
     const ref = useRef<HTMLSpanElement>(null);
     const motionValue = useMotionValue(0);
     const springValue = useSpring(motionValue, { damping: 60, stiffness: 100 });
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const isInView = useInView(ref, { once: true, margin: "0px" });
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
