@@ -55,12 +55,11 @@ export const Hero = () => {
                 className="absolute inset-0 z-0"
             >
                 <div className="absolute inset-0 h-full w-full">
-                    <Image
-                        src="/images/hero-children.jpg?v=2"
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                        src="/images/hero-children.jpg?v=20260125"
                         alt="Children in Sierra Leone"
-                        fill
-                        className="object-cover transform scale-105"
-                        priority
+                        className="absolute inset-0 w-full h-full object-cover transform scale-105"
                     />
                 </div>
                 {/* Dark gradient overlay for text readability */}
