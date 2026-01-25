@@ -56,8 +56,8 @@ export const Hero = () => {
             >
                 <div className="absolute inset-0 h-full w-full">
                     <Image
-                        src="https://images.unsplash.com/photo-1542359556-320d5885068a?q=80&w=2000&auto=format&fit=crop"
-                        alt="Sierra Leone Landscape"
+                        src="/images/hero-children.jpg"
+                        alt="Children in Sierra Leone"
                         fill
                         className="object-cover transform scale-105"
                         priority
