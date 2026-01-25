@@ -20,8 +20,8 @@ export const ScrollyBackground = ({ scrollYProgress }: ScrollyBackgroundProps) =
             {/* Layer 1: Damaged State (Base) */}
             <div className="absolute inset-0 w-full h-full">
                 <img
-                    src="/images/damaged-landscape.jpg"
-                    alt="Damaged Landscape"
+                    src="/images/hero-children.jpg"
+                    alt="Children in Sierra Leone"
                     className="w-full h-full object-cover filter sepia-[0.3] contrast-125 saturate-50"
                 />
                 <div className="absolute inset-0 bg-muddy-brown/40 mix-blend-multiply" />
