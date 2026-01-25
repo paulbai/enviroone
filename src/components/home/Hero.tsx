@@ -56,7 +56,7 @@ export const Hero = () => {
             >
                 <div className="absolute inset-0 h-full w-full">
                     <Image
-                        src="/images/hero-children.jpg"
+                        src="/images/hero-children.jpg?v=2"
                         alt="Children in Sierra Leone"
                         fill
                         className="object-cover transform scale-105"
