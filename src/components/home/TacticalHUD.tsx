@@ -16,28 +16,9 @@ export const TacticalHUD = () => {
                 }}
             />
 
-            {/* Corner Crosshairs */}
-            <Crosshair className="top-8 left-8" />
-            <Crosshair className="top-8 right-8" />
-            <Crosshair className="bottom-8 left-8" />
-            <Crosshair className="bottom-8 right-8" />
 
-            {/* Coordinates Display */}
-            <div className="absolute bottom-8 left-8 md:left-20 font-mono text-[10px] md:text-xs text-electric-lime tracking-widest flex flex-col gap-1 opacity-80">
-                <motion.div
-                    animate={{ opacity: [0.5, 1, 0.5] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                >
-                    LAT: 8.4657° N
-                </motion.div>
-                <motion.div
-                    animate={{ opacity: [0.5, 1, 0.5] }}
-                    transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
-                >
-                    LONG: 12.0317° W
-                </motion.div>
-                <div>SECTOR: ROKEL-RIVER-BASIN</div>
-            </div>
+
+
 
             {/* Scanning Line */}
             <motion.div
