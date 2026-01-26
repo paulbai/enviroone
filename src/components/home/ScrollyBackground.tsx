@@ -36,8 +36,8 @@ export const ScrollyBackground = ({ scrollYProgress }: ScrollyBackgroundProps) =
                 }}
             >
                 <img
-                    src="/images/restored-landscape.png"
-                    alt="Restored Landscape"
+                    src="/images/restored-landscape-new.jpg"
+                    alt="Restored Green Valley Landscape"
                     className="w-full h-full object-cover filter brightness-110 saturate-110"
                 />
                 <div className="absolute inset-0 bg-forest-dark/20 mix-blend-overlay" />
