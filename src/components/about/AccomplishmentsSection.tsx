@@ -16,15 +16,13 @@ export const AccomplishmentsSection = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-4xl font-display font-bold text-forest mb-6">Why Africa?</h2>
+                        <h2 className="text-4xl font-display font-bold text-forest mb-6">Why Sierra Leone?</h2>
                         <div className="prose text-charcoal/80">
                             <p>
-                                According to major global reports, the percentage of people undernourished per capita and living on less than $2 per day is highest in Africa.
-                                Access to clean water is the most fundamental component of development, yet Africa often faces the lowest water poverty index.
+                                Sierra Leone is among the countries with the highest rural poverty and lowest access to safe water in Africa. Decades of civil war, the Ebola crisis, and recurring climate shocks have left rural communities with fragile livelihoods, limited infrastructure, and few opportunities for the next generation. In many villages, families depend on rain-fed agriculture, walk long distances to collect unsafe water, and lack reliable access to basic health and education services. Women and girls shoulder much of this burden, spending hours each day fetching water instead of attending school or earning income.
                             </p>
                             <p className="mt-4">
-                                For these reasons, EnviroOne believes that its poverty reduction programs will have the most impact in Africa.
-                                Since 2011, we have been implementing programs that have impacted lives in Sierra Leone, especially in Lower Yoni, Koya, and Kaffu Bullom chiefdoms.
+                                We focus on Sierra Leone because it is a place where targeted, community-driven investments in agriculture, clean water, and education can change the trajectory of entire villages. By working closely with local leaders in chiefdoms such as Tonkolili, Port Loko, and the Western Rural Area, EnviroOne helps rural communities move from surviving crisis to building long-term resilience and hope.
                             </p>
                         </div>
 
