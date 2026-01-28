@@ -22,9 +22,8 @@ export const ScrollyBackground = ({ scrollYProgress }: ScrollyBackgroundProps) =
                 <img
                     src="/images/hero-children.jpg"
                     alt="Children in Sierra Leone"
-                    className="w-full h-full object-cover filter sepia-[0.3] contrast-125 saturate-50"
+                    className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-muddy-brown/40 mix-blend-multiply" />
             </div>
 
             {/* Layer 2: Restored State (Reveal) */}
