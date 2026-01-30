@@ -4,6 +4,7 @@ import { FocusAreas } from "@/components/home/FocusAreas";
 import { StoriesCarousel } from "@/components/home/StoriesCarousel";
 import { ThreeSection } from "@/components/home/ThreeSection";
 import { Team } from "@/components/home/Team";
+import { ImpactDownload } from "@/components/home/ImpactDownload";
 // Other components will be imported here as they are created
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <LandingPage />
       <ImpactStats />
+      <ImpactDownload />
       <FocusAreas />
       {/* <StoriesCarousel /> */}
       {/* 
