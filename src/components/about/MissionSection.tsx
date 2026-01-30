@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export const MissionSection = () => {
     return (
         <Section className="bg-cream text-charcoal">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 items-start">
                 {/* Mission */}
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
@@ -24,7 +24,7 @@ export const MissionSection = () => {
                             "Our mission is to demonstrate that a systems approach that integrates the three main components of human development (health/environment, food, and knowledge) is not only needed to improve the lives of people successfully, but also achievable."
                         </p>
                         <p className="mt-4">
-                            This is a paradigm shift from the current piecemeal approach to human development. It is the basis of our “All It Takes Is Three” strategy.
+                            This is a paradigm shift from the current piecemeal approach to human development. It is the basis of our "All It Takes Is Three" strategy.
                         </p>
                     </div>
                 </motion.div>
@@ -67,6 +67,28 @@ export const MissionSection = () => {
                             </span>
                         </li>
                     </ul>
+                </motion.div>
+
+                {/* Our Impact */}
+                <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 }}
+                >
+                    <h2 className="text-4xl font-display font-bold text-forest mb-6">Our Impact</h2>
+                    <p className="text-charcoal/80 mb-6">
+                        For a concise overview of EnviroOne's work and results in Sierra Leone, download our 1-page EnviroOne Impact summary.
+                    </p>
+                    <a
+                        href="/EnviroOne-Impact.pdf"
+                        download="EnviroOne-Impact.pdf"
+                        className="inline-block"
+                    >
+                        <button className="px-6 py-3 bg-forest text-white font-semibold rounded-lg hover:bg-forest/90 transition-colors shadow-md hover:shadow-lg">
+                            Download
+                        </button>
+                    </a>
                 </motion.div>
             </div>
         </Section>
