@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useScroll, motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -10,7 +11,13 @@ import { Button } from "@/components/ui/Button";
 export const Navbar = () => {
     const { scrollYProgress } = useScroll();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [activeLink, setActiveLink] = useState("/");
+    const pathname = usePathname();
+    const [activeLink, setActiveLink] = useState(pathname || "/");
+
+    // Update active link when pathname changes
+    useEffect(() => {
+        setActiveLink(pathname || "/");
+    }, [pathname]);
 
     const navLinks = [
         { name: "Home", href: "/" },
