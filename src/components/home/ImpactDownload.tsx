@@ -3,7 +3,6 @@
 import React from "react";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { Download } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const ImpactDownload = () => {
@@ -24,14 +23,13 @@ export const ImpactDownload = () => {
                 <a
                     href="/EnviroOne-Impact.pdf"
                     download="EnviroOne-Impact.pdf"
-                    className="inline-block"
+                    className="inline-flex justify-center"
                 >
                     <Button
                         variant="primary"
-                        className="shadow-lg hover:shadow-xl transition-shadow flex items-center gap-2"
+                        className="shadow-lg hover:shadow-xl transition-shadow px-8"
                     >
-                        <Download className="w-5 h-5" />
-                        Download EnviroOne Impact
+                        Download
                     </Button>
                 </a>
             </motion.div>
