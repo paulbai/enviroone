@@ -90,7 +90,7 @@ export const FocusAreas = () => {
         {
             title: "Water Well Program",
             description: "Providing critical access to clean water for districts across Sierra Leone, reducing disease and empowering communities.",
-            image: "/projects/water_well.jpg",
+            image: "/images/water-well-high-res.jpg",
             href: "/projects/clean-water", // Changed from targetId
             color: "text-water",
             align: "right" as const
