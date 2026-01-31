@@ -135,11 +135,11 @@ export const FullTeam = () => {
                         className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group h-full flex flex-col"
                     >
                         {/* Image */}
-                        <div className="relative overflow-hidden w-full aspect-[4/3] shrink-0">
+                        <div className="relative overflow-hidden w-full aspect-[4/3] shrink-0 bg-gray-100">
                             <img
                                 src={member.image}
                                 alt={member.name}
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                             />
                         </div>
 
