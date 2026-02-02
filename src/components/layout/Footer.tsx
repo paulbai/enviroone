@@ -13,7 +13,7 @@ export const Footer = () => {
 
 
             <div className="relative z-10 max-w-[var(--spacing-container)] mx-auto px-4 md:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 items-start">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 items-start">
 
                     {/* Left Column: Sierra Leone Address */}
                     <div className="text-left py-4">
@@ -27,6 +27,33 @@ export const Footer = () => {
                                 +232 99 443377
                             </p>
                         </div>
+                    </div>
+
+                    {/* Resources Column */}
+                    <div className="text-left py-4">
+                        <h3 className="text-golden font-bold mb-3 text-sm">Resources</h3>
+                        <ul className="text-cream/80 text-sm space-y-2">
+                            <li>
+                                <a href="/EnviroOne_Impact.pdf" target="_blank" className="hover:text-cream transition-colors">
+                                    EnviroOne Impact
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.enviroone.org/s/EnviroOneCropGuideVer01.rar" target="_blank" className="hover:text-cream transition-colors">
+                                    Crop Guide
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.enviroone.org/s/Fracking-for-natural-gas-paper.pdf" target="_blank" className="hover:text-cream transition-colors">
+                                    Hydrofracing Natural Gas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.enviroone.org/s/Biodiesel-from-sludge.pdf" target="_blank" className="hover:text-cream transition-colors">
+                                    Sludge to Biodiesel
+                                </a>
+                            </li>
+                        </ul>
                     </div>
 
                     {/* Center Column: Socials & Email */}
