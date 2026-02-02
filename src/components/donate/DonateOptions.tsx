@@ -27,8 +27,7 @@ export const DonateOptions = () => {
                         title="EnviroOne Donation Form"
                         className="w-full border-0"
                         style={{
-                            minHeight: '800px',
-                            height: 'auto'
+                            height: '1200px'
                         }}
                         onLoad={() => setIsLoading(false)}
                         sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"
