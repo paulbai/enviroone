@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { Heart, Shield, Globe } from "lucide-react";
+import { Heart } from "lucide-react";
 
 export const DonateOptions = () => {
     return (
@@ -39,22 +39,6 @@ export const DonateOptions = () => {
                         <p className="text-xl text-cream/90 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
                             Your secure donation provides clean water, sustainable agriculture, and education to communities in Sierra Leone. Every contribution makes a lasting impact.
                         </p>
-
-                        {/* Trust Indicators */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-3xl mx-auto">
-                            <div className="flex flex-col items-center gap-2">
-                                <Shield className="w-6 h-6 text-golden" />
-                                <p className="text-cream/80 text-sm">Secure Payment</p>
-                            </div>
-                            <div className="flex flex-col items-center gap-2">
-                                <Globe className="w-6 h-6 text-golden" />
-                                <p className="text-cream/80 text-sm">Direct Impact</p>
-                            </div>
-                            <div className="flex flex-col items-center gap-2">
-                                <Heart className="w-6 h-6 text-golden" />
-                                <p className="text-cream/80 text-sm">Tax Deductible</p>
-                            </div>
-                        </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                             <Button
