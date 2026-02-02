@@ -1,45 +1,38 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { Section } from "@/components/ui/Section";
 
 export const DonateOptions = () => {
-    useEffect(() => {
-        // Load Squarespace donation block script
-        const script = document.createElement('script');
-        script.src = 'https://static1.squarespace.com/static/ta/5134cbefe4b0c6fb04df8065/10515/assets/ss-merch-core.js';
-        script.async = true;
-        document.body.appendChild(script);
-
-        return () => {
-            // Cleanup script on unmount
-            if (document.body.contains(script)) {
-                document.body.removeChild(script);
-            }
-        };
-    }, []);
+    const [isLoading, setIsLoading] = useState(true);
 
     return (
         <Section className="bg-cream relative z-10 py-16">
             <div className="max-w-4xl mx-auto px-4">
-                {/* Squarespace Donation Block */}
-                <div
-                    className="sqs-block donate-block sqs-block-donate bg-white rounded-2xl shadow-lg p-8"
-                    data-block-type="69"
-                >
-                    <div
-                        className="sqs-block-content"
-                        dangerouslySetInnerHTML={{
-                            __html: `
-                                <div class="donation-form-wrapper">
-                                    <script src="https://static1.squarespace.com/static/ta/5134cbefe4b0c6fb04df8065/10515/assets/ss-merch-core.js"></script>
-                                    <div 
-                                        class="squarespace-donation-block" 
-                                        data-donate-page-id="57f5646ed2b8578aac1f3fd8"
-                                    ></div>
-                                </div>
-                            `
+                {/* Embedded Donation Form */}
+                <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden">
+                    {/* Loading State */}
+                    {isLoading && (
+                        <div className="absolute inset-0 flex items-center justify-center bg-white z-10 min-h-[600px]">
+                            <div className="text-center">
+                                <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-forest-dark border-r-transparent mb-4"></div>
+                                <p className="text-charcoal/60">Loading donation form...</p>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Iframe */}
+                    <iframe
+                        src="https://www.enviroone.org/checkout/donate?donatePageId=57f5646ed2b8578aac1f3fd8"
+                        title="EnviroOne Donation Form"
+                        className="w-full border-0"
+                        style={{
+                            minHeight: '800px',
+                            height: 'auto'
                         }}
+                        onLoad={() => setIsLoading(false)}
+                        sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"
+                        allow="payment"
                     />
                 </div>
 
