@@ -33,7 +33,7 @@ export const DonateOptions = () => {
                             src="https://www.enviroone.org/checkout/donate?donatePageId=57f5646ed2b8578aac1f3fd8"
                             title="EnviroOne Donation Form"
                             className="w-full border-0"
-                            style={{ minHeight: '800px', height: '100vh' }}
+                            style={{ height: '1200px' }}
                             onLoad={() => setIsLoading(false)}
                             allow="payment"
                         />
