@@ -32,7 +32,10 @@ export const Navbar = () => {
             {/* Scroll Progress Bar */}
             <motion.div
                 className="fixed top-0 left-0 right-0 h-[2px] bg-golden z-[1001] origin-left"
-                style={{ scaleX: scrollYProgress }}
+                style={{
+                    scaleX: scrollYProgress,
+                    opacity: scrollYProgress
+                }}
             />
 
             {/* Desktop & Mobile Navbar */}

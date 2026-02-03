@@ -7,7 +7,13 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'images.unsplash.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.squarespace-cdn.com',
+      },
     ],
+    // Allow local images from public folder
+    unoptimized: false,
   },
 };
 
