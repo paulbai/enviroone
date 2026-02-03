@@ -33,14 +33,21 @@ export default function BlogPage() {
                             >
                                 <Link
                                     href={`/blog/${post.slug}`}
-                                    className="group block h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-warmGray/20 flex flex-col"
+                                    className={`group block h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col ${index === 0 ? 'border-2 border-golden' : 'border border-warmGray/20'
+                                        }`}
                                 >
-                                    <div className="h-64 overflow-hidden relative">
+                                    <div className="h-64 overflow-hidden relative bg-cream">
+                                        {index === 0 && (
+                                            <div className="absolute top-4 left-4 z-20 bg-golden text-forest-dark px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                                                Latest
+                                            </div>
+                                        )}
                                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-10" />
                                         <img
                                             src={post.image}
                                             alt={post.title}
-                                            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                                            className={`w-full h-full ${index === 0 ? 'object-contain' : 'object-cover'
+                                                } transform group-hover:scale-110 transition-transform duration-700`}
                                         />
                                     </div>
 
