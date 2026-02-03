@@ -22,7 +22,7 @@ export const Navbar = () => {
     const navLinks = [
         { name: "Home", href: "/" },
         { name: "About Us", href: "/about" },
-        { name: "Blog posts", href: "/blog" },
+        { name: "Blog", href: "/blog" },
         { name: "Projects", href: "/projects" },
         { name: "Get involved", href: "/get-involved" },
     ];
