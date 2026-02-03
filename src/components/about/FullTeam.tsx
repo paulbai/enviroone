@@ -25,7 +25,7 @@ const teamMembers = [
         name: "Hajaratu Fullah, MBA",
         role: "Vice President of Operations",
         bio: "Hajaratu Fullah is Vice President of Operations at EnviroOne. With a B.S. in Agriculture and an MBA in Agribusiness Management, she brings over a decade of experience in rural development, women’s economic empowerment, and sustainable agribusiness. Hajaratu leads the design and execution of community-led initiatives that blend indigenous knowledge with modern regenerative practices. In her current role, she oversees project implementation across multiple districts, directs women-led microenterprises, and ensures strategic partnerships and policy engagement. Her leadership reflects a deep commitment to gender equity, climate resilience, and innovation for lasting impact in Sierra Leone.",
-        image: "/team/hajaratu_fullah_final.jpg?v=20260131b",
+        image: "/team/hajaratu_fullah_final.jpg",
     },
     {
         name: "Mark Nastasi, MBA",
