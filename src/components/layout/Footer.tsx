@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Twitter, Facebook, Instagram } from "lucide-react";
+import { Twitter, Facebook, Instagram, Mail } from "lucide-react";
 
 export const Footer = () => {
     return (
@@ -56,14 +56,6 @@ export const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Center Column: Email Only */}
-                    <div className="flex flex-col items-center justify-center py-4">
-                        <h3 className="text-cream font-bold mb-4">Stay Connected</h3>
-                        <a href="mailto:mail@enviroone.org" className="text-water hover:text-cream transition-colors text-sm">
-                            mail@enviroone.org
-                        </a>
-                    </div>
-
                     {/* Right Column: USA Address */}
                     <div className="md:text-right py-4">
                         <div className="text-cream/80 text-sm space-y-4">
@@ -87,6 +79,9 @@ export const Footer = () => {
 
                     {/* Social Icons - Right Side */}
                     <div className="flex gap-3">
+                        <a href="mailto:mail@enviroone.org" className="p-2 rounded-full bg-white/5 hover:bg-forest text-cream transition-all hover:scale-110">
+                            <Mail className="w-5 h-5" />
+                        </a>
                         <a href="https://www.instagram.com/envirooneorg?igsh=MTI1c2U0dGQyMzluZg==" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/5 hover:bg-forest text-cream transition-all hover:scale-110">
                             <Instagram className="w-5 h-5" />
                         </a>
