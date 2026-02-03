@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import NextImage from "next/image";
 import { Section } from "@/components/ui/Section";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowRight } from "lucide-react";
@@ -136,9 +137,12 @@ export const FullTeam = () => {
                     >
                         {/* Image */}
                         <div className="relative overflow-hidden w-full aspect-[4/3] shrink-0 bg-gray-100">
-                            <img
+                            <NextImage
                                 src={member.image}
                                 alt={member.name}
+                                width={400}
+                                height={300}
+                                loading="lazy"
                                 className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                             />
                         </div>
@@ -192,9 +196,11 @@ export const FullTeam = () => {
 
                                 {/* Modal Image */}
                                 <div className="w-full md:w-1/3 aspect-square md:aspect-auto shrink-0 relative bg-forest-dark/5">
-                                    <img
+                                    <NextImage
                                         src={selectedMember.image}
                                         alt={selectedMember.name}
+                                        width={400}
+                                        height={400}
                                         className="w-full h-full object-cover"
                                     />
                                 </div>

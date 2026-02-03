@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import { Section } from '@/components/ui/Section';
 import { motion } from 'framer-motion';
 import { BookOpen, Droplets, Sprout, ArrowRight } from 'lucide-react';
@@ -72,9 +73,12 @@ export default function ProjectsPage() {
                                 >
                                     <div className="h-48 overflow-hidden relative">
                                         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10" />
-                                        <img
+                                        <Image
                                             src={project.image}
                                             alt={project.title}
+                                            width={600}
+                                            height={400}
+                                            loading="lazy"
                                             className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                                         />
                                         <div className={`absolute top-4 left-4 p-3 rounded-xl backdrop-blur-sm bg-white/90 z-20 ${project.textClass}`}>

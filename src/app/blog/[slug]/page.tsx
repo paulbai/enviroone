@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import { Section } from '@/components/ui/Section';
 import { motion } from 'framer-motion';
 import { Calendar, User, ArrowLeft } from 'lucide-react';
@@ -48,9 +49,12 @@ export default function BlogPostPage() {
                         className="bg-white rounded-3xl overflow-hidden shadow-sm border border-warmGray/20"
                     >
                         <div className="h-64 md:h-[500px] overflow-hidden relative">
-                            <img
+                            <Image
                                 src={post.image}
                                 alt={post.title}
+                                width={1200}
+                                height={800}
+                                priority={true}
                                 className="w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

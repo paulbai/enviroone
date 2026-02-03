@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
+import NextImage from "next/image";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { Section } from "@/components/ui/Section";
 import { Quote, ArrowLeft, ArrowRight } from "lucide-react";
@@ -22,7 +23,14 @@ const StoryCard = ({ quote, author, role, image }: StoryCardProps) => {
 
                 <div className="relative z-10">
                     <div className="w-[120px] h-[120px] rounded-full overflow-hidden border-4 border-white shadow-sm mx-auto mb-6">
-                        <img src={image} alt={author} className="w-full h-full object-cover" />
+                        <NextImage
+                            src={image}
+                            alt={author}
+                            width={120}
+                            height={120}
+                            loading="lazy"
+                            className="w-full h-full object-cover"
+                        />
                     </div>
 
                     <Quote className="w-8 h-8 text-golden/40 mx-auto mb-4" />

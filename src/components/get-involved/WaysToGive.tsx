@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import NextImage from "next/image";
 import { motion } from "framer-motion";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";

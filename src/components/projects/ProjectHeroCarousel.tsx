@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -44,9 +45,12 @@ export const ProjectHeroCarousel = ({ slides, className }: ProjectHeroCarouselPr
                         transition={{ duration: 0.7, ease: "easeInOut" }}
                         className="absolute inset-0"
                     >
-                        <img
+                        <Image
                             src={slides[currentIndex].src}
                             alt={slides[currentIndex].alt || slides[currentIndex].caption}
+                            width={1920}
+                            height={1080}
+                            priority={currentIndex === 0}
                             className="w-full h-full object-cover"
                         />
                         {/* Gradient Overlay for Caption Readability */}

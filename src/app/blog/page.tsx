@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import { Section } from '@/components/ui/Section';
 import { motion } from 'framer-motion';
 import { Calendar, User, ArrowRight } from 'lucide-react';
@@ -43,11 +44,14 @@ export default function BlogPage() {
                                             </div>
                                         )}
                                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-10" />
-                                        <img
+                                        <Image
                                             src={post.image}
                                             alt={post.title}
+                                            width={800}
+                                            height={600}
                                             className={`w-full h-full ${index === 0 ? 'object-contain' : 'object-cover'
                                                 } transform group-hover:scale-110 transition-transform duration-700`}
+                                            loading={index === 0 ? 'eager' : 'lazy'}
                                         />
                                     </div>
 
