@@ -26,7 +26,16 @@ export const villages: Village[] = [
             {
                 id: 'lungi-airport',
                 name: 'Lungi-Airport Water Well',
-                photos: [],
+                photos: [
+                    // Milestone 1: Prayer
+                    { src: '/projects/lungi_airport_prayer.jpg', caption: 'Community Gathering for Prayer' },
+                    // Milestone 2: Construction
+                    { src: '/projects/lungi_airport_construction_1.png', caption: 'Well Depth Measurement' },
+                    { src: '/projects/lungi_airport_construction_2.jpg', caption: 'Construction Phase' },
+                    { src: '/projects/lungi_airport_construction_3.jpg', caption: 'Well Structure Complete' },
+                    // Milestone 3: Celebration & Handing Over
+                    { src: '/projects/lungi_airport_celebration.jpg', caption: 'Community Celebration' }
+                ],
                 videoId: undefined
             },
             {
