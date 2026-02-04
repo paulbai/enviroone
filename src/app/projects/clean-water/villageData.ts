@@ -26,6 +26,7 @@ export const villages: Village[] = [
             {
                 id: 'lungi-airport',
                 name: 'Lungi-Airport Water Well',
+                sponsor: 'Irene Gerbrick',
                 photos: [
                     // Milestone 1: Prayer
                     { src: '/projects/lungi_airport_prayer.jpg', caption: 'Community Gathering for Prayer' },
@@ -56,6 +57,7 @@ export const villages: Village[] = [
             {
                 id: 'maloko',
                 name: 'Maloko Water Well',
+                sponsor: 'Nicholas & Harrison Nastasi',
                 photos: [
                     // Milestone 1: Prayer
                     { src: '/projects/maloko_prayer.jpg', caption: 'Community Prayer & Blessing' },
@@ -71,7 +73,7 @@ export const villages: Village[] = [
             {
                 id: 'masoila',
                 name: 'Masoila Water Well',
-                sponsor: 'Doug & Denise Brown, New Jersey USA',
+                sponsor: 'Nicholas & Harrison Nastasi',
                 photos: [
                     // Milestone 1: Prayer
                     { src: '/projects/masoila_prayer.jpg', caption: 'Community Prayer Gathering' },
