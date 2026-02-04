@@ -91,7 +91,16 @@ export const villages: Village[] = [
                 id: 'tombobana-1',
                 name: 'Tombobana Water Well - 1',
                 sponsor: 'Richard & Nancy Stetson, New Jersey USA',
-                photos: [],
+                photos: [
+                    // Milestone 1: Prayer
+                    { src: '/projects/tombobana_1_prayer.jpg', caption: 'Community Prayer & Blessing' },
+                    // Milestone 2: Construction
+                    { src: '/projects/tombobana_1_construction_1.jpg', caption: 'Well Excavation Work' },
+                    { src: '/projects/tombobana_1_construction_2.jpg', caption: 'Project Signage Installation' },
+                    { src: '/projects/tombobana_1_construction_3.jpg', caption: 'Pump Testing & Installation' },
+                    // Milestone 3: Celebration & Handing Over
+                    { src: '/projects/tombobana_1_celebration.jpg', caption: 'Official Dedication Ceremony' }
+                ],
                 videoId: 'NWImYHhSWco'
             },
             {
