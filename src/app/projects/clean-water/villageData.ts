@@ -41,7 +41,16 @@ export const villages: Village[] = [
             {
                 id: 'kasonha',
                 name: 'Kasonha Water Well',
-                photos: [],
+                photos: [
+                    // Milestone 1: Prayer
+                    { src: '/projects/kasonha_prayer.png', caption: 'Initial Site Assessment & Prayer' },
+                    // Milestone 2: Construction
+                    { src: '/projects/kasonha_construction_1.jpg', caption: 'Well Construction in Progress' },
+                    { src: '/projects/kasonha_construction_2.jpg', caption: 'Well Structure & Pump Installation' },
+                    { src: '/projects/kasonha_construction_3.jpg', caption: 'Testing the Water Pump' },
+                    // Milestone 3: Celebration & Handing Over
+                    { src: '/projects/kasonha_celebration.png', caption: 'Community Celebration & First Water' }
+                ],
                 videoId: undefined
             },
             {
