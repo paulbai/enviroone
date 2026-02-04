@@ -100,19 +100,6 @@ export default function CleanWaterPage() {
                             </button>
                         </div>
 
-                        <div className="mt-12 not-prose">
-                            <ProjectHeroCarousel
-                                slides={[
-                                    { src: "https://images.squarespace-cdn.com/content/v1/57e2b65646c3c44183c4ddff/1744442692268-EGQ6YJ63UN4SWI9Q27OT/01a+Digging.jpg", caption: "Initial Digging Phase" },
-                                    { src: "https://images.squarespace-cdn.com/content/v1/57e2b65646c3c44183c4ddff/1744442693090-FSQHO4HJ7XEVCNTQJ8FF/02+Concreting.jpg", caption: "Securing the Well" },
-                                    { src: "https://images.squarespace-cdn.com/content/v1/57e2b65646c3c44183c4ddff/1744442694128-YV8X4JQVWPDYOPW5O5Z4/05a+Pump+Installation.jpg", caption: "Pump Installation" },
-                                    { src: "https://images.squarespace-cdn.com/content/v1/57e2b65646c3c44183c4ddff/1744442695877-FUPC4GIABWCHTKSUVHW9/07+Irene+Water+Well.jpg", caption: "Irene Community Well" },
-                                    { src: "https://images.squarespace-cdn.com/content/v1/57e2b65646c3c44183c4ddff/1744442978454-FXMQKGO5QEJ04B0TS2B3/Water+well+opening+photo0.jpg", caption: "Opening Ceremony" },
-                                    { src: "/projects/clean_water_1.png", caption: "Clean Water Access" },
-                                    { src: "/projects/clean_water_2.png", caption: "Community Impact" }
-                                ]}
-                            />
-                        </div>
                     </motion.div>
 
                     {/* Village Bento Grid */}
