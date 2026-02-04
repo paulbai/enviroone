@@ -7,9 +7,15 @@ import { Droplets, Play, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { VideoModal } from '@/components/ui/VideoModal';
 import { ProjectHeroCarousel } from '@/components/projects/ProjectHeroCarousel';
+import { VillageGrid } from '@/components/projects/VillageGrid';
+import { VillageModal } from '@/components/projects/VillageModal';
+import { villages } from './villageData';
 
 export default function CleanWaterPage() {
     const [currentVideoId, setCurrentVideoId] = useState<string | null>(null);
+    const [selectedVillageId, setSelectedVillageId] = useState<string | null>(null);
+
+    const selectedVillage = villages.find(v => v.id === selectedVillageId) || null;
 
     return (
         <main className="pt-20">
@@ -18,6 +24,14 @@ export default function CleanWaterPage() {
                 onClose={() => setCurrentVideoId(null)}
                 videoId={currentVideoId || ""}
             />
+
+            <VillageModal
+                village={selectedVillage}
+                isOpen={!!selectedVillageId}
+                onClose={() => setSelectedVillageId(null)}
+                onVideoClick={(videoId) => setCurrentVideoId(videoId)}
+            />
+
             <Section className="bg-water/5 min-h-screen">
                 <div className="max-w-5xl mx-auto py-12 md:py-20">
                     <motion.div
@@ -99,406 +113,13 @@ export default function CleanWaterPage() {
                                 ]}
                             />
                         </div>
-
-
-                        {/* ========== MALOKO WATER WELL ========== */}
-                        <div className="mt-12 border-t border-gray-200 pt-12">
-                            <h4 className="text-2xl font-bold text-forest mb-8">Maloko Water Well</h4>
-
-                            <div className="not-prose">
-                                <ProjectHeroCarousel
-                                    slides={[
-                                        // Milestone 1: Prayer
-                                        { src: "/projects/clean_water_18.png", caption: "Community Gathering for Prayer" },
-                                        // Milestone 2: Construction
-                                        { src: "/projects/clean_water_15.png", caption: "Drilling Phase 1" },
-                                        { src: "/projects/clean_water_16.png", caption: "Drilling Phase 2" },
-                                        { src: "/projects/clean_water_17.png", caption: "Water Source Secured" },
-                                        // Milestone 3: Celebration & Handing Over
-                                        { src: "/projects/clean_water_19.png", caption: "Celebration of Water" }
-                                    ]}
-                                />
-                            </div>
-
-                            {/* Video Button */}
-                            <div className="mt-6 not-prose">
-                                <button
-                                    onClick={() => setCurrentVideoId("")}
-                                    className="inline-flex items-center gap-2 px-6 py-3 bg-water text-white font-bold rounded-full hover:bg-water/90 transition-all shadow-md hover:shadow-lg group"
-                                    disabled
-                                >
-                                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                        <Play className="w-4 h-4 fill-current" />
-                                    </div>
-                                    Watch: Maloko Water Well Video (Coming Soon)
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* ========== PROVO-SPONSORED WATER WELL RETROFIT ========== */}
-                        <div className="mt-12 border-t border-gray-200 pt-12">
-                            <h4 className="text-2xl font-bold text-forest mb-8">Provo-Sponsored Water Well Retrofit</h4>
-
-                            <div className="not-prose">
-                                <ProjectHeroCarousel
-                                    slides={[
-                                        // Milestone 1: Prayer
-                                        { src: "/projects/clean_water_20.png", caption: "Assessment & Prayer" },
-                                        // Milestone 2: Construction
-                                        { src: "/projects/clean_water_21.png", caption: "Repairs in Progress" },
-                                        { src: "/projects/clean_water_22.png", caption: "Flow Restored" },
-                                        // Milestone 3: Celebration & Handing Over
-                                        { src: "/projects/clean_water_23.png", caption: "Sustainable Maintenance Handover" }
-                                    ]}
-                                />
-                            </div>
-
-                            {/* Video Button */}
-                            <div className="mt-6 not-prose">
-                                <button
-                                    onClick={() => setCurrentVideoId("")}
-                                    className="inline-flex items-center gap-2 px-6 py-3 bg-water text-white font-bold rounded-full hover:bg-water/90 transition-all shadow-md hover:shadow-lg group"
-                                    disabled
-                                >
-                                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                        <Play className="w-4 h-4 fill-current" />
-                                    </div>
-                                    Watch: Provo Retrofit Video (Coming Soon)
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* ========== PROBLEM WATER WELLS - SIERRA LEONE ========== */}
-                        <div className="mt-12 border-t border-gray-200 pt-12">
-                            <h4 className="text-2xl font-bold text-forest mb-8">Problem Water Wells Retrofit - Sierra Leone</h4>
-
-                            <div className="not-prose">
-                                <ProjectHeroCarousel
-                                    slides={[
-                                        // Milestone 1: Prayer
-                                        { src: "/projects/clean_water_24.png", caption: "Diagnosing Issues" },
-                                        // Milestone 2: Construction
-                                        { src: "/projects/clean_water_25.png", caption: "Engineering Fix" },
-                                        { src: "/projects/clean_water_26.png", caption: "Well Safe Again" },
-                                        { src: "/projects/clean_water_27.png", caption: "Community Check" },
-                                        // Milestone 3: Celebration & Handing Over
-                                        { src: "/projects/clean_water_28.png", caption: "Long-Term Solution Delivered" }
-                                    ]}
-                                />
-                            </div>
-
-                            {/* Video Button */}
-                            <div className="mt-6 not-prose">
-                                <button
-                                    onClick={() => setCurrentVideoId("")}
-                                    className="inline-flex items-center gap-2 px-6 py-3 bg-water text-white font-bold rounded-full hover:bg-water/90 transition-all shadow-md hover:shadow-lg group"
-                                    disabled
-                                >
-                                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                        <Play className="w-4 h-4 fill-current" />
-                                    </div>
-                                    Watch: Retrofit Project Video (Coming Soon)
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* ========== KAFFU BULLOM CHIEFDOM ========== */}
-                        <div className="mt-12 border-t border-gray-200 pt-12">
-                            <h4 className="text-2xl font-bold text-forest mb-8">Kaffu Bullom Chiefdom Water Well Retrofit</h4>
-
-                            <div className="not-prose">
-                                <ProjectHeroCarousel
-                                    slides={[
-                                        // Milestone 1: Prayer
-                                        { src: "/projects/clean_water_kaffu_grid.jpg", caption: "Community Gathering" },
-                                        // Milestone 2: Construction
-                                        { src: "/projects/clean_water_kaffu_grid.jpg", caption: "Water Flowing" },
-                                        // Milestone 3: Celebration & Handing Over
-                                        { src: "/projects/clean_water_kaffu_grid.jpg", caption: "Health Restored" }
-                                    ]}
-                                />
-                            </div>
-
-                            {/* Video Button */}
-                            <div className="mt-6 not-prose">
-                                <button
-                                    onClick={() => setCurrentVideoId("")}
-                                    className="inline-flex items-center gap-2 px-6 py-3 bg-water text-white font-bold rounded-full hover:bg-water/90 transition-all shadow-md hover:shadow-lg group"
-                                    disabled
-                                >
-                                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                        <Play className="w-4 h-4 fill-current" />
-                                    </div>
-                                    Watch: Kaffu Bullom Video (Coming Soon)
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* ========== MASAMBONGPIE COMMUNITY ========== */}
-                        <div className="mt-12 border-t border-gray-200 pt-12">
-                            <h4 className="text-2xl font-bold text-forest mb-8">Masambongpie Community Water Well</h4>
-
-                            <div className="bg-gray-50 rounded-lg p-8 text-center text-gray-500">
-                                Photos coming soon
-                            </div>
-
-                            {/* Video Button */}
-                            <div className="mt-6 not-prose">
-                                <button
-                                    onClick={() => setCurrentVideoId("lS7tLhf-gbw")}
-                                    className="inline-flex items-center gap-2 px-6 py-3 bg-water text-white font-bold rounded-full hover:bg-water/90 transition-all shadow-md hover:shadow-lg group"
-                                >
-                                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                        <Play className="w-4 h-4 fill-current" />
-                                    </div>
-                                    Watch: Masambongpie Water Well Video
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* ========== LUNGI COMMUNITY ========== */}
-                        <div className="mt-12 border-t border-gray-200 pt-12">
-                            <h4 className="text-2xl font-bold text-forest mb-8">Lungi Community Water Well</h4>
-                            <p className="text-sm text-gray-600 mb-6">Sponsored by Bill & Dawn Flitcraft, New Jersey USA</p>
-
-                            <div className="bg-gray-50 rounded-lg p-8 text-center text-gray-500">
-                                Photos coming soon
-                            </div>
-
-                            {/* Video Button */}
-                            <div className="mt-6 not-prose">
-                                <button
-                                    onClick={() => setCurrentVideoId("PY7-B8jWkSE")}
-                                    className="inline-flex items-center gap-2 px-6 py-3 bg-water text-white font-bold rounded-full hover:bg-water/90 transition-all shadow-md hover:shadow-lg group"
-                                >
-                                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                        <Play className="w-4 h-4 fill-current" />
-                                    </div>
-                                    Watch: Lungi Community Water Well Video
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* ========== MARUNIA COMMUNITY ========== */}
-                        <div className="mt-12 border-t border-gray-200 pt-12">
-                            <h4 className="text-2xl font-bold text-forest mb-8">Marunia Community Water Well</h4>
-                            <p className="text-sm text-gray-600 mb-6">Sponsored by PROVCO Ventures, Pennsylvania USA</p>
-
-                            <div className="not-prose">
-                                <ProjectHeroCarousel
-                                    slides={[
-                                        // Milestone 1: Prayer
-                                        { src: "/projects/clean_water_marunia_grid.jpg", caption: "A New Beginning" },
-                                        // Milestone 2: Construction
-                                        { src: "/projects/clean_water_marunia_grid.jpg", caption: "Clean Water" },
-                                        // Milestone 3: Celebration & Handing Over
-                                        { src: "/projects/clean_water_marunia_grid.jpg", caption: "Community Pride" }
-                                    ]}
-                                />
-                            </div>
-
-                            {/* Video Button */}
-                            <div className="mt-6 not-prose">
-                                <button
-                                    onClick={() => setCurrentVideoId("")}
-                                    className="inline-flex items-center gap-2 px-6 py-3 bg-water text-white font-bold rounded-full hover:bg-water/90 transition-all shadow-md hover:shadow-lg group"
-                                    disabled
-                                >
-                                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                        <Play className="w-4 h-4 fill-current" />
-                                    </div>
-                                    Watch: Marunia Water Well Video (Coming Soon)
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* ========== MAKOMP COMMUNITY ========== */}
-                        <div className="mt-12 border-t border-gray-200 pt-12">
-                            <h4 className="text-2xl font-bold text-forest mb-8">Makomp Community Water Well</h4>
-                            <p className="text-sm text-gray-600 mb-6">Sponsored by Trinity United Methodist Church, Mullica Hill NJ USA</p>
-
-                            <div className="not-prose">
-                                <ProjectHeroCarousel
-                                    slides={[
-                                        // Milestone 1: Prayer
-                                        { src: "/projects/clean_water_makomp_grid.png", caption: "Drilling Success" },
-                                        // Milestone 2: Construction
-                                        { src: "/projects/clean_water_makomp_grid.png", caption: "Fresh Water" },
-                                        // Milestone 3: Celebration & Handing Over
-                                        { src: "/projects/clean_water_makomp_grid.png", caption: "Trinity Support" }
-                                    ]}
-                                />
-                            </div>
-
-                            {/* Video Button */}
-                            <div className="mt-6 not-prose">
-                                <button
-                                    onClick={() => setCurrentVideoId("")}
-                                    className="inline-flex items-center gap-2 px-6 py-3 bg-water text-white font-bold rounded-full hover:bg-water/90 transition-all shadow-md hover:shadow-lg group"
-                                    disabled
-                                >
-                                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                        <Play className="w-4 h-4 fill-current" />
-                                    </div>
-                                    Watch: Makomp Water Well Video (Coming Soon)
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* ========== MASOILA COMMUNITY ========== */}
-                        <div className="mt-12 border-t border-gray-200 pt-12">
-                            <h4 className="text-2xl font-bold text-forest mb-8">Masoila Community Water Well</h4>
-                            <p className="text-sm text-gray-600 mb-6">Sponsored by Doug & Denise Brown, New Jersey USA</p>
-
-                            <div className="not-prose">
-                                <ProjectHeroCarousel
-                                    slides={[
-                                        // Milestone 1: Prayer
-                                        { src: "/projects/clean_water_masoila_1.png", caption: "New Well" },
-                                        // Milestone 2: Construction
-                                        { src: "/projects/clean_water_masoila_2.png", caption: "Community Handover" },
-                                        // Milestone 3: Celebration & Handing Over
-                                        { src: "/projects/clean_water_masoila_3.png", caption: "Gratitude" }
-                                    ]}
-                                />
-                            </div>
-
-                            {/* Video Button */}
-                            <div className="mt-6 not-prose">
-                                <button
-                                    onClick={() => setCurrentVideoId("")}
-                                    className="inline-flex items-center gap-2 px-6 py-3 bg-water text-white font-bold rounded-full hover:bg-water/90 transition-all shadow-md hover:shadow-lg group"
-                                    disabled
-                                >
-                                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                        <Play className="w-4 h-4 fill-current" />
-                                    </div>
-                                    Watch: Masoila Water Well Video (Coming Soon)
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* ========== TOMBO BANA COMMUNITY ========== */}
-                        <div className="mt-12 border-t border-gray-200 pt-12">
-                            <h4 className="text-2xl font-bold text-forest mb-8">Tombo Bana Community Water Well</h4>
-                            <p className="text-sm text-gray-600 mb-6">Sponsored by Richard & Nancy Stetson, New Jersey USA</p>
-
-                            <div className="not-prose">
-                                <ProjectHeroCarousel
-                                    slides={[
-                                        // Milestone 1: Prayer
-                                        { src: "/projects/clean_water_tombo_1.png", caption: "Breaking Ground" },
-                                        // Milestone 2: Construction
-                                        { src: "/projects/clean_water_tombo_2.png", caption: "Construction" },
-                                        // Milestone 3: Celebration & Handing Over
-                                        { src: "/projects/clean_water_tombo_3.png", caption: "Clean Water" }
-                                    ]}
-                                />
-                            </div>
-
-                            {/* Video Button */}
-                            <div className="mt-6 not-prose">
-                                <button
-                                    onClick={() => setCurrentVideoId("NWImYHhSWco")}
-                                    className="inline-flex items-center gap-2 px-6 py-3 bg-water text-white font-bold rounded-full hover:bg-water/90 transition-all shadow-md hover:shadow-lg group"
-                                >
-                                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                        <Play className="w-4 h-4 fill-current" />
-                                    </div>
-                                    Watch: Tombo Bana & Tombo Lol Celebration
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* ========== MAKENI ROCFOLA (LISA BORGESE) ========== */}
-                        <div className="mt-12 border-t border-gray-200 pt-12">
-                            <h4 className="text-2xl font-bold text-forest mb-8">Makeni Rocfola Community Water Well</h4>
-                            <p className="text-sm text-gray-600 mb-6">Sponsored by Lisa Borgese, New Jersey USA</p>
-
-                            <div className="not-prose">
-                                <ProjectHeroCarousel
-                                    slides={[
-                                        // Milestone 1: Prayer
-                                        { src: "/projects/clean_water_makeni_grid.jpg", caption: "Phase 1" },
-                                        // Milestone 2: Construction
-                                        { src: "/projects/clean_water_makeni_grid.jpg", caption: "Phase 2" },
-                                        // Milestone 3: Celebration & Handing Over
-                                        { src: "/projects/clean_water_makeni_grid.jpg", caption: "Phase 3" }
-                                    ]}
-                                />
-                            </div>
-
-                            {/* Video Button */}
-                            <div className="mt-6 not-prose">
-                                <button
-                                    onClick={() => setCurrentVideoId("")}
-                                    className="inline-flex items-center gap-2 px-6 py-3 bg-water text-white font-bold rounded-full hover:bg-water/90 transition-all shadow-md hover:shadow-lg group"
-                                    disabled
-                                >
-                                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                        <Play className="w-4 h-4 fill-current" />
-                                    </div>
-                                    Watch: Makeni Rocfola Video (Coming Soon)
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* ========== SONGO WATER RELIEF ========== */}
-                        <div className="mt-12 border-t border-gray-200 pt-12">
-                            <h4 className="text-2xl font-bold text-forest mb-8">Songo Water Relief</h4>
-
-                            <div className="bg-gray-50 rounded-lg p-8 text-center text-gray-500">
-                                Photos coming soon
-                            </div>
-
-                            {/* Video Button */}
-                            <div className="mt-6 not-prose">
-                                <button
-                                    onClick={() => setCurrentVideoId("2EcKP2ZU0rs")}
-                                    className="inline-flex items-center gap-2 px-6 py-3 bg-water text-white font-bold rounded-full hover:bg-water/90 transition-all shadow-md hover:shadow-lg group"
-                                >
-                                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                        <Play className="w-4 h-4 fill-current" />
-                                    </div>
-                                    Watch: Songo Water Relief Video
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* ========== MAKENI ROCFOLA (TRINITY UMC) ========== */}
-                        <div className="mt-12 border-t border-gray-200 pt-12">
-                            <h4 className="text-2xl font-bold text-forest mb-8">Makeni Rocfola Community Water Well</h4>
-                            <p className="text-sm text-gray-600 mb-6">Sponsored by Trinity United Methodist Church, Mullica Hill NJ USA</p>
-
-                            <div className="not-prose">
-                                <ProjectHeroCarousel
-                                    slides={[
-                                        // Milestone 1: Prayer
-                                        { src: "/projects/clean_water_makeni_trinity_banner.png", caption: "Trinity Sponsorship Banner" },
-                                        // Milestone 2: Construction
-                                        { src: "/projects/clean_water_makeni_trinity_3.png", caption: "Construction Progress" },
-                                        // Milestone 3: Celebration & Handing Over
-                                        { src: "/projects/clean_water_makeni_trinity_2.png", caption: "Impact" },
-                                        { src: "/projects/clean_water_makeni_trinity_4.png", caption: "Community" }
-                                    ]}
-                                />
-                            </div>
-
-                            {/* Video Button */}
-                            <div className="mt-6 not-prose">
-                                <button
-                                    onClick={() => setCurrentVideoId("")}
-                                    className="inline-flex items-center gap-2 px-6 py-3 bg-water text-white font-bold rounded-full hover:bg-water/90 transition-all shadow-md hover:shadow-lg group"
-                                    disabled
-                                >
-                                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                        <Play className="w-4 h-4 fill-current" />
-                                    </div>
-                                    Watch: Makeni Rocfola Trinity Video (Coming Soon)
-                                </button>
-                            </div>
-                        </div>
                     </motion.div>
+
+                    {/* Village Bento Grid */}
+                    <VillageGrid
+                        villages={villages}
+                        onVillageClick={(villageId) => setSelectedVillageId(villageId)}
+                    />
                 </div>
             </Section>
         </main>
