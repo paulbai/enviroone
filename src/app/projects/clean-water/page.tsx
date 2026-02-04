@@ -105,38 +105,19 @@ export default function CleanWaterPage() {
                         <div className="mt-12 border-t border-gray-200 pt-12">
                             <h4 className="text-2xl font-bold text-forest mb-8">Maloko Water Well</h4>
 
-                            <div className="space-y-8">
-                                {/* Prayer */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Prayer</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_18.png", caption: "Community Gathering for Prayer" }
-                                        ]}
-                                    />
-                                </div>
-
-                                {/* Construction */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Construction</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_15.png", caption: "Drilling Phase 1" },
-                                            { src: "/projects/clean_water_16.png", caption: "Drilling Phase 2" },
-                                            { src: "/projects/clean_water_17.png", caption: "Water Source Secured" }
-                                        ]}
-                                    />
-                                </div>
-
-                                {/* Celebration & Handing Over */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Celebration & Handing Over</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_19.png", caption: "Celebration of Water" }
-                                        ]}
-                                    />
-                                </div>
+                            <div className="not-prose">
+                                <ProjectHeroCarousel
+                                    slides={[
+                                        // Milestone 1: Prayer
+                                        { src: "/projects/clean_water_18.png", caption: "Community Gathering for Prayer" },
+                                        // Milestone 2: Construction
+                                        { src: "/projects/clean_water_15.png", caption: "Drilling Phase 1" },
+                                        { src: "/projects/clean_water_16.png", caption: "Drilling Phase 2" },
+                                        { src: "/projects/clean_water_17.png", caption: "Water Source Secured" },
+                                        // Milestone 3: Celebration & Handing Over
+                                        { src: "/projects/clean_water_19.png", caption: "Celebration of Water" }
+                                    ]}
+                                />
                             </div>
 
                             {/* Video Button */}
@@ -158,37 +139,18 @@ export default function CleanWaterPage() {
                         <div className="mt-12 border-t border-gray-200 pt-12">
                             <h4 className="text-2xl font-bold text-forest mb-8">Provo-Sponsored Water Well Retrofit</h4>
 
-                            <div className="space-y-8">
-                                {/* Prayer */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Prayer</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_20.png", caption: "Assessment & Prayer" }
-                                        ]}
-                                    />
-                                </div>
-
-                                {/* Construction */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Construction</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_21.png", caption: "Repairs in Progress" },
-                                            { src: "/projects/clean_water_22.png", caption: "Flow Restored" }
-                                        ]}
-                                    />
-                                </div>
-
-                                {/* Celebration & Handing Over */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Celebration & Handing Over</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_23.png", caption: "Sustainable Maintenance Handover" }
-                                        ]}
-                                    />
-                                </div>
+                            <div className="not-prose">
+                                <ProjectHeroCarousel
+                                    slides={[
+                                        // Milestone 1: Prayer
+                                        { src: "/projects/clean_water_20.png", caption: "Assessment & Prayer" },
+                                        // Milestone 2: Construction
+                                        { src: "/projects/clean_water_21.png", caption: "Repairs in Progress" },
+                                        { src: "/projects/clean_water_22.png", caption: "Flow Restored" },
+                                        // Milestone 3: Celebration & Handing Over
+                                        { src: "/projects/clean_water_23.png", caption: "Sustainable Maintenance Handover" }
+                                    ]}
+                                />
                             </div>
 
                             {/* Video Button */}
@@ -210,38 +172,19 @@ export default function CleanWaterPage() {
                         <div className="mt-12 border-t border-gray-200 pt-12">
                             <h4 className="text-2xl font-bold text-forest mb-8">Problem Water Wells Retrofit - Sierra Leone</h4>
 
-                            <div className="space-y-8">
-                                {/* Prayer */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Prayer</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_24.png", caption: "Diagnosing Issues" }
-                                        ]}
-                                    />
-                                </div>
-
-                                {/* Construction */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Construction</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_25.png", caption: "Engineering Fix" },
-                                            { src: "/projects/clean_water_26.png", caption: "Well Safe Again" },
-                                            { src: "/projects/clean_water_27.png", caption: "Community Check" }
-                                        ]}
-                                    />
-                                </div>
-
-                                {/* Celebration & Handing Over */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Celebration & Handing Over</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_28.png", caption: "Long-Term Solution Delivered" }
-                                        ]}
-                                    />
-                                </div>
+                            <div className="not-prose">
+                                <ProjectHeroCarousel
+                                    slides={[
+                                        // Milestone 1: Prayer
+                                        { src: "/projects/clean_water_24.png", caption: "Diagnosing Issues" },
+                                        // Milestone 2: Construction
+                                        { src: "/projects/clean_water_25.png", caption: "Engineering Fix" },
+                                        { src: "/projects/clean_water_26.png", caption: "Well Safe Again" },
+                                        { src: "/projects/clean_water_27.png", caption: "Community Check" },
+                                        // Milestone 3: Celebration & Handing Over
+                                        { src: "/projects/clean_water_28.png", caption: "Long-Term Solution Delivered" }
+                                    ]}
+                                />
                             </div>
 
                             {/* Video Button */}
@@ -263,36 +206,17 @@ export default function CleanWaterPage() {
                         <div className="mt-12 border-t border-gray-200 pt-12">
                             <h4 className="text-2xl font-bold text-forest mb-8">Kaffu Bullom Chiefdom Water Well Retrofit</h4>
 
-                            <div className="space-y-8">
-                                {/* Prayer */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Prayer</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_kaffu_grid.jpg", caption: "Community Gathering" }
-                                        ]}
-                                    />
-                                </div>
-
-                                {/* Construction */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Construction</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_kaffu_grid.jpg", caption: "Water Flowing" }
-                                        ]}
-                                    />
-                                </div>
-
-                                {/* Celebration & Handing Over */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Celebration & Handing Over</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_kaffu_grid.jpg", caption: "Health Restored" }
-                                        ]}
-                                    />
-                                </div>
+                            <div className="not-prose">
+                                <ProjectHeroCarousel
+                                    slides={[
+                                        // Milestone 1: Prayer
+                                        { src: "/projects/clean_water_kaffu_grid.jpg", caption: "Community Gathering" },
+                                        // Milestone 2: Construction
+                                        { src: "/projects/clean_water_kaffu_grid.jpg", caption: "Water Flowing" },
+                                        // Milestone 3: Celebration & Handing Over
+                                        { src: "/projects/clean_water_kaffu_grid.jpg", caption: "Health Restored" }
+                                    ]}
+                                />
                             </div>
 
                             {/* Video Button */}
@@ -314,30 +238,8 @@ export default function CleanWaterPage() {
                         <div className="mt-12 border-t border-gray-200 pt-12">
                             <h4 className="text-2xl font-bold text-forest mb-8">Masambongpie Community Water Well</h4>
 
-                            <div className="space-y-8">
-                                {/* Prayer */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Prayer</h5>
-                                    <div className="bg-gray-50 rounded-lg p-8 text-center text-gray-500">
-                                        Photos coming soon
-                                    </div>
-                                </div>
-
-                                {/* Construction */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Construction</h5>
-                                    <div className="bg-gray-50 rounded-lg p-8 text-center text-gray-500">
-                                        Photos coming soon
-                                    </div>
-                                </div>
-
-                                {/* Celebration & Handing Over */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Celebration & Handing Over</h5>
-                                    <div className="bg-gray-50 rounded-lg p-8 text-center text-gray-500">
-                                        Photos coming soon
-                                    </div>
-                                </div>
+                            <div className="bg-gray-50 rounded-lg p-8 text-center text-gray-500">
+                                Photos coming soon
                             </div>
 
                             {/* Video Button */}
@@ -359,30 +261,8 @@ export default function CleanWaterPage() {
                             <h4 className="text-2xl font-bold text-forest mb-8">Lungi Community Water Well</h4>
                             <p className="text-sm text-gray-600 mb-6">Sponsored by Bill & Dawn Flitcraft, New Jersey USA</p>
 
-                            <div className="space-y-8">
-                                {/* Prayer */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Prayer</h5>
-                                    <div className="bg-gray-50 rounded-lg p-8 text-center text-gray-500">
-                                        Photos coming soon
-                                    </div>
-                                </div>
-
-                                {/* Construction */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Construction</h5>
-                                    <div className="bg-gray-50 rounded-lg p-8 text-center text-gray-500">
-                                        Photos coming soon
-                                    </div>
-                                </div>
-
-                                {/* Celebration & Handing Over */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Celebration & Handing Over</h5>
-                                    <div className="bg-gray-50 rounded-lg p-8 text-center text-gray-500">
-                                        Photos coming soon
-                                    </div>
-                                </div>
+                            <div className="bg-gray-50 rounded-lg p-8 text-center text-gray-500">
+                                Photos coming soon
                             </div>
 
                             {/* Video Button */}
@@ -404,36 +284,17 @@ export default function CleanWaterPage() {
                             <h4 className="text-2xl font-bold text-forest mb-8">Marunia Community Water Well</h4>
                             <p className="text-sm text-gray-600 mb-6">Sponsored by PROVCO Ventures, Pennsylvania USA</p>
 
-                            <div className="space-y-8">
-                                {/* Prayer */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Prayer</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_marunia_grid.jpg", caption: "A New Beginning" }
-                                        ]}
-                                    />
-                                </div>
-
-                                {/* Construction */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Construction</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_marunia_grid.jpg", caption: "Clean Water" }
-                                        ]}
-                                    />
-                                </div>
-
-                                {/* Celebration & Handing Over */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Celebration & Handing Over</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_marunia_grid.jpg", caption: "Community Pride" }
-                                        ]}
-                                    />
-                                </div>
+                            <div className="not-prose">
+                                <ProjectHeroCarousel
+                                    slides={[
+                                        // Milestone 1: Prayer
+                                        { src: "/projects/clean_water_marunia_grid.jpg", caption: "A New Beginning" },
+                                        // Milestone 2: Construction
+                                        { src: "/projects/clean_water_marunia_grid.jpg", caption: "Clean Water" },
+                                        // Milestone 3: Celebration & Handing Over
+                                        { src: "/projects/clean_water_marunia_grid.jpg", caption: "Community Pride" }
+                                    ]}
+                                />
                             </div>
 
                             {/* Video Button */}
@@ -456,36 +317,17 @@ export default function CleanWaterPage() {
                             <h4 className="text-2xl font-bold text-forest mb-8">Makomp Community Water Well</h4>
                             <p className="text-sm text-gray-600 mb-6">Sponsored by Trinity United Methodist Church, Mullica Hill NJ USA</p>
 
-                            <div className="space-y-8">
-                                {/* Prayer */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Prayer</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_makomp_grid.png", caption: "Drilling Success" }
-                                        ]}
-                                    />
-                                </div>
-
-                                {/* Construction */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Construction</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_makomp_grid.png", caption: "Fresh Water" }
-                                        ]}
-                                    />
-                                </div>
-
-                                {/* Celebration & Handing Over */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Celebration & Handing Over</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_makomp_grid.png", caption: "Trinity Support" }
-                                        ]}
-                                    />
-                                </div>
+                            <div className="not-prose">
+                                <ProjectHeroCarousel
+                                    slides={[
+                                        // Milestone 1: Prayer
+                                        { src: "/projects/clean_water_makomp_grid.png", caption: "Drilling Success" },
+                                        // Milestone 2: Construction
+                                        { src: "/projects/clean_water_makomp_grid.png", caption: "Fresh Water" },
+                                        // Milestone 3: Celebration & Handing Over
+                                        { src: "/projects/clean_water_makomp_grid.png", caption: "Trinity Support" }
+                                    ]}
+                                />
                             </div>
 
                             {/* Video Button */}
@@ -508,36 +350,17 @@ export default function CleanWaterPage() {
                             <h4 className="text-2xl font-bold text-forest mb-8">Masoila Community Water Well</h4>
                             <p className="text-sm text-gray-600 mb-6">Sponsored by Doug & Denise Brown, New Jersey USA</p>
 
-                            <div className="space-y-8">
-                                {/* Prayer */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Prayer</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_masoila_1.png", caption: "New Well" }
-                                        ]}
-                                    />
-                                </div>
-
-                                {/* Construction */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Construction</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_masoila_2.png", caption: "Community Handover" }
-                                        ]}
-                                    />
-                                </div>
-
-                                {/* Celebration & Handing Over */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Celebration & Handing Over</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_masoila_3.png", caption: "Gratitude" }
-                                        ]}
-                                    />
-                                </div>
+                            <div className="not-prose">
+                                <ProjectHeroCarousel
+                                    slides={[
+                                        // Milestone 1: Prayer
+                                        { src: "/projects/clean_water_masoila_1.png", caption: "New Well" },
+                                        // Milestone 2: Construction
+                                        { src: "/projects/clean_water_masoila_2.png", caption: "Community Handover" },
+                                        // Milestone 3: Celebration & Handing Over
+                                        { src: "/projects/clean_water_masoila_3.png", caption: "Gratitude" }
+                                    ]}
+                                />
                             </div>
 
                             {/* Video Button */}
@@ -560,36 +383,17 @@ export default function CleanWaterPage() {
                             <h4 className="text-2xl font-bold text-forest mb-8">Tombo Bana Community Water Well</h4>
                             <p className="text-sm text-gray-600 mb-6">Sponsored by Richard & Nancy Stetson, New Jersey USA</p>
 
-                            <div className="space-y-8">
-                                {/* Prayer */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Prayer</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_tombo_1.png", caption: "Breaking Ground" }
-                                        ]}
-                                    />
-                                </div>
-
-                                {/* Construction */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Construction</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_tombo_2.png", caption: "Construction" }
-                                        ]}
-                                    />
-                                </div>
-
-                                {/* Celebration & Handing Over */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Celebration & Handing Over</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_tombo_3.png", caption: "Clean Water" }
-                                        ]}
-                                    />
-                                </div>
+                            <div className="not-prose">
+                                <ProjectHeroCarousel
+                                    slides={[
+                                        // Milestone 1: Prayer
+                                        { src: "/projects/clean_water_tombo_1.png", caption: "Breaking Ground" },
+                                        // Milestone 2: Construction
+                                        { src: "/projects/clean_water_tombo_2.png", caption: "Construction" },
+                                        // Milestone 3: Celebration & Handing Over
+                                        { src: "/projects/clean_water_tombo_3.png", caption: "Clean Water" }
+                                    ]}
+                                />
                             </div>
 
                             {/* Video Button */}
@@ -611,36 +415,17 @@ export default function CleanWaterPage() {
                             <h4 className="text-2xl font-bold text-forest mb-8">Makeni Rocfola Community Water Well</h4>
                             <p className="text-sm text-gray-600 mb-6">Sponsored by Lisa Borgese, New Jersey USA</p>
 
-                            <div className="space-y-8">
-                                {/* Prayer */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Prayer</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_makeni_grid.jpg", caption: "Phase 1" }
-                                        ]}
-                                    />
-                                </div>
-
-                                {/* Construction */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Construction</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_makeni_grid.jpg", caption: "Phase 2" }
-                                        ]}
-                                    />
-                                </div>
-
-                                {/* Celebration & Handing Over */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Celebration & Handing Over</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_makeni_grid.jpg", caption: "Phase 3" }
-                                        ]}
-                                    />
-                                </div>
+                            <div className="not-prose">
+                                <ProjectHeroCarousel
+                                    slides={[
+                                        // Milestone 1: Prayer
+                                        { src: "/projects/clean_water_makeni_grid.jpg", caption: "Phase 1" },
+                                        // Milestone 2: Construction
+                                        { src: "/projects/clean_water_makeni_grid.jpg", caption: "Phase 2" },
+                                        // Milestone 3: Celebration & Handing Over
+                                        { src: "/projects/clean_water_makeni_grid.jpg", caption: "Phase 3" }
+                                    ]}
+                                />
                             </div>
 
                             {/* Video Button */}
@@ -662,30 +447,8 @@ export default function CleanWaterPage() {
                         <div className="mt-12 border-t border-gray-200 pt-12">
                             <h4 className="text-2xl font-bold text-forest mb-8">Songo Water Relief</h4>
 
-                            <div className="space-y-8">
-                                {/* Prayer */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Prayer</h5>
-                                    <div className="bg-gray-50 rounded-lg p-8 text-center text-gray-500">
-                                        Photos coming soon
-                                    </div>
-                                </div>
-
-                                {/* Construction */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Construction</h5>
-                                    <div className="bg-gray-50 rounded-lg p-8 text-center text-gray-500">
-                                        Photos coming soon
-                                    </div>
-                                </div>
-
-                                {/* Celebration & Handing Over */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Celebration & Handing Over</h5>
-                                    <div className="bg-gray-50 rounded-lg p-8 text-center text-gray-500">
-                                        Photos coming soon
-                                    </div>
-                                </div>
+                            <div className="bg-gray-50 rounded-lg p-8 text-center text-gray-500">
+                                Photos coming soon
                             </div>
 
                             {/* Video Button */}
@@ -707,37 +470,18 @@ export default function CleanWaterPage() {
                             <h4 className="text-2xl font-bold text-forest mb-8">Makeni Rocfola Community Water Well</h4>
                             <p className="text-sm text-gray-600 mb-6">Sponsored by Trinity United Methodist Church, Mullica Hill NJ USA</p>
 
-                            <div className="space-y-8">
-                                {/* Prayer */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Prayer</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_makeni_trinity_banner.png", caption: "Trinity Sponsorship Banner" }
-                                        ]}
-                                    />
-                                </div>
-
-                                {/* Construction */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Construction</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_makeni_trinity_3.png", caption: "Construction Progress" }
-                                        ]}
-                                    />
-                                </div>
-
-                                {/* Celebration & Handing Over */}
-                                <div>
-                                    <h5 className="text-lg font-semibold text-charcoal mb-3">Celebration & Handing Over</h5>
-                                    <ProjectHeroCarousel
-                                        slides={[
-                                            { src: "/projects/clean_water_makeni_trinity_2.png", caption: "Impact" },
-                                            { src: "/projects/clean_water_makeni_trinity_4.png", caption: "Community" }
-                                        ]}
-                                    />
-                                </div>
+                            <div className="not-prose">
+                                <ProjectHeroCarousel
+                                    slides={[
+                                        // Milestone 1: Prayer
+                                        { src: "/projects/clean_water_makeni_trinity_banner.png", caption: "Trinity Sponsorship Banner" },
+                                        // Milestone 2: Construction
+                                        { src: "/projects/clean_water_makeni_trinity_3.png", caption: "Construction Progress" },
+                                        // Milestone 3: Celebration & Handing Over
+                                        { src: "/projects/clean_water_makeni_trinity_2.png", caption: "Impact" },
+                                        { src: "/projects/clean_water_makeni_trinity_4.png", caption: "Community" }
+                                    ]}
+                                />
                             </div>
 
                             {/* Video Button */}
