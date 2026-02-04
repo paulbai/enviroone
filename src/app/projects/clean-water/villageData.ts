@@ -72,7 +72,17 @@ export const villages: Village[] = [
                 id: 'masoila',
                 name: 'Masoila Water Well',
                 sponsor: 'Doug & Denise Brown, New Jersey USA',
-                photos: [],
+                photos: [
+                    // Milestone 1: Prayer
+                    { src: '/projects/masoila_prayer.jpg', caption: 'Community Prayer Gathering' },
+                    // Milestone 2: Construction
+                    { src: '/projects/masoila_construction_1.png', caption: 'Well Construction Work' },
+                    { src: '/projects/masoila_construction_2.jpg', caption: 'Depth Measurement & Testing' },
+                    { src: '/projects/masoila_construction_3.jpg', caption: 'Pump Installation' },
+                    { src: '/projects/masoila_construction_4.jpg', caption: 'Project Signage & Completion' },
+                    // Milestone 3: Celebration & Handing Over
+                    { src: '/projects/masoila_celebration.jpg', caption: 'Community Celebration & First Water' }
+                ],
                 videoId: undefined
             },
             {
