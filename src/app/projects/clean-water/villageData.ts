@@ -56,7 +56,16 @@ export const villages: Village[] = [
             {
                 id: 'maloko',
                 name: 'Maloko Water Well',
-                photos: [],
+                photos: [
+                    // Milestone 1: Prayer
+                    { src: '/projects/maloko_prayer.jpg', caption: 'Community Prayer & Blessing' },
+                    // Milestone 2: Construction
+                    { src: '/projects/maloko_construction_1.jpg', caption: 'Well Foundation Construction' },
+                    { src: '/projects/maloko_construction_2.jpg', caption: 'Pump Installation & Testing' },
+                    { src: '/projects/maloko_construction_3.jpg', caption: 'Project Signage Installation' },
+                    // Milestone 3: Celebration & Handing Over
+                    { src: '/projects/maloko_celebration.jpg', caption: 'Community Celebration & Dedication' }
+                ],
                 videoId: undefined
             },
             {
