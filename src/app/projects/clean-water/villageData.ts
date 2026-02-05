@@ -106,7 +106,16 @@ export const villages: Village[] = [
             {
                 id: 'tombobana-2',
                 name: 'Tombobana Water Well - 2',
-                photos: [],
+                photos: [
+                    // Milestone 1: Prayer
+                    { src: '/projects/tombobana_2_prayer.jpg', caption: 'Community Prayer Session' },
+                    // Milestone 2: Construction
+                    { src: '/projects/tombobana_2_construction_1.jpg', caption: 'Foundation & Signage Work' },
+                    { src: '/projects/tombobana_2_construction_2.jpg', caption: 'Pump Installation Process' },
+                    { src: '/projects/tombobana_2_construction_3.jpg', caption: 'Well Testing & Inspection' },
+                    // Milestone 3: Celebration & Handing Over
+                    { src: '/projects/tombobana_2_celebration.jpg', caption: 'Community Handover Ceremony' }
+                ],
                 videoId: undefined
             },
             {
