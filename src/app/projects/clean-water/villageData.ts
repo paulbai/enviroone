@@ -121,7 +121,16 @@ export const villages: Village[] = [
             {
                 id: 'tombolol',
                 name: 'Tombolol Water Well',
-                photos: [],
+                photos: [
+                    // Milestone 1: Prayer
+                    { src: '/projects/tombolol_prayer.jpg', caption: 'Community Prayer & Blessing' },
+                    // Milestone 2: Construction
+                    { src: '/projects/tombolol_construction_1.jpg', caption: 'Well Structure Construction' },
+                    { src: '/projects/tombolol_construction_2.jpg', caption: 'Well Depth & Interior Work' },
+                    { src: '/projects/tombolol_construction_3.jpg', caption: 'Project Signage & Completion' },
+                    // Milestone 3: Celebration & Handing Over
+                    { src: '/projects/tombolol_celebration.jpg', caption: 'Community Celebration & First Water' }
+                ],
                 videoId: undefined
             },
             {
