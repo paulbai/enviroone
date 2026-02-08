@@ -78,7 +78,7 @@ export const villages: Village[] = [
                     // Milestone 1: Prayer
                     { src: '/projects/masoila_prayer.jpg', caption: 'Community Prayer Gathering' },
                     // Milestone 2: Construction
-                    { src: '/projects/masoila_construction_1.png', caption: 'Well Construction Work' },
+                    { src: '/projects/masoila_construction_1.jpg', caption: 'Well Construction Work' },
                     { src: '/projects/masoila_construction_2.jpg', caption: 'Depth Measurement & Testing' },
                     { src: '/projects/masoila_construction_3.jpg', caption: 'Pump Installation' },
                     { src: '/projects/masoila_construction_4.jpg', caption: 'Project Signage & Completion' },

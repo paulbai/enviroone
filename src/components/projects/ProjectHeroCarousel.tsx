@@ -52,6 +52,7 @@ export const ProjectHeroCarousel = ({ slides, className }: ProjectHeroCarouselPr
                             height={1080}
                             priority={currentIndex === 0}
                             className="w-full h-full object-contain"
+                            sizes="100vw"
                         />
                         {/* Gradient Overlay for Caption Readability */}
                         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
