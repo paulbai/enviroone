@@ -162,7 +162,16 @@ export const villages: Village[] = [
                 id: 'rocfolla-1',
                 name: 'RocFolla Water Well - 1',
                 sponsor: 'Lisa Borgese, New Jersey USA',
-                photos: [],
+                photos: [
+                    // Milestone 1: Prayer
+                    { src: '/projects/rocfolla_1_prayer.jpg', caption: 'Community Prayer & Blessing' },
+                    // Milestone 2: Construction
+                    { src: '/projects/rocfolla_1_construction_1.jpg', caption: 'Well Construction in Progress' },
+                    { src: '/projects/rocfolla_1_construction_2.jpg', caption: 'Well Structure & Signage' },
+                    { src: '/projects/rocfolla_1_construction_3.jpg', caption: 'Well Depth & Integration' },
+                    // Milestone 3: Celebration & Handing Over
+                    { src: '/projects/rocfolla_1_celebration.jpg', caption: 'Community Celebration & Hand-over' }
+                ],
                 videoId: undefined
             },
             {
