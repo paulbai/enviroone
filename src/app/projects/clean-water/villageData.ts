@@ -137,7 +137,16 @@ export const villages: Village[] = [
                 id: 'tulun',
                 name: 'Tulun Water Well',
                 sponsor: 'Bill & Dawn Fitcraft',
-                photos: [],
+                photos: [
+                    // Milestone 1: Prayer
+                    { src: '/projects/tulun_prayer.jpg', caption: 'Community Prayer & Blessing' },
+                    // Milestone 2: Construction
+                    { src: '/projects/tulun_construction_1.jpg', caption: 'Well Construction in Progress' },
+                    { src: '/projects/tulun_construction_2.jpg', caption: 'Well Structure & Signage' },
+                    { src: '/projects/tulun_construction_3.jpg', caption: 'Well Depth & Interior' },
+                    // Milestone 3: Celebration & Handing Over
+                    { src: '/projects/tulun_celebration.jpg', caption: 'Community Celebration & First Water' }
+                ],
                 videoId: undefined
             }
         ]
