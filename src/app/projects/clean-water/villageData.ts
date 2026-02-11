@@ -203,7 +203,16 @@ export const villages: Village[] = [
                 id: 'makomp-main',
                 name: 'Makomp Water Well',
                 sponsor: 'Trinity United Methodist Church, Mullica Hill NJ USA',
-                photos: [],
+                photos: [
+                    // Milestone 1: Prayer
+                    { src: '/projects/makomp_prayer.jpg', caption: 'Community Prayer & Dedication' },
+                    // Milestone 2: Construction
+                    { src: '/projects/makomp_construction_1.jpg', caption: 'Well Construction in Progress' },
+                    { src: '/projects/makomp_construction_2.jpg', caption: 'Well Structure Construction' },
+                    { src: '/projects/makomp_construction_3.jpg', caption: 'Well Depth & Completion' },
+                    // Milestone 3: Celebration & Handing Over
+                    { src: '/projects/makomp_celebration.jpg', caption: 'Community Celebration & Hand-over' }
+                ],
                 videoId: undefined
             }
         ]
