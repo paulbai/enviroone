@@ -182,11 +182,11 @@ export const villages: Village[] = [
                     // Milestone 1: Prayer
                     { src: '/projects/rocfolla_2_prayer.jpg', caption: 'Community Prayer & Dedication' },
                     // Milestone 2: Construction
-                    { src: '/projects/rocfolla_2_construction_1.jpg', caption: 'Well Construction in Progress' },
-                    { src: '/projects/rocfolla_2_construction_2.jpg', caption: 'Well Structure & Signage' },
-                    { src: '/projects/rocfolla_2_construction_3.jpg', caption: 'Well Depth & Integration' },
+                    { src: '/projects/rocfolla_2_construction_3.jpg', caption: 'Well Construction in Progress' }, // Moved from pos 4 to 2 (Yellow bucket)
+                    { src: '/projects/rocfolla_2_construction_1.jpg', caption: 'Well Depth & Integration' },    // Moved from pos 2 to 3 (Blue pipe)
+                    { src: '/projects/rocfolla_2_celebration.jpg', caption: 'Well Structure & Signage' },        // Moved from pos 5 to 4 (Signage)
                     // Milestone 3: Celebration & Handing Over
-                    { src: '/projects/rocfolla_2_celebration.jpg', caption: 'Community Celebration & Hand-over' }
+                    { src: '/projects/rocfolla_2_construction_2.jpg', caption: 'Community Celebration & Hand-over' } // Moved from pos 3 to 5 (Crowd)
                 ],
                 videoId: undefined
             }
