@@ -252,7 +252,16 @@ export const villages: Village[] = [
                 id: 'marunia-main',
                 name: 'Marunia Water Well',
                 sponsor: 'PROVCO Ventures, Pennsylvania USA',
-                photos: [],
+                photos: [
+                    // Milestone 1: Prayer
+                    { src: '/projects/marunia_prayer.jpg', caption: 'Community Prayer & Dedication' },
+                    // Milestone 2: Construction
+                    { src: '/projects/marunia_construction_1.jpg', caption: 'Well Construction in Progress' },
+                    { src: '/projects/marunia_construction_2.jpg', caption: 'Well Structure Construction' },
+                    { src: '/projects/marunia_construction_3.jpg', caption: 'Well Depth & Completion' },
+                    // Milestone 3: Celebration & Handing Over
+                    { src: '/projects/marunia_celebration.jpg', caption: 'Community Celebration & Hand-over' }
+                ],
                 videoId: undefined
             }
         ]
