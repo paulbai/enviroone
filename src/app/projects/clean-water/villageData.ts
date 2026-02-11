@@ -178,7 +178,16 @@ export const villages: Village[] = [
                 id: 'rocfolla-2',
                 name: 'RocFolla Water Well - 2',
                 sponsor: 'Trinity United Methodist Church, Mullica Hill NJ USA',
-                photos: [],
+                photos: [
+                    // Milestone 1: Prayer
+                    { src: '/projects/rocfolla_2_prayer.jpg', caption: 'Community Prayer & Dedication' },
+                    // Milestone 2: Construction
+                    { src: '/projects/rocfolla_2_construction_1.jpg', caption: 'Well Construction in Progress' },
+                    { src: '/projects/rocfolla_2_construction_2.jpg', caption: 'Well Structure & Signage' },
+                    { src: '/projects/rocfolla_2_construction_3.jpg', caption: 'Well Depth & Integration' },
+                    // Milestone 3: Celebration & Handing Over
+                    { src: '/projects/rocfolla_2_celebration.jpg', caption: 'Community Celebration & Hand-over' }
+                ],
                 videoId: undefined
             }
         ]
