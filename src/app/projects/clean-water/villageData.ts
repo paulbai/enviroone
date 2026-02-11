@@ -233,7 +233,7 @@ export const villages: Village[] = [
                     // Milestone 2: Construction
                     { src: '/projects/mamunta_construction_1.jpg', caption: 'Well Construction in Progress' },
                     { src: '/projects/mamunta_construction_2.jpg', caption: 'Well Structure Construction' },
-                    { src: '/projects/mamunta_construction_3.jpg', caption: 'Well Depth & Completion' },
+                    { src: '/projects/mamunta_construction_3.jpg', caption: 'Well Signage & Completion' },
                     // Milestone 3: Celebration & Handing Over
                     { src: '/projects/mamunta_celebration.jpg', caption: 'Community Celebration & Hand-over' }
                 ],
