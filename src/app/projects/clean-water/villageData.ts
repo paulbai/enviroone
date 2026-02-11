@@ -276,7 +276,16 @@ export const villages: Village[] = [
             {
                 id: 'masabong-main',
                 name: 'Masabong Water Well',
-                photos: [],
+                photos: [
+                    // Milestone 1: Prayer
+                    { src: '/projects/masabong_prayer.jpg', caption: 'Community Prayer & Dedication' },
+                    // Milestone 2: Construction
+                    { src: '/projects/masabong_construction_1.jpg', caption: 'Well Construction in Progress' },
+                    { src: '/projects/masabong_construction_2.jpg', caption: 'Well Structure Construction' },
+                    { src: '/projects/masabong_construction_3.jpg', caption: 'Well Depth & Completion' },
+                    // Milestone 3: Celebration & Handing Over
+                    { src: '/projects/masabong_celebration.jpg', caption: 'Community Celebration & Hand-over' }
+                ],
                 videoId: 'lS7tLhf-gbw'
             }
         ]
