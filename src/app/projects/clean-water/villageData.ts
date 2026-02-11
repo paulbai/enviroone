@@ -300,7 +300,16 @@ export const villages: Village[] = [
             {
                 id: 'waterloo-main',
                 name: 'Waterloo Water Well',
-                photos: [],
+                photos: [
+                    // Milestone 1: Prayer
+                    { src: '/projects/waterloo_prayer.jpg', caption: 'Community Prayer & Dedication' },
+                    // Milestone 2: Construction
+                    { src: '/projects/waterloo_construction_1.jpg', caption: 'Well Construction in Progress' },
+                    { src: '/projects/waterloo_construction_2.jpg', caption: 'Well Structure Construction' },
+                    { src: '/projects/waterloo_construction_3.jpg', caption: 'Well Depth & Completion' },
+                    // Milestone 3: Celebration & Handing Over
+                    { src: '/projects/waterloo_celebration.png', caption: 'Community Celebration & Hand-over' }
+                ],
                 videoId: undefined
             }
         ]
