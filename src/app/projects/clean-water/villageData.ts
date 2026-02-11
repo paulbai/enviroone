@@ -227,7 +227,16 @@ export const villages: Village[] = [
             {
                 id: 'mamunta-main',
                 name: 'Mamunta Water Well',
-                photos: [],
+                photos: [
+                    // Milestone 1: Prayer
+                    { src: '/projects/mamunta_prayer.jpg', caption: 'Community Prayer & Dedication' },
+                    // Milestone 2: Construction
+                    { src: '/projects/mamunta_construction_1.jpg', caption: 'Well Construction in Progress' },
+                    { src: '/projects/mamunta_construction_2.jpg', caption: 'Well Structure Construction' },
+                    { src: '/projects/mamunta_construction_3.jpg', caption: 'Well Depth & Completion' },
+                    // Milestone 3: Celebration & Handing Over
+                    { src: '/projects/mamunta_celebration.jpg', caption: 'Community Celebration & Hand-over' }
+                ],
                 videoId: undefined
             }
         ]
