@@ -305,10 +305,10 @@ export const villages: Village[] = [
                     { src: '/projects/waterloo_prayer.jpg', caption: 'Community Prayer & Dedication' },
                     // Milestone 2: Construction
                     { src: '/projects/waterloo_construction_1.jpg', caption: 'Well Construction in Progress' },
-                    { src: '/projects/waterloo_construction_2.jpg', caption: 'Well Structure Construction' },
-                    { src: '/projects/waterloo_construction_3.jpg', caption: 'Well Depth & Completion' },
+                    { src: '/projects/waterloo_celebration.png', caption: 'Well Structure Construction' },      // Moved from pos 5, new caption
+                    { src: '/projects/waterloo_construction_3.jpg', caption: 'Well Completion' },               // New caption
                     // Milestone 3: Celebration & Handing Over
-                    { src: '/projects/waterloo_celebration.png', caption: 'Community Celebration & Hand-over' }
+                    { src: '/projects/waterloo_construction_2.jpg', caption: 'Community Celebration & Hand-over' } // Moved from pos 3, new caption
                 ],
                 videoId: undefined
             }
