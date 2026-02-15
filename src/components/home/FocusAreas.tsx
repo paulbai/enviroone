@@ -83,7 +83,7 @@ export const FocusAreas = () => {
         {
             title: "Regenerative Agriculture",
             description: "Restoring soil health and strengthening community resilience through sustainable farming practices that nurture harmony with nature.",
-            image: "/projects/regenerative_ag.jpg",
+            image: "/projects/regenerative_ag_new.jpg",
             href: "/projects/agriculture", // Changed from targetId
             color: "text-forest",
             align: "left" as const
