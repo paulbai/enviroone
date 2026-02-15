@@ -3,11 +3,36 @@
 import React from "react";
 import { Section } from "@/components/ui/Section";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/Button";
+import { CertificationsModal } from "@/components/ui/CertificationsModal";
 
 export const MissionSection = () => {
+    const [isCertModalOpen, setIsCertModalOpen] = React.useState(false);
+
     return (
         <Section className="bg-cream text-charcoal">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 items-start">
+            {/* Moved Hero Content */}
+            <div className="max-w-4xl mx-auto text-center mb-16 md:mb-24">
+                <motion.h1
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-5xl md:text-6xl font-display font-bold text-forest mb-6 leading-tight"
+                >
+                    Building a Sustainable Future
+                </motion.h1>
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                    className="text-xl md:text-2xl text-charcoal/80 font-light max-w-2xl mx-auto leading-relaxed"
+                >
+                    Promoting sustainable environmental and agricultural activities to lift communities out of poverty.
+                </motion.p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 items-start mb-16">
                 {/* Mission */}
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
@@ -91,6 +116,23 @@ export const MissionSection = () => {
                     </a>
                 </motion.div>
             </div>
+
+            {/* View Certifications Button */}
+            <div className="flex justify-center mt-12">
+                <Button
+                    variant="primary"
+                    icon="arrow"
+                    onClick={() => setIsCertModalOpen(true)}
+                    className="bg-forest text-cream hover:bg-forest-dark"
+                >
+                    View Certifications
+                </Button>
+            </div>
+
+            <CertificationsModal
+                isOpen={isCertModalOpen}
+                onClose={() => setIsCertModalOpen(false)}
+            />
         </Section>
     );
 };

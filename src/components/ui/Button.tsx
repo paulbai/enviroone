@@ -3,13 +3,13 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import { motion, HTMLMotionProps } from "framer-motion";
-import { ArrowRight, Heart } from "lucide-react";
+import { ArrowRight, Heart, Play } from "lucide-react";
 import Link from "next/link";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: "primary" | "secondary" | "outline";
     children: React.ReactNode;
-    icon?: "arrow" | "heart" | "none";
+    icon?: "arrow" | "heart" | "play" | "none";
     href?: string;
     target?: string;
     rel?: string;
@@ -44,7 +44,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                         transition={{ duration: 0.2 }}
                         className="overflow-hidden"
                     >
-                        {icon === "arrow" ? <ArrowRight className="w-5 h-5" /> : <Heart className="w-5 h-5" />}
+                        {icon === "arrow" ? <ArrowRight className="w-5 h-5" /> : icon === "heart" ? <Heart className="w-5 h-5" /> : <Play className="w-5 h-5" />}
                     </motion.div>
                 )}
             </>

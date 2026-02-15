@@ -17,16 +17,16 @@ const narratives = [
         label: "CURRENT STATUS",
         title: "The Challenge",
         description: "Climate change risks include erratic rains, dry spells, and reduced farm yields. Energy poverty forces rural villages to rely on kerosene, impacting health and literacy.",
-        color: "text-terracotta",
-        borderColor: "hover:border-terracotta/50"
+        color: "text-electric-lime",
+        borderColor: "hover:border-electric-lime/50"
     },
     {
         id: "approach",
         label: "STRATEGIC FRAMEWORK",
         title: "All It Takes Is Three",
         description: "Our integrated approach addresses the trifecta of human development: Food (Agriculture), Health (Clean Water), and Knowledge (Education).",
-        color: "text-water",
-        borderColor: "hover:border-water/50"
+        color: "text-electric-lime",
+        borderColor: "hover:border-electric-lime/50"
     }
 ];
 

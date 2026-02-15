@@ -42,15 +42,8 @@ const WayToGiveItem = ({ title, description, image, href, align, index, target }
 
             {/* Image Container with Angled Cut */}
             <div className="w-full lg:w-7/12 relative aspect-[4/3] lg:aspect-[16/10]">
-                {/* Chamfered Image */}
-                <div
-                    className="absolute inset-0 overflow-hidden"
-                    style={{
-                        clipPath: isLeft
-                            ? "polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 20%)"
-                            : "polygon(0 0, 90% 0, 100% 20%, 100% 100%, 0 100%)"
-                    }}
-                >
+                {/* Rectangular Image */}
+                <div className="absolute inset-0 overflow-hidden rounded-xl">
                     <img
                         src={image}
                         alt={title}
@@ -63,11 +56,8 @@ const WayToGiveItem = ({ title, description, image, href, align, index, target }
 
                 {/* Decorative Outline */}
                 <div
-                    className="absolute inset-0 border border-charcoal/10 pointer-events-none"
+                    className="absolute inset-0 border border-charcoal/10 pointer-events-none rounded-xl"
                     style={{
-                        clipPath: isLeft
-                            ? "polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 20%)"
-                            : "polygon(0 0, 90% 0, 100% 20%, 100% 100%, 0 100%)",
                         transform: "translate(10px, 10px)",
                         zIndex: -1
                     }}
