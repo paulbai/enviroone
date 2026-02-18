@@ -6,14 +6,14 @@ import { Twitter, Facebook, Instagram, Mail } from "lucide-react";
 
 export const Footer = () => {
     return (
-        <footer className="relative bg-charcoal pt-12 pb-6 overflow-hidden">
+        <footer className="relative bg-forest-dark pt-12 pb-6 overflow-hidden">
             {/* Grain Overlay */}
             <div className="absolute inset-0 opacity-5 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 
 
 
             <div className="relative z-10 max-w-[var(--spacing-container)] mx-auto px-4 md:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 items-start">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 items-start">
 
                     {/* Left Column: Sierra Leone Address */}
                     <div className="text-left py-4">
@@ -30,7 +30,7 @@ export const Footer = () => {
                     </div>
 
                     {/* Resources Column */}
-                    <div className="text-left py-4">
+                    <div className="text-left md:text-center py-4">
                         <h3 className="text-golden font-bold mb-3 text-sm">Resources</h3>
                         <ul className="text-cream/80 text-sm space-y-2">
                             <li>
