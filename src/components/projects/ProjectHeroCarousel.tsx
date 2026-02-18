@@ -69,12 +69,9 @@ export const ProjectHeroCarousel = ({ slides, className }: ProjectHeroCarouselPr
                     >
                         <div className="flex items-center gap-3 mb-2">
                             <span className="bg-electric-lime text-forest font-mono text-xs font-bold px-2 py-1 rounded-sm uppercase tracking-wider">
-                                Milestone {currentIndex + 1}/{slides.length}
+                                Milestone {currentIndex + 1}: {slides[currentIndex].caption}
                             </span>
                         </div>
-                        <h3 className="text-3xl md:text-5xl font-display font-bold text-white drop-shadow-md leading-tight">
-                            {slides[currentIndex].caption}
-                        </h3>
                     </motion.div>
                 </div>
 

@@ -86,7 +86,7 @@ export const WaysToGive = () => {
         {
             title: "Church Ministry",
             description: "Connect your congregation with a cause that matters. We partner with churches to bring faith and works together for transformative community development.",
-            image: "/projects/clean_water_makeni_trinity_1.png",
+            image: "/images/church_ministry_new.png",
             href: "/get-involved/church-ministry",
             align: "left" as const
         }
