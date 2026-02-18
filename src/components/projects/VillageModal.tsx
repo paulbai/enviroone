@@ -99,7 +99,7 @@ export const VillageModal = ({ village, isOpen, onClose, onVideoClick }: Village
                                                         <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                                                             <Play className="w-4 h-4 fill-current" />
                                                         </div>
-                                                        Watch: {project.name} Video
+                                                        Watch Project Video
                                                     </button>
                                                 </div>
                                             )}

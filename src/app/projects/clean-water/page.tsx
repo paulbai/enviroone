@@ -78,27 +78,7 @@ export default function CleanWaterPage() {
                             <li><strong>Environmental:</strong> Reduced riverbank degradation and support for ecosystem health.</li>
                         </ul>
 
-                        {/* Action Buttons */}
-                        <div className="mt-8 mb-8 not-prose flex flex-wrap gap-4">
-                            <button
-                                onClick={() => setCurrentVideoId("myeXYnH-niI")}
-                                className="inline-flex items-center gap-2 px-6 py-3 bg-water text-white font-bold rounded-full hover:bg-water/90 transition-all shadow-md hover:shadow-lg group"
-                            >
-                                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                    <Play className="w-4 h-4 fill-current" />
-                                </div>
-                                Watch: Clean Water Project I
-                            </button>
-                            <button
-                                onClick={() => setCurrentVideoId("RRMQSRSJYOY")}
-                                className="inline-flex items-center gap-2 px-6 py-3 bg-water text-white font-bold rounded-full hover:bg-water/90 transition-all shadow-md hover:shadow-lg group"
-                            >
-                                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                    <Play className="w-4 h-4 fill-current" />
-                                </div>
-                                Watch: Clean Water Project II
-                            </button>
-                        </div>
+
 
                     </motion.div>
 

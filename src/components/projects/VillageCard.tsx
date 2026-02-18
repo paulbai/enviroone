@@ -47,12 +47,7 @@ export const VillageCard = ({
 
             {/* Content */}
             <div className="relative h-full flex flex-col justify-end p-6 md:p-8">
-                {/* Project Count Badge */}
-                <div className="mb-3">
-                    <span className="inline-block bg-electric-lime text-forest font-bold text-xs px-3 py-1.5 rounded-full uppercase tracking-wider">
-                        {projectCount} {projectCount === 1 ? 'Well' : 'Wells'}
-                    </span>
-                </div>
+
 
                 {/* Village Name */}
                 <h3 className={cn(

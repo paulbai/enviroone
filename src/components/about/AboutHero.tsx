@@ -14,10 +14,13 @@ export const AboutHero = () => {
             <div className="absolute inset-0 z-0">
                 <iframe
                     className="absolute inset-0 w-full h-full object-cover scale-[1.35]"
-                    src="https://www.youtube.com/embed/DiXj55oQH58?autoplay=1&mute=1&controls=0&loop=1&playlist=DiXj55oQH58&playsinline=1&rel=0&showinfo=0&modestbranding=1"
-                    allow="autoplay; encrypted-media"
+                    src="https://www.youtube.com/embed/DiXj55oQH58?autoplay=1&mute=1&controls=0&loop=1&playlist=DiXj55oQH58&playsinline=1&rel=0&showinfo=0&disablekb=1&iv_load_policy=3&start=0&end=60"
+                    allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                     title="EnviroOne Background Video"
                     style={{ pointerEvents: "none" }}
+                    loading="eager"
+                    // @ts-ignore - fetchPriority is a valid attribute but React types might not fully support it yet in all versions
+                    fetchPriority="high"
                 />
                 <div className="absolute inset-0 bg-black/40" />
             </div>

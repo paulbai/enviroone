@@ -72,14 +72,14 @@ export const WaysToGive = () => {
         {
             title: "Become a Sponsor",
             description: "Partner with us to provide sustainable solutions to communities in need. Your sponsorship directly impacts lives through clean water, agriculture, and education projects.",
-            image: "/projects/clean_water_1.png",
+            image: "/images/get_involved_sponsor_new.jpg",
             href: "/get-involved/sponsor",
             align: "left" as const
         },
         {
             title: "Volunteer",
             description: "Join our global network of passionate individuals. Whether on the ground in Sierra Leone or remotely, your skills and time can help drive our mission forward.",
-            image: "/projects/agriculture_new_1.png",
+            image: "/images/get_involved_volunteer_new.png",
             href: "/get-involved/volunteer",
             align: "right" as const
         },

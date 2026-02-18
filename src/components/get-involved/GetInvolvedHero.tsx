@@ -10,7 +10,7 @@ export const GetInvolvedHero = () => {
             {/* Background */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/images/about-hero.jpg" // Using about-hero as placeholder, ideally user provides a new one or we pick another
+                    src="/images/get_involved_hero_new.jpg"
                     alt="Get Involved"
                     fill
                     className="object-cover brightness-[0.6]"

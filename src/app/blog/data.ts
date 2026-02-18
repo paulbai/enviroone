@@ -5,7 +5,7 @@ export const blogPosts = [
         title: "Climate change impact on poor farmers in Africa",
         date: "January 15, 2026",
         author: "EnviroOne Team",
-        image: "/projects/agriculture_new_1.png",
+        image: "/blog/climate_change_rice_field.jpg",
         excerpt: "EnviroOne has experienced firsthand the impact of changes in climate on farm yields in Sierra Leone. Learn about the risks and potential adaptation strategies.",
         content: [
             "EnviroOne has experienced firsthand the impact of changes in climate on farm yields in Sierra Leone. Climate change related risks include erratic and intense rains, and thunderstorms, dry spells, high temperatures, and changes in length of growing season.",

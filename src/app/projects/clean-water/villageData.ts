@@ -37,7 +37,7 @@ export const villages: Village[] = [
                     // Milestone 3: Celebration & Handing Over
                     { src: '/projects/lungi_airport_celebration.jpg', caption: 'Community Celebration' }
                 ],
-                videoId: undefined
+                videoId: 'myeXYnH-niI'
             },
             {
                 id: 'kasonha',
@@ -147,13 +147,13 @@ export const villages: Village[] = [
                     // Milestone 3: Celebration & Handing Over
                     { src: '/projects/tulun_celebration.jpg', caption: 'Community Celebration & First Water' }
                 ],
-                videoId: undefined
+                videoId: 'PY7-B8jWkSE'
             }
         ]
     },
     {
         id: 'makeni',
-        name: 'Makeni',
+        name: 'Makeni Rocfolla',
         displayName: 'Makeni Community',
         heroImage: '/projects/clean_water_makeni_grid.jpg',
         projectCount: 2,
@@ -237,7 +237,7 @@ export const villages: Village[] = [
                     // Milestone 3: Celebration & Handing Over
                     { src: '/projects/mamunta_celebration.jpg', caption: 'Community Celebration & Hand-over' }
                 ],
-                videoId: undefined
+                videoId: 'RRMQSRSJYOY'
             }
         ]
     },
@@ -310,7 +310,7 @@ export const villages: Village[] = [
                     // Milestone 3: Celebration & Handing Over
                     { src: '/projects/waterloo_construction_2.jpg', caption: 'Community Celebration & Hand-over' } // Moved from pos 3, new caption
                 ],
-                videoId: undefined
+                videoId: '2EcKP2ZU0rs'
             }
         ]
     }
