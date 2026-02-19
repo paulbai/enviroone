@@ -11,26 +11,7 @@ export const MissionSection = () => {
 
     return (
         <Section className="bg-cream text-charcoal">
-            {/* Moved Hero Content */}
-            <div className="max-w-4xl mx-auto text-center mb-16 md:mb-24">
-                <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-5xl md:text-6xl font-display font-bold text-forest mb-6 leading-tight"
-                >
-                    Building a Sustainable Future
-                </motion.h1>
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 }}
-                    className="text-xl md:text-2xl text-charcoal/80 font-light max-w-2xl mx-auto leading-relaxed"
-                >
-                    Promoting sustainable environmental and agricultural activities to lift communities out of poverty.
-                </motion.p>
-            </div>
+
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 items-start mb-16">
                 {/* Mission */}

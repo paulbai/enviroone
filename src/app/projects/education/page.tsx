@@ -64,29 +64,18 @@ export default function EducationPage() {
                             <li>Improved crop yields and reduction in waterborne illnesses.</li>
                         </ul>
 
-                        {/* Action Buttons */}
-                        <div className="mt-8 mb-8 not-prose">
-                            <button
-                                onClick={() => setCurrentVideoId("fd93opqBc2E")}
-                                className="inline-flex items-center gap-2 px-6 py-3 bg-golden text-forest font-bold rounded-full hover:bg-golden/90 transition-all shadow-md hover:shadow-lg group"
-                            >
-                                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                    <Play className="w-4 h-4 fill-current" />
-                                </div>
-                                Watch: Lighting the Way Forward
-                            </button>
-                        </div>
-
                         <div className="mt-12 not-prose">
                             <ProjectHeroCarousel
                                 slides={[
-                                    { src: "https://images.squarespace-cdn.com/content/v1/57e2b65646c3c44183c4ddff/1745037491726-H0QR8YA8W6IQ6OJWWP6Q/4-Agroforestry+Training.png", caption: "Hands-On Field Training" },
+                                    { src: "/projects/education_red_shirt_final.jpg", caption: "Community Health Education" },
                                     { src: "https://images.squarespace-cdn.com/content/v1/57e2b65646c3c44183c4ddff/1745037760252-XLOA5VHZQVYLTKGNW2BZ/_Students.jpg", caption: "Knowledge is Power" },
-                                    { src: "https://images.squarespace-cdn.com/content/v1/57e2b65646c3c44183c4ddff/1745037176113-PEMT8NB4BG2P449OHQB7/Using+solar+lamps.png", caption: "Lighting Up Futures" },
+                                    { src: "/projects/education_green_hat_final.jpg", caption: "Supporting Local Farmers" },
                                     { src: "https://images.squarespace-cdn.com/content/v1/57e2b65646c3c44183c4ddff/1571087834979-WI13WMNMPFQQIAAT07Z7/03+Students+excited+for+lights.jpg", caption: "Study Hours Extended" },
                                     { src: "/projects/education_1.png", caption: "Classroom Engagement" },
                                     { src: "/projects/education_2.png", caption: "Building Foundations" }
                                 ]}
+                                onVideoClick={() => setCurrentVideoId("fd93opqBc2E")}
+                                videoLabel="Watch: Lighting the Way Forward"
                             />
                         </div>
                     </motion.div>

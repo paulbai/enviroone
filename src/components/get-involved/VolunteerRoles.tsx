@@ -80,7 +80,7 @@ export const VolunteerRoles = () => {
                 "Gain hands-on experience in sustainable development.",
                 "Opportunity to transition into a paid Ambassador role."
             ],
-            image: "/images/volunteer-program-new.png",
+            image: "/images/volunteer_program_woman.jpg",
             align: "left" as const
         },
         {

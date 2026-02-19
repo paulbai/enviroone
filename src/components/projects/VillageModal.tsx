@@ -81,26 +81,14 @@ export const VillageModal = ({ village, isOpen, onClose, onVideoClick }: Village
                                             {/* Photo Carousel */}
                                             {project.photos.length > 0 ? (
                                                 <div className="mb-6">
-                                                    <ProjectHeroCarousel slides={project.photos} />
+                                                    <ProjectHeroCarousel
+                                                        slides={project.photos}
+                                                        onVideoClick={project.videoId ? () => onVideoClick(project.videoId!) : undefined}
+                                                    />
                                                 </div>
                                             ) : (
                                                 <div className="bg-gray-50 rounded-lg p-8 text-center text-gray-500 mb-6">
                                                     Photos coming soon
-                                                </div>
-                                            )}
-
-                                            {/* Video Button */}
-                                            {project.videoId && (
-                                                <div className="not-prose">
-                                                    <button
-                                                        onClick={() => onVideoClick(project.videoId!)}
-                                                        className="inline-flex items-center gap-2 px-6 py-3 bg-water text-white font-bold rounded-full hover:bg-water/90 transition-all shadow-md hover:shadow-lg group"
-                                                    >
-                                                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                                            <Play className="w-4 h-4 fill-current" />
-                                                        </div>
-                                                        Watch Project Video
-                                                    </button>
                                                 </div>
                                             )}
                                         </div>

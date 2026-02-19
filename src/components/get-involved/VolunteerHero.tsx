@@ -10,7 +10,7 @@ export const VolunteerHero = () => {
             {/* Background */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/projects/education.jpg"
+                    src="/images/volunteer_hero_new.png"
                     alt="Volunteer"
                     fill
                     className="object-cover brightness-[0.6]"
