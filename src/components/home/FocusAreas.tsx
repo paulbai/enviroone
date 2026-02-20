@@ -26,7 +26,7 @@ const FocusItem = ({ title, description, image, href, align, index }: FocusItemP
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
-            className={`flex flex-col ${isLeft ? "lg:flex-row" : "lg:flex-row-reverse"} items-center gap-12 lg:gap-24 mb-32 last:mb-0`}
+            className={`flex flex-col ${isLeft ? "lg:flex-row" : "lg:flex-row-reverse"} items-center gap-12 lg:gap-24 mb-20 md:mb-32 last:mb-0`}
         >
             {/* Text Content */}
             <div className="w-full lg:w-5/12 flex flex-col items-start text-left">
@@ -52,10 +52,12 @@ const FocusItem = ({ title, description, image, href, align, index }: FocusItemP
                             : "polygon(0 0, 90% 0, 100% 20%, 100% 100%, 0 100%)"
                     }}
                 >
-                    <img
+                    <NextImage
                         src={image}
-                        alt={title}
-                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                        alt={`Focus Area: ${title}`}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 60vw"
+                        className="object-cover transition-transform duration-700 hover:scale-105"
                     />
 
                     {/* Inner Shadow/Gradient for depth */}
@@ -107,11 +109,11 @@ export const FocusAreas = () => {
     ];
 
     return (
-        <Section className="bg-cream relative z-10 py-32 overflow-hidden">
+        <Section className="bg-cream relative z-10 py-16 md:py-32 overflow-hidden">
             {/* Background Texture (Subtle) */}
             <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 
-            <div className="mb-24 md:mb-32 max-w-3xl">
+            <div className="mb-16 md:mb-24 max-w-3xl">
                 <h2 className="text-5xl md:text-7xl font-display font-bold text-charcoal mb-8 leading-[0.9] tracking-tight">
                     Our Focus Areas.
                 </h2>

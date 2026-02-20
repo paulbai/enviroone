@@ -9,7 +9,8 @@ import { Droplet, Sprout, BookOpen, Users, MapPin, Heart, Sun, Leaf, Activity } 
 // CountUp Component
 const CountUp = ({ to, duration = 2, suffix = "" }: { to: number; duration?: number; suffix?: string }) => {
     const ref = useRef<HTMLSpanElement>(null);
-    const motionValue = useMotionValue(0);
+    const startValue = Math.floor(to * 0.5);
+    const motionValue = useMotionValue(startValue);
     const springValue = useSpring(motionValue, { damping: 60, stiffness: 100 });
     const isInView = useInView(ref, { once: true, margin: "0px" });
     const [mounted, setMounted] = useState(false);
@@ -33,7 +34,7 @@ const CountUp = ({ to, duration = 2, suffix = "" }: { to: number; duration?: num
         return () => unsubscribe();
     }, [springValue, suffix, mounted]);
 
-    return <span ref={ref} className="tabular-nums">0{suffix}</span>;
+    return <span ref={ref} className="tabular-nums">{startValue.toLocaleString()}{suffix}</span>;
 };
 
 // Stat Card Component
@@ -55,7 +56,7 @@ const StatCard = ({ value, label, suffix = "", icon: Icon, className, gradient, 
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay, ease: "easeOut" }}
             className={cn(
-                "relative overflow-hidden p-8 flex flex-col justify-between group neu-flat",
+                "relative overflow-hidden p-6 md:p-8 flex flex-col justify-between group neu-flat",
                 className
             )}
         >
@@ -72,7 +73,7 @@ const StatCard = ({ value, label, suffix = "", icon: Icon, className, gradient, 
                 <h3 className="text-4xl md:text-5xl font-display font-bold text-forest-dark mb-2 tracking-tight">
                     <CountUp to={value} suffix={suffix} />
                 </h3>
-                <p className="text-charcoal/80 font-medium text-sm md:text-base leading-snug">{label}</p>
+                <p className="text-charcoal/80 font-medium text-base md:text-lg leading-snug">{label}</p>
             </div>
         </motion.div>
     );
@@ -80,8 +81,8 @@ const StatCard = ({ value, label, suffix = "", icon: Icon, className, gradient, 
 
 export const ImpactStats = () => {
     return (
-        <Section className="bg-cream relative z-20 pt-20 md:pt-32">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[minmax(200px,auto)] md:auto-rows-[280px]">
+        <Section className="bg-cream relative z-20 pt-16 md:pt-32 pb-16">
+            <div className="grid grid-cols-2 md:grid-cols-12 gap-4 md:gap-6 auto-rows-[minmax(180px,auto)] md:auto-rows-[280px]">
                 {/* Row 1 */}
                 {/* [4 cols] Wells */}
                 <StatCard
@@ -95,7 +96,7 @@ export const ImpactStats = () => {
                 />
                 {/* [5 cols] People Served (Hero) */}
                 <StatCard
-                    className="md:col-span-5"
+                    className="col-span-2 md:col-span-5"
                     value={105000}
                     suffix="+"
                     label="People Provided with Clean Water"
@@ -105,7 +106,7 @@ export const ImpactStats = () => {
                 />
                 {/* [3 cols] Hectares */}
                 <StatCard
-                    className="md:col-span-3"
+                    className="col-span-1 md:col-span-3"
                     value={20}
                     suffix="+"
                     label="Hectares Cultivated"
@@ -117,7 +118,7 @@ export const ImpactStats = () => {
                 {/* Row 2 */}
                 {/* [3 cols] Facilitators */}
                 <StatCard
-                    className="md:col-span-3"
+                    className="col-span-1 md:col-span-3"
                     value={10}
                     label="Peer Facilitators Trained"
                     icon={BookOpen}
@@ -126,7 +127,7 @@ export const ImpactStats = () => {
                 />
                 {/* [6 cols] Farmers */}
                 <StatCard
-                    className="md:col-span-6"
+                    className="col-span-2 md:col-span-6"
                     value={500}
                     suffix="+"
                     label="Farmers Supported with Seeds & Tools"
@@ -136,7 +137,7 @@ export const ImpactStats = () => {
                 />
                 {/* [3 cols] Districts */}
                 <StatCard
-                    className="md:col-span-3"
+                    className="col-span-1 md:col-span-3"
                     value={3}
                     label="Districts Served (Tonkolili, Port Loko, Waterloo)"
                     icon={MapPin}
@@ -147,7 +148,7 @@ export const ImpactStats = () => {
                 {/* Row 3 */}
                 {/* [5 cols] Youth/Women */}
                 <StatCard
-                    className="md:col-span-5"
+                    className="col-span-2 md:col-span-5"
                     value={100}
                     suffix="+"
                     label="Youth & Women Trained"
@@ -158,7 +159,7 @@ export const ImpactStats = () => {
                 {/* [4 cols] Illness Reduction - Symbolic Number or text? Keep simpler stats */}
                 {/* Using 40% reduction as placeholder or just symbolic count like 24/7 access */}
                 <StatCard
-                    className="md:col-span-4"
+                    className="col-span-1 md:col-span-4"
                     value={24}
                     suffix="/7"
                     label="Access to Clean Water & Medicine"
@@ -168,7 +169,7 @@ export const ImpactStats = () => {
                 />
                 {/* [3 cols] Women Burden */}
                 <StatCard
-                    className="md:col-span-3"
+                    className="col-span-1 md:col-span-3"
                     value={60}
                     suffix="%"
                     label="Reduction in Water Collection Time"

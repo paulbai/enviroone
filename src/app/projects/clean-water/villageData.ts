@@ -155,7 +155,7 @@ export const villages: Village[] = [
         id: 'makeni',
         name: 'Makeni Rocfolla',
         displayName: 'Makeni Community',
-        heroImage: '/projects/clean_water_makeni_grid.jpg',
+        heroImage: '/projects/makeni_hero_final.jpg',
         projectCount: 2,
         projects: [
             {
@@ -164,13 +164,13 @@ export const villages: Village[] = [
                 sponsor: 'Lisa Borgese, New Jersey USA',
                 photos: [
                     // Milestone 1: Prayer
-                    { src: '/projects/rocfolla_1_prayer.jpg', caption: 'Prayers' },
+                    { src: '/projects/rocfolla_2_prayer.jpg', caption: 'Prayers' },
                     // Milestone 2: Construction
                     { src: '/projects/rocfolla_1_construction_1.jpg', caption: 'Construction' },
-                    { src: '/projects/rocfolla_1_construction_2.jpg', caption: 'Construction' },
-                    { src: '/projects/rocfolla_1_construction_3.jpg', caption: 'Construction' },
+                    { src: '/projects/rocfolla_2_construction_1.jpg', caption: 'Construction' },
+                    { src: '/projects/rocfolla_2_celebration.jpg', caption: 'Construction' },
                     // Milestone 3: Celebration & Handing Over
-                    { src: '/projects/rocfolla_1_celebration.jpg', caption: 'Celebration & Handing over' }
+                    { src: '/projects/rocfolla_2_construction_2.jpg', caption: 'Celebration & Handing over' }
                 ],
                 videoId: undefined
             },
@@ -180,13 +180,13 @@ export const villages: Village[] = [
                 sponsor: 'Trinity United Methodist Church, Mullica Hill NJ USA',
                 photos: [
                     // Milestone 1: Prayer
-                    { src: '/projects/rocfolla_2_prayer.jpg', caption: 'Prayers' },
+                    { src: '/projects/rocfolla_1_prayer.jpg', caption: 'Prayers' },
                     // Milestone 2: Construction
                     { src: '/projects/rocfolla_2_construction_3.jpg', caption: 'Construction' },
-                    { src: '/projects/rocfolla_2_construction_1.jpg', caption: 'Construction' },
-                    { src: '/projects/rocfolla_2_celebration.jpg', caption: 'Construction' },
+                    { src: '/projects/rocfolla_1_construction_2.jpg', caption: 'Construction' },
+                    { src: '/projects/rocfolla_1_construction_3.jpg', caption: 'Construction' },
                     // Milestone 3: Celebration & Handing Over
-                    { src: '/projects/rocfolla_2_construction_2.jpg', caption: 'Celebration & Handing over' }
+                    { src: '/projects/rocfolla_1_celebration.jpg', caption: 'Celebration & Handing over' }
                 ],
                 videoId: undefined
             }
@@ -294,7 +294,7 @@ export const villages: Village[] = [
         id: 'waterloo',
         name: 'Waterloo',
         displayName: 'Waterloo Community',
-        heroImage: '/projects/clean_water_kaffu_grid.jpg',
+        heroImage: '/projects/waterloo_hero_final.png',
         projectCount: 1,
         projects: [
             {

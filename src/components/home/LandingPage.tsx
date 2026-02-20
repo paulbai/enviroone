@@ -16,7 +16,7 @@ export const LandingPage = () => {
     });
 
     return (
-        <section ref={containerRef} className="relative w-full h-[300vh] bg-charcoal z-10">
+        <section ref={containerRef} className="relative w-full h-[200vh] bg-charcoal z-10">
             {/* 1. Fixed Background & UI Layer */}
             <div className="sticky top-0 left-0 w-full h-screen overflow-hidden">
                 <ScrollyBackground scrollYProgress={scrollYProgress} />

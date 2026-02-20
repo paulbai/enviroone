@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useScroll, motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -52,11 +53,14 @@ export const Navbar = () => {
             >
                 <div className="w-full max-w-[var(--spacing-container)] mx-auto px-4 md:px-8 flex items-center justify-between">
                     {/* Logo - Add brightness filter for dark mode */}
-                    <Link href="/" className="relative h-24 w-auto aspect-[3/2] block top-4" onClick={() => setActiveLink("/")}>
-                        <img
+                    <Link href="/" className="relative h-12 md:h-16 w-32 md:w-40 flex items-center" onClick={() => setActiveLink("/")}>
+                        <Image
                             src="/logo.png"
                             alt="EnviroOne Logo"
-                            className="h-full w-auto object-contain"
+                            fill
+                            sizes="160px"
+                            priority
+                            className="object-contain object-left"
                         />
                     </Link>
 
