@@ -53,14 +53,11 @@ export const Navbar = () => {
             >
                 <div className="w-full max-w-[var(--spacing-container)] mx-auto px-4 md:px-8 flex items-center justify-between">
                     {/* Logo - Add brightness filter for dark mode */}
-                    <Link href="/" className="relative h-12 md:h-16 w-32 md:w-40 flex items-center" onClick={() => setActiveLink("/")}>
-                        <Image
+                    <Link href="/" className="relative flex items-center h-12 md:h-16 w-32 md:w-40" onClick={() => setActiveLink("/")}>
+                        <img
                             src="/logo.png"
                             alt="EnviroOne Logo"
-                            fill
-                            sizes="160px"
-                            priority
-                            className="object-contain object-left"
+                            className="h-full w-full object-contain object-left"
                         />
                     </Link>
 
