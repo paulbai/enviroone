@@ -13,20 +13,12 @@ const narratives = [
         borderColor: "hover:border-electric-lime/50"
     },
     {
-        id: "approach",
-        label: "STRATEGIC FRAMEWORK",
-        title: "All It Takes Is Three",
-        description: "Our integrated approach addresses the trifecta of human development: Food (Agriculture), Health (Clean Water), and Knowledge (Education).",
+        id: "challenge",
+        label: "CURRENT STATUS",
+        title: "The Challenge",
+        description: "Climate change risks include erratic rains, dry spells, and reduced farm yields. Energy poverty forces rural villages to rely on kerosene, impacting health and literacy.",
         color: "text-electric-lime",
         borderColor: "hover:border-electric-lime/50"
-    },
-    {
-        id: "impact",
-        label: "PROGRAM IMPACT",
-        title: "Proven Results",
-        description: "Over 105,000 individuals provided with clean water. 30+ wells built or retrofitted. Hundreds of farmers supported with seeds and tools.",
-        color: "text-forest",
-        borderColor: "hover:border-forest/50"
     }
 ];
 
@@ -68,9 +60,6 @@ const NarrativeBlock = ({ item, index }: { item: any, index: number }) => {
 
             {/* Content Card */}
             <div className={`bg-charcoal/95 backdrop-blur-xl border border-white/20 p-6 md:p-8 rounded-sm shadow-2xl transition-colors ${item.borderColor}`}>
-                <div className={`font-mono text-xs tracking-[0.2em] mb-4 ${item.color}`}>
-                    {item.label}
-                </div>
                 <h2 className="font-sans font-bold text-3xl md:text-4xl text-white mb-4 uppercase leading-none shadow-black drop-shadow-md">
                     {item.title}
                 </h2>
