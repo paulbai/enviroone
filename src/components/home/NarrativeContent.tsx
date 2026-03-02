@@ -42,7 +42,7 @@ const stickyNarrative = {
 export const NarrativeContent = () => {
     return (
         <div className="relative z-20 w-full max-w-[var(--spacing-container)] mx-auto px-4 md:px-8 pointer-events-none">
-            <div className="w-full md:w-[45%] flex flex-col gap-[35vh] py-[30vh]">
+            <div className="w-full md:w-[45%] flex flex-col gap-[5vh] pt-[15vh] pb-[20vh]">
                 {/* Vertical Timeline Line */}
                 <div className="absolute left-4 md:left-12 top-0 bottom-0 w-[1px] bg-white/20 -z-10" />
 
@@ -52,7 +52,7 @@ export const NarrativeContent = () => {
             </div>
 
             {/* Static "Proven Results" Card - Sticky at the end/bottom */}
-            <div className="pointer-events-auto absolute bottom-[-15vh] md:bottom-[-20vh] left-0 md:left-8 w-full md:w-[45%] z-30 px-4 md:px-0">
+            <div className="pointer-events-auto absolute bottom-[5vh] left-0 md:left-8 w-full md:w-[45%] z-30 px-4 md:px-0">
                 <div className="relative pl-8 md:pl-12">
                     {/* Timeline Dot for Static Card */}
                     <div className={`absolute left-[-9px] md:left-[-5px] top-6 w-3 h-3 rounded-full border border-current bg-charcoal ${stickyNarrative.color} shadow-[0_0_10px_currentColor]`} />
