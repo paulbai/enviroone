@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform, useMotionTemplate } from "framer-motion";
 
 const narratives = [
     {
@@ -13,81 +13,54 @@ const narratives = [
         borderColor: "hover:border-electric-lime/50"
     },
     {
-        id: "challenge",
-        label: "CURRENT STATUS",
-        title: "The Challenge",
-        description: "Climate change risks include erratic rains, dry spells, and reduced farm yields. Energy poverty forces rural villages to rely on kerosene, impacting health and literacy.",
-        color: "text-electric-lime",
-        borderColor: "hover:border-electric-lime/50"
-    },
-    {
         id: "approach",
         label: "STRATEGIC FRAMEWORK",
         title: "All It Takes Is Three",
         description: "Our integrated approach addresses the trifecta of human development: Food (Agriculture), Health (Clean Water), and Knowledge (Education).",
         color: "text-electric-lime",
         borderColor: "hover:border-electric-lime/50"
+    },
+    {
+        id: "impact",
+        label: "PROGRAM IMPACT",
+        title: "Proven Results",
+        description: "Over 105,000 individuals provided with clean water. 30+ wells built or retrofitted. Hundreds of farmers supported with seeds and tools.",
+        color: "text-forest",
+        borderColor: "hover:border-forest/50"
     }
 ];
-
-const stickyNarrative = {
-    id: "impact",
-    label: "PROGRAM IMPACT",
-    title: "Proven Results",
-    description: "Over 105,000 individuals provided with clean water. 30+ wells built or retrofitted. Hundreds of farmers supported with seeds and tools.",
-    color: "text-forest",
-    borderColor: "hover:border-forest/50"
-};
 
 export const NarrativeContent = () => {
     return (
         <div className="relative z-20 w-full max-w-[var(--spacing-container)] mx-auto px-4 md:px-8 pointer-events-none">
-            <div className="w-full md:w-[45%] flex flex-col gap-[5vh] pt-[15vh] pb-[20vh]">
+            <div className="w-full md:w-[45%] flex flex-col gap-[20vh] pt-[20vh] pb-[30vh]">
                 {/* Vertical Timeline Line */}
-                <div className="absolute left-4 md:left-12 top-0 bottom-0 w-[1px] bg-white/20 -z-10" />
+                <div className="absolute left-4 md:left-12 top-[20vh] bottom-[30vh] w-[1px] bg-white/20 -z-10" />
 
                 {narratives.map((item, index) => (
                     <NarrativeBlock key={item.id} item={item} index={index} />
                 ))}
-            </div>
-
-            {/* Static "Proven Results" Card - Sticky at the end/bottom */}
-            <div className="pointer-events-auto absolute bottom-[5vh] left-0 md:left-8 w-full md:w-[45%] z-30 px-4 md:px-0">
-                <div className="relative pl-8 md:pl-12">
-                    {/* Timeline Dot for Static Card */}
-                    <div className={`absolute left-[-9px] md:left-[-5px] top-6 w-3 h-3 rounded-full border border-current bg-charcoal ${stickyNarrative.color} shadow-[0_0_10px_currentColor]`} />
-
-                    {/* Content Card */}
-                    <div className={`bg-charcoal/95 backdrop-blur-xl border border-white/20 p-6 md:p-8 rounded-sm shadow-2xl transition-colors ${stickyNarrative.borderColor}`}>
-                        <div className={`font-mono text-xs tracking-[0.2em] mb-4 ${stickyNarrative.color}`}>
-                            {stickyNarrative.label}
-                        </div>
-                        <h2 className="font-sans font-bold text-3xl md:text-4xl text-white mb-4 uppercase leading-none shadow-black drop-shadow-md">
-                            {stickyNarrative.title}
-                        </h2>
-                        <p className="font-mono text-sm md:text-base text-white/90 leading-relaxed border-l-2 border-white/20 pl-4">
-                            {stickyNarrative.description}
-                        </p>
-
-                        {/* Decorative Tech Corners */}
-                        <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/30" />
-                        <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-white/30" />
-                        <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white/30" />
-                        <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/30" />
-                    </div>
-                </div>
             </div>
         </div>
     );
 };
 
 const NarrativeBlock = ({ item, index }: { item: any, index: number }) => {
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start 90%", "end 10%"]
+    });
+
+    const y = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [50, 0, 0, -50]);
+    const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+    const blurValue = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [5, 0, 0, 5]);
+    const filter = useMotionTemplate`blur(${blurValue}px)`;
+
     return (
         <motion.div
-            initial={{ opacity: 0, x: -20, filter: "blur(10px)" }}
-            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-            viewport={{ once: false, margin: "-30% 0px -30% 0px" }}
-            transition={{ duration: 0.6 }}
+            ref={ref}
+            style={{ y, opacity, filter }}
             className="group relative pl-8 md:pl-12 pointer-events-auto"
         >
             {/* Timeline Dot */}
