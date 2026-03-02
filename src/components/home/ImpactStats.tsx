@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
+import { motion, useInView, animate } from "framer-motion";
 import { Section } from "@/components/ui/Section";
 import { cn } from "@/lib/utils";
 import { Droplet, Sprout, BookOpen, Users, MapPin, Heart, Sun, Leaf, Activity } from "lucide-react";
@@ -10,8 +10,6 @@ import { Droplet, Sprout, BookOpen, Users, MapPin, Heart, Sun, Leaf, Activity } 
 const CountUp = ({ to, duration = 2, suffix = "" }: { to: number; duration?: number; suffix?: string }) => {
     const ref = useRef<HTMLSpanElement>(null);
     const startValue = Math.floor(to * 0.5);
-    const motionValue = useMotionValue(startValue);
-    const springValue = useSpring(motionValue, { damping: 60, stiffness: 100 });
     const isInView = useInView(ref, { once: true, margin: "0px" });
     const [mounted, setMounted] = useState(false);
 
@@ -20,19 +18,19 @@ const CountUp = ({ to, duration = 2, suffix = "" }: { to: number; duration?: num
     }, []);
 
     useEffect(() => {
-        if (isInView && mounted) {
-            motionValue.set(to);
+        if (isInView && mounted && ref.current) {
+            const controls = animate(startValue, to, {
+                duration: duration,
+                ease: "easeOut",
+                onUpdate(value) {
+                    if (ref.current) {
+                        ref.current.textContent = Math.floor(value).toLocaleString() + suffix;
+                    }
+                }
+            });
+            return () => controls.stop();
         }
-    }, [isInView, to, motionValue, mounted]);
-
-    useEffect(() => {
-        const unsubscribe = springValue.on("change", (latest) => {
-            if (ref.current && mounted) {
-                ref.current.textContent = Math.floor(latest).toLocaleString() + suffix;
-            }
-        });
-        return () => unsubscribe();
-    }, [springValue, suffix, mounted]);
+    }, [isInView, to, duration, suffix, mounted, startValue]);
 
     return <span ref={ref} className="tabular-nums">{startValue.toLocaleString()}{suffix}</span>;
 };
