@@ -22,7 +22,7 @@ export const ScrollyBackground = ({ scrollYProgress }: ScrollyBackgroundProps) =
                 <img
                     src="/images/hero-children.jpg"
                     alt="Children in Sierra Leone"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-[center_20%] md:object-center"
                 />
             </div>
 
@@ -37,7 +37,7 @@ export const ScrollyBackground = ({ scrollYProgress }: ScrollyBackgroundProps) =
                 <img
                     src="/images/restored-landscape-new.jpg"
                     alt="Restored Green Valley Landscape"
-                    className="w-full h-full object-cover filter brightness-110 saturate-110"
+                    className="w-full h-full object-cover object-bottom md:object-center filter brightness-110 saturate-110"
                 />
                 <div className="absolute inset-0 bg-forest-dark/20 mix-blend-overlay" />
             </motion.div>

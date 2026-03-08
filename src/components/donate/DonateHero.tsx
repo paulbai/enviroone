@@ -13,7 +13,7 @@ export const DonateHero = () => {
                     src="/projects/clean_water_makeni_grid.jpg"
                     alt="Donate to EnviroOne"
                     fill
-                    className="object-cover brightness-[0.5]"
+                    className="object-cover object-[center_30%] md:object-center brightness-[0.5]"
                     priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-forest-dark/70 via-forest-dark/40 to-forest-dark/80" />
