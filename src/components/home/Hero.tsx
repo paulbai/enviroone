@@ -59,7 +59,7 @@ export const Hero = () => {
                     <img
                         src="/images/hero-children.jpg?v=20260125"
                         alt="Children in Sierra Leone"
-                        className="absolute inset-0 w-full h-full object-cover transform scale-105"
+                        className="absolute inset-0 w-full h-full object-cover object-[50%_10%] md:object-[50%_20%] transform scale-105"
                     />
                 </div>
                 {/* Dark gradient overlay for text readability */}
