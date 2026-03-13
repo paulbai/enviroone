@@ -58,8 +58,7 @@ export const DonateOptions = () => {
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                             <Button
-                                href="https://www.enviroone.org/checkout/donate?donatePageId=57f5646ed2b8578aac1f3fd8"
-                                target="_blank"
+                                href="https://www.zeffy.com/en-US/donation-form/your-generosity-transforms-lives"
                                 variant="primary"
                                 className="bg-golden text-forest-dark hover:bg-white hover:text-forest-dark font-bold text-lg px-10 py-5 h-auto min-w-[240px] shadow-xl hover:shadow-2xl transition-all"
                             >
