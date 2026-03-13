@@ -22,7 +22,7 @@ export const ScrollyBackground = ({ scrollYProgress }: ScrollyBackgroundProps) =
                 <img
                     src="/images/hero-children.jpg"
                     alt="Children in Sierra Leone"
-                    className="w-full h-full object-cover object-[50%_10%] md:object-[50%_20%]"
+                    className="w-full h-full object-cover object-[75%_15%] md:object-[50%_20%]"
                 />
             </div>
 

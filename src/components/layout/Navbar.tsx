@@ -94,10 +94,10 @@ export const Navbar = () => {
 
                     {/* Mobile Menu Toggle */}
                     <button
-                        className="md:hidden p-2 text-forest"
+                        className="md:hidden p-2 text-electric-lime drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
                         onClick={() => setIsMobileMenuOpen(true)}
                     >
-                        <Menu className="w-6 h-6" />
+                        <Menu className="w-8 h-8" />
                     </button>
                 </div>
             </motion.header>
