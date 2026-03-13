@@ -54,12 +54,12 @@ export const Hero = () => {
                 style={{ y: yBg }}
                 className="absolute inset-0 z-0"
             >
-                <div className="absolute inset-0 h-full w-full">
+                <div className="absolute inset-0 h-full w-full bg-black">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                         src="/images/hero-children.jpg?v=20260125"
                         alt="Children in Sierra Leone"
-                        className="absolute inset-0 w-full h-full object-cover object-[75%_15%] md:object-[50%_20%] transform scale-105"
+                        className="absolute inset-0 w-full h-full object-contain object-top md:object-cover md:object-[50%_20%] transform md:scale-105"
                     />
                 </div>
                 {/* Dark gradient overlay for text readability */}
