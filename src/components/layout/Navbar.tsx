@@ -94,7 +94,8 @@ export const Navbar = () => {
 
                     {/* Mobile Menu Toggle */}
                     <button
-                        className="md:hidden p-2 text-[#CCFF00] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+                        className="md:hidden p-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+                        style={{ color: '#CCFF00' }}
                         onClick={() => setIsMobileMenuOpen(true)}
                     >
                         <Menu className="w-8 h-8" />
