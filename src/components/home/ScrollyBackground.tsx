@@ -17,11 +17,11 @@ export const ScrollyBackground = ({ scrollYProgress }: ScrollyBackgroundProps) =
 
     return (
         <div className="absolute inset-0 w-full h-full z-0">
-            <div className="absolute inset-0 w-full h-full bg-black">
+            <div className="absolute inset-0 w-full h-full">
                 <img
                     src="/images/hero-children.jpg"
                     alt="Children in Sierra Leone"
-                    className="w-full h-full object-contain object-top md:object-cover md:object-[50%_20%]"
+                    className="w-full h-full object-cover object-[70%_25%] md:object-[50%_20%]"
                 />
             </div>
 
