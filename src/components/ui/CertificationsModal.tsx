@@ -13,27 +13,27 @@ interface CertificationsModalProps {
 const certifications = [
     {
         title: "Renewal Certificate",
-        url: "https://www.enviroone.org/s/Renewal-Certificate.jpg",
+        url: "/images/certifications/Renewal-Certificate.jpg",
         type: "Certificate"
     },
     {
         title: "EnviroOne Attestation",
-        url: "https://www.enviroone.org/s/EnviroOne-Attestation.pdf",
+        url: "/documents/EnviroOne-Attestation.pdf",
         type: "Attestation"
     },
     {
         title: "Agriculture Attestation 2015",
-        url: "https://www.enviroone.org/s/Attestation_Agriculture_2015.jpg",
+        url: "/images/certifications/Attestation_Agriculture_2015.jpg",
         type: "Attestation"
     },
     {
         title: "NGO Attestation Social Welfare",
-        url: "https://www.enviroone.org/s/NGO-Attestation_Social-welfare.jpg",
+        url: "/images/certifications/NGO-Attestation_Social-welfare.jpg",
         type: "Attestation"
     },
     {
         title: "Attestation Agriculture Tonkolili",
-        url: "https://www.enviroone.org/s/Attestation_Agric_Tonkolili.jpg",
+        url: "/images/certifications/Attestation_Agric_Tonkolili.jpg",
         type: "Attestation"
     }
 ];

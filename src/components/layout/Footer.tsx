@@ -34,22 +34,22 @@ export const Footer = () => {
                         <h3 className="text-golden font-bold mb-3 text-sm">Resources</h3>
                         <ul className="text-cream/80 text-sm space-y-2">
                             <li>
-                                <a href="/EnviroOne-Impact.pdf" className="hover:text-cream transition-colors">
+                                <a href="/EnviroOne-Impact.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-cream transition-colors">
                                     EnviroOne Impact
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.enviroone.org/s/EnviroOneCropGuideVer01.rar" className="hover:text-cream transition-colors">
+                                <a href="/documents/EnviroOneCropGuideVer01.rar" className="hover:text-cream transition-colors">
                                     Crop Guide
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.enviroone.org/s/Fracking-for-natural-gas-paper.pdf" className="hover:text-cream transition-colors">
+                                <a href="/documents/Fracking-for-natural-gas-paper.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-cream transition-colors">
                                     Hydrofracing Natural Gas
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.enviroone.org/s/Biodiesel-from-sludge.pdf" className="hover:text-cream transition-colors">
+                                <a href="/documents/Biodiesel-from-sludge.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-cream transition-colors">
                                     Sludge to Biodiesel
                                 </a>
                             </li>
