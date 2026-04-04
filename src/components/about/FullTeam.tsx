@@ -22,6 +22,12 @@ const teamMembers = [
         image: "/team/bai_sheka_wurie.png",
     },
     {
+        name: "Dan Koroma, PhD",
+        role: "Grants Manager & Financial Analyst",
+        bio: "Dr. Koroma is EnviroOne’s Grant Manager and Financial Analyst. Prior to joining the management team at EnviroOne, Dr. Koroma was an Environmental Policy Analyst with the Department of Ecology in Washington State. Dan holds a Post Graduate Diploma in Agricultural Economics from the University of Reading, England; a Masters in Agricultural Economics, University of Nebraska, USA and a Ph.D. in Environmental and Natural Resource Sciences from Washington State University, WA USA.",
+        image: "/team/dan_koroma.png",
+    },
+    {
         name: "Hajaratu Fullah, MBA",
         role: "Vice President of Operations",
         bio: "Hajaratu Fullah is Vice President of Operations at EnviroOne. With a B.S. in Agriculture and an MBA in Agribusiness Management, she brings over a decade of experience in rural development, women’s economic empowerment, and sustainable agribusiness. Hajaratu leads the design and execution of community-led initiatives that blend indigenous knowledge with modern regenerative practices. In her current role, she oversees project implementation across multiple districts, directs women-led microenterprises, and ensures strategic partnerships and policy engagement. Her leadership reflects a deep commitment to gender equity, climate resilience, and innovation for lasting impact in Sierra Leone.",
@@ -57,12 +63,7 @@ const teamMembers = [
         bio: "Samuel heads the farm operations in the EnviroOne’s agriculture programs in Lower Yoni and Kaffu Bullom chiefdoms in Sierra Leone. Samuel is a retiree from the Sierra Leone Police Force. He is a people’s person whose daily interactions with the communities has greatly increased cooperation between EnviroOne and project beneficiaries.",
         image: "/team/samuel_yamba.png",
     },
-    {
-        name: "Dan Koroma, PhD",
-        role: "Board Member & Policy Analyst",
-        bio: "Dr. Koroma is a member of EnviroOne’s Board of Directors and has volunteered in the EnviroOne program development. He is an Environmental Policy Analyst with the Department of Ecology in Washington State. Dan holds a Post Graduate Diploma in Agricultural Economics from the University of Reading, England; a Masters in Agricultural Economics, University of Nebraska, USA and a Ph.D. in Environmental and Natural Resource Sciences from Washington State University, WA USA.",
-        image: "/team/dan_koroma.png",
-    },
+
     {
         name: "Sally B Kargbo, BSc, RN",
         role: "Board Member & Health Lead",
