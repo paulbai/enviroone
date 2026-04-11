@@ -313,5 +313,20 @@ export const villages: Village[] = [
                 videoId: '2EcKP2ZU0rs'
             }
         ]
+    },
+    {
+        id: 'songo',
+        name: 'Songo',
+        displayName: 'Songo Community',
+        heroImage: '/projects/clean_water_3.png',
+        projectCount: 1,
+        projects: [
+            {
+                id: 'songo-main',
+                name: 'Songo Water Well',
+                photos: [],
+                videoId: '2EcKP2ZU0rs'
+            }
+        ]
     }
 ];
