@@ -46,12 +46,6 @@ const teamMembers = [
         image: "/team/alhassan_kanu.png",
     },
     {
-        name: "Desmond Kargbo, BSc.",
-        role: "Head of Traditional Public Health",
-        bio: "Mr. Desmond Kargbo is Head of EnviroOne’s Traditional Public Health Unit. He leads efforts to preserve and promote the safe use of indigenous herbal medicine through community training, documentation, and engagement with traditional healers. With over 10 years of experience, Desmond works to align local health practices with national public health standards, ensuring rural communities benefit from trusted, culturally grounded care.",
-        image: "/team/desmond_kargbo.png",
-    },
-    {
         name: "Prince B Koroma",
         role: "Agriculture & Water Specialist",
         bio: "Prince is the agriculture and water resources specialist at EnviroOne. He holds a Diploma in Agriculture. Prince oversees the water well drilling operations in the District and assists in supervising agricultural activities in the EnviroOne farming complex in Makeni Roc Fola. He continues to receive praise from management for being very productive in all of his duties.",

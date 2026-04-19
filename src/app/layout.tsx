@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, DM_Sans, Lora, Roboto_Mono } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -31,6 +31,12 @@ const robotoMono = Roboto_Mono({
 export const metadata: Metadata = {
   title: "EnviroOne | Transforming Lives in Sierra Leone",
   description: "EnviroOne is dedicated to sustainable development, clean water access, and educational empowerment in Sierra Leone.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({

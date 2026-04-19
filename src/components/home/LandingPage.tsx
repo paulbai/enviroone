@@ -28,7 +28,7 @@ export const LandingPage = () => {
                         All It Takes <span className="text-electric-lime drop-shadow-[0_0_10px_rgba(204,255,0,0.5)]">Is Three</span>
                     </h1>
                     <p className="font-mono text-sm md:text-base tracking-[0.3em] opacity-90 uppercase bg-black/40 backdrop-blur-sm px-4 py-2 inline-block rounded-full border border-white/10">
-                        Agriculture • Clean Water • Education
+                        Food • Health • Knowledge
                     </p>
                 </div>
 
