@@ -1,7 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, DM_Sans, Lora, Roboto_Mono } from "next/font/google";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
 
 const inter = Inter({
@@ -30,7 +28,8 @@ const robotoMono = Roboto_Mono({
 
 export const metadata: Metadata = {
   title: "EnviroOne | Transforming Lives in Sierra Leone",
-  description: "EnviroOne is dedicated to sustainable development, clean water access, and educational empowerment in Sierra Leone.",
+  description:
+    "EnviroOne is dedicated to sustainable development, clean water access, and educational empowerment in Sierra Leone.",
 };
 
 export const viewport: Viewport = {
@@ -49,10 +48,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${dmSans.variable} ${lora.variable} ${robotoMono.variable} antialiased bg-cream text-charcoal font-sans flex flex-col min-h-screen`}
       >
-        <div className="grain-overlay" />
-        <Navbar />
-        <main className="flex-grow">{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );
