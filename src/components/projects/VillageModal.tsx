@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Play } from 'lucide-react';
-import { Village } from '@/app/projects/clean-water/villageData';
+import { Village } from '@/app/(site)/projects/clean-water/villageData';
 import { ProjectHeroCarousel } from './ProjectHeroCarousel';
 
 interface VillageModalProps {

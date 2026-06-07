@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { VillageCard } from './VillageCard';
-import { Village } from '@/app/projects/clean-water/villageData';
+import { Village } from '@/app/(site)/projects/clean-water/villageData';
 
 interface VillageGridProps {
     villages: Village[];
