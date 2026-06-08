@@ -4,8 +4,20 @@ import React from "react";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { motion } from "framer-motion";
+import type { ImpactDownloadQueryResult } from "@/sanity/sanity.types";
 
-export const ImpactDownload = () => {
+const DEFAULT_TITLE = "See Our Full Impact Report";
+const DEFAULT_DESCRIPTION =
+    "Download our comprehensive impact report to learn more about the communities we serve and the lasting change we're creating together.";
+const DEFAULT_BUTTON_LABEL = "Download";
+const DEFAULT_PDF_URL = "/EnviroOne-Impact.pdf";
+
+export const ImpactDownload = ({ data }: { data: ImpactDownloadQueryResult }) => {
+    const title = data?.title ?? DEFAULT_TITLE;
+    const description = data?.description ?? DEFAULT_DESCRIPTION;
+    const buttonLabel = data?.buttonLabel ?? DEFAULT_BUTTON_LABEL;
+    const pdfUrl = data?.pdfUrl ?? DEFAULT_PDF_URL;
+
     return (
         <Section className="bg-cream py-12">
             <motion.div
@@ -15,13 +27,13 @@ export const ImpactDownload = () => {
                 className="text-center"
             >
                 <h3 className="text-2xl md:text-3xl font-display font-bold text-forest mb-4">
-                    See Our Full Impact Report
+                    {title}
                 </h3>
                 <p className="text-charcoal/70 mb-6 max-w-2xl mx-auto">
-                    Download our comprehensive impact report to learn more about the communities we serve and the lasting change we're creating together.
+                    {description}
                 </p>
                 <a
-                    href="/EnviroOne-Impact.pdf"
+                    href={pdfUrl}
                     download="EnviroOne-Impact.pdf"
                     className="inline-flex justify-center"
                 >
@@ -29,7 +41,7 @@ export const ImpactDownload = () => {
                         variant="primary"
                         className="shadow-lg hover:shadow-xl transition-shadow px-8"
                     >
-                        Download
+                        {buttonLabel}
                     </Button>
                 </a>
             </motion.div>

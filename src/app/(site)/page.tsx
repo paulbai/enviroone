@@ -5,17 +5,33 @@ import { StoriesCarousel } from "@/components/home/StoriesCarousel";
 import { ThreeSection } from "@/components/home/ThreeSection";
 import { Team } from "@/components/home/Team";
 import { ImpactDownload } from "@/components/home/ImpactDownload";
+import {
+  getHomeHero,
+  getFocusAreasIntro,
+  getImpactDownload,
+  getFocusAreas,
+  getImpactStats,
+} from "@/sanity/lib/home";
 // Other components will be imported here as they are created
 
-export default function Home() {
+export default async function Home() {
+  const [hero, focusAreasIntro, impactDownload, focusAreas, stats] =
+    await Promise.all([
+      getHomeHero(),
+      getFocusAreasIntro(),
+      getImpactDownload(),
+      getFocusAreas(),
+      getImpactStats(),
+    ]);
+
   return (
     <div className="flex flex-col min-h-screen">
-      <LandingPage />
-      <ImpactStats />
-      <ImpactDownload />
-      <FocusAreas />
+      <LandingPage hero={hero} />
+      <ImpactStats stats={stats} />
+      <ImpactDownload data={impactDownload} />
+      <FocusAreas intro={focusAreasIntro} areas={focusAreas} />
       {/* <StoriesCarousel /> */}
-      {/* 
+      {/*
       <ThreeSection />
       <Team />
       <div className="h-[50vh] bg-cream" /> {/* Spacer to verify scrolling */}
