@@ -9,3 +9,28 @@ export const teamMembersQuery = defineQuery(`
     photo
   }
 `);
+
+export const blogPostsListQuery = defineQuery(`
+  *[_type == "blogPost"] | order(publishedAt desc) {
+    _id,
+    title,
+    "slug": slug.current,
+    publishedAt,
+    author,
+    heroImage,
+    excerpt
+  }
+`);
+
+export const blogPostBySlugQuery = defineQuery(`
+  *[_type == "blogPost" && slug.current == $slug][0] {
+    _id,
+    title,
+    "slug": slug.current,
+    publishedAt,
+    author,
+    heroImage,
+    excerpt,
+    body
+  }
+`);
