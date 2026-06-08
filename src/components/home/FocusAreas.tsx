@@ -4,20 +4,30 @@ import React from "react";
 import NextImage from "next/image";
 import { motion } from "framer-motion";
 import { Section } from "@/components/ui/Section";
-import { Sprout, Droplet, BookOpen } from "lucide-react"; // Removed ArrowRight import
 import { Button } from "@/components/ui/Button";
+import { urlFor } from "@/sanity/lib/image";
+import type {
+    FocusAreasIntroQueryResult,
+    FocusAreasQueryResult,
+} from "@/sanity/sanity.types";
 
 interface FocusItemProps {
     title: string;
     description: string;
     image: string;
-    href: string; // Changed from targetId
+    href: string;
     color: string;
     align: "left" | "right";
     index: number;
 }
 
-const FocusItem = ({ title, description, image, href, align, index }: FocusItemProps) => { // Changed targetId to href
+const COLOR_ROTATION = ["text-forest", "text-water", "text-golden"] as const;
+
+const DEFAULT_HEADING = "Our Focus Areas.";
+const DEFAULT_DESCRIPTION =
+    "EnviroOne helps communities in Sierra Leone and beyond adapt to climate change by advancing agroecology, clean water access, and environmental education.";
+
+const FocusItem = ({ title, description, image, href, align, index }: FocusItemProps) => {
     const isLeft = align === "left";
 
     return (
@@ -80,33 +90,14 @@ const FocusItem = ({ title, description, image, href, align, index }: FocusItemP
     );
 };
 
-export const FocusAreas = () => {
-    const areas = [
-        {
-            title: "Regenerative Agriculture",
-            description: "Restoring soil health and strengthening community resilience through sustainable farming practices that nurture harmony with nature.",
-            image: "/projects/regenerative_ag_new.png",
-            href: "/projects/agriculture", // Changed from targetId
-            color: "text-forest",
-            align: "left" as const
-        },
-        {
-            title: "Water Well Program",
-            description: "Providing critical access to clean water for districts across Sierra Leone, reducing disease and empowering communities.",
-            image: "/projects/water_well_new_hero.jpg",
-            href: "/projects/clean-water", // Changed from targetId
-            color: "text-water",
-            align: "right" as const
-        },
-        {
-            title: "Education Program",
-            description: "Building a knowledgeable foundation for the future by integrating agriculture and clean water awareness into rural learning.",
-            image: "/projects/education.jpg",
-            href: "/projects/education",
-            color: "text-golden",
-            align: "left" as const
-        }
-    ];
+interface FocusAreasProps {
+    intro: FocusAreasIntroQueryResult;
+    areas: FocusAreasQueryResult;
+}
+
+export const FocusAreas = ({ intro, areas }: FocusAreasProps) => {
+    const heading = intro?.heading ?? DEFAULT_HEADING;
+    const description = intro?.description ?? DEFAULT_DESCRIPTION;
 
     return (
         <Section className="bg-cream relative z-10 py-16 md:py-32 overflow-hidden">
@@ -115,17 +106,26 @@ export const FocusAreas = () => {
 
             <div className="mb-16 md:mb-24 max-w-3xl">
                 <h2 className="text-5xl md:text-7xl font-display font-bold text-charcoal mb-8 leading-[0.9] tracking-tight">
-                    Our Focus Areas.
+                    {heading}
                 </h2>
                 <div className="h-1 w-24 bg-electric-lime mb-8" />
                 <p className="text-charcoal/70 text-xl font-light leading-relaxed max-w-2xl">
-                    EnviroOne helps communities in Sierra Leone and beyond adapt to climate change by advancing agroecology, clean water access, and environmental education.
+                    {description}
                 </p>
             </div>
 
             <div className="flex flex-col">
                 {areas.map((area, i) => (
-                    <FocusItem key={area.title} {...area} index={i} />
+                    <FocusItem
+                        key={area._id}
+                        title={area.title}
+                        description={area.description}
+                        image={urlFor(area.image).width(1600).height(1000).url()}
+                        href={area.link.href}
+                        color={COLOR_ROTATION[i % COLOR_ROTATION.length]}
+                        align={area.align}
+                        index={i}
+                    />
                 ))}
             </div>
         </Section>

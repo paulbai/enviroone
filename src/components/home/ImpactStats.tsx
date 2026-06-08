@@ -5,6 +5,37 @@ import { motion, useInView, animate } from "framer-motion";
 import { Section } from "@/components/ui/Section";
 import { cn } from "@/lib/utils";
 import { Droplet, Sprout, BookOpen, Users, MapPin, Heart, Sun, Leaf, Activity } from "lucide-react";
+import type { ImpactStatsQueryResult } from "@/sanity/sanity.types";
+
+const ICONS = {
+    droplet: Droplet,
+    users: Users,
+    leaf: Leaf,
+    "book-open": BookOpen,
+    sprout: Sprout,
+    "map-pin": MapPin,
+    sun: Sun,
+    heart: Heart,
+    activity: Activity,
+} as const;
+
+const ACCENT_GRADIENTS = {
+    water: "bg-gradient-to-br from-water to-transparent",
+    "forest-water": "bg-gradient-to-br from-forest to-water",
+    terracotta: "bg-gradient-to-br from-terracotta to-transparent",
+    golden: "bg-gradient-to-br from-golden to-transparent",
+    "forest-golden": "bg-gradient-to-br from-forest to-golden",
+    warmGray: "bg-gradient-to-br from-warmGray to-transparent",
+    "terracotta-golden": "bg-gradient-to-br from-terracotta to-golden",
+    "water-forest": "bg-gradient-to-br from-water to-forest",
+    forest: "bg-gradient-to-br from-forest to-transparent",
+} as const;
+
+const SPAN_CLASSES = {
+    small: "col-span-1 md:col-span-3",
+    medium: "col-span-2 md:col-span-4",
+    large: "col-span-2 md:col-span-5",
+} as const;
 
 // CountUp Component
 const CountUp = ({ to, duration = 2, suffix = "" }: { to: number; duration?: number; suffix?: string }) => {
@@ -77,104 +108,31 @@ const StatCard = ({ value, label, suffix = "", icon: Icon, className, gradient, 
     );
 };
 
-export const ImpactStats = () => {
+export const ImpactStats = ({ stats }: { stats: ImpactStatsQueryResult }) => {
+    if (!stats || stats.length === 0) {
+        return null;
+    }
+
     return (
         <Section className="bg-cream relative z-20 pt-16 md:pt-32 pb-16">
             <div className="grid grid-cols-2 md:grid-cols-12 gap-4 md:gap-6 auto-rows-[minmax(180px,auto)] md:auto-rows-[280px]">
-                {/* Row 1 */}
-                {/* [4 cols] Wells */}
-                <StatCard
-                    className="md:col-span-4"
-                    value={30}
-                    suffix="+"
-                    label="Water Wells Built"
-                    icon={Droplet}
-                    gradient="bg-gradient-to-br from-water to-transparent"
-                    delay={0}
-                />
-                {/* [5 cols] People Served (Hero) */}
-                <StatCard
-                    className="col-span-2 md:col-span-5"
-                    value={105000}
-                    suffix="+"
-                    label="People Provided with Clean Water"
-                    icon={Users}
-                    gradient="bg-gradient-to-br from-forest to-water"
-                    delay={0.1}
-                />
-                {/* [3 cols] Hectares */}
-                <StatCard
-                    className="col-span-1 md:col-span-3"
-                    value={20}
-                    suffix="+"
-                    label="Hectares Cultivated"
-                    icon={Leaf}
-                    gradient="bg-gradient-to-br from-terracotta to-transparent"
-                    delay={0.2}
-                />
-
-                {/* Row 2 */}
-                {/* [3 cols] Facilitators */}
-                <StatCard
-                    className="col-span-1 md:col-span-3"
-                    value={10}
-                    label="Peer Facilitators Trained"
-                    icon={BookOpen}
-                    gradient="bg-gradient-to-br from-golden to-transparent"
-                    delay={0.3}
-                />
-                {/* [6 cols] Farmers */}
-                <StatCard
-                    className="col-span-2 md:col-span-6"
-                    value={500}
-                    suffix="+"
-                    label="Farmers Supported with Seeds & Tools"
-                    icon={Sprout}
-                    gradient="bg-gradient-to-br from-forest to-golden"
-                    delay={0.4}
-                />
-                {/* [3 cols] Districts */}
-                <StatCard
-                    className="col-span-1 md:col-span-3"
-                    value={3}
-                    label="Districts Served (Tonkolili, Port Loko, Waterloo)"
-                    icon={MapPin}
-                    gradient="bg-gradient-to-br from-warmGray to-transparent"
-                    delay={0.5}
-                />
-
-                {/* Row 3 */}
-                {/* [5 cols] Youth/Women */}
-                <StatCard
-                    className="col-span-2 md:col-span-5"
-                    value={100}
-                    suffix="+"
-                    label="Youth & Women Trained"
-                    icon={Sun}
-                    gradient="bg-gradient-to-br from-terracotta to-golden"
-                    delay={0.6}
-                />
-                {/* [4 cols] Illness Reduction - Symbolic Number or text? Keep simpler stats */}
-                {/* Using 40% reduction as placeholder or just symbolic count like 24/7 access */}
-                <StatCard
-                    className="col-span-1 md:col-span-4"
-                    value={24}
-                    suffix="/7"
-                    label="Access to Clean Water & Medicine"
-                    icon={Heart}
-                    gradient="bg-gradient-to-br from-water to-forest"
-                    delay={0.7}
-                />
-                {/* [3 cols] Women Burden */}
-                <StatCard
-                    className="col-span-1 md:col-span-3"
-                    value={60}
-                    suffix="%"
-                    label="Reduction in Water Collection Time"
-                    icon={Activity}
-                    gradient="bg-gradient-to-br from-forest to-transparent"
-                    delay={0.8}
-                />
+                {stats.map((stat, index) => {
+                    const Icon = ICONS[stat.icon];
+                    const gradient = ACCENT_GRADIENTS[stat.accent];
+                    const span = SPAN_CLASSES[stat.gridSpan];
+                    return (
+                        <StatCard
+                            key={stat._id}
+                            className={span}
+                            value={stat.value}
+                            suffix={stat.suffix ?? ""}
+                            label={stat.label}
+                            icon={Icon}
+                            gradient={gradient}
+                            delay={index * 0.1}
+                        />
+                    );
+                })}
             </div>
         </Section>
     );
