@@ -84,3 +84,24 @@ export const impactStatsQuery = defineQuery(`
     accent
   }
 `);
+
+export const projectsIndexQuery = defineQuery(`
+  *[_id == "projectsIndex"][0] { heading, description }
+`);
+
+export const projectCardsQuery = defineQuery(`
+  *[_type == "projectPage"] | order(orderRank) {
+    _id, title, "slug": slug.current, icon, accent, summary, cardImage
+  }
+`);
+
+export const projectPagesSlugsQuery = defineQuery(`
+  *[_type == "projectPage"] { "slug": slug.current }
+`);
+
+export const projectPageBySlugQuery = defineQuery(`
+  *[_type == "projectPage" && slug.current == $slug][0] {
+    _id, title, "slug": slug.current, icon, accent, summary, cardImage,
+    body, carousel, featuredVideoId, featuredVideoLabel
+  }
+`);

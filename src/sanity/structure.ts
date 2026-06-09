@@ -8,6 +8,8 @@ import {
   DownloadIcon,
   EarthGlobeIcon,
   BarChartIcon,
+  ProjectsIcon,
+  RocketIcon,
 } from "@sanity/icons";
 
 export const structure: StructureResolver = (S, context) =>
@@ -51,6 +53,25 @@ export const structure: StructureResolver = (S, context) =>
             ]),
         ),
       S.divider(),
+      S.listItem()
+        .title("Projects")
+        .icon(ProjectsIcon)
+        .child(
+          S.list()
+            .title("Projects")
+            .items([
+              S.listItem()
+                .title("Projects Index")
+                .icon(ProjectsIcon)
+                .child(
+                  S.editor()
+                    .id("projectsIndex")
+                    .schemaType("projectsIndex")
+                    .documentId("projectsIndex"),
+                ),
+            ]),
+        ),
+      S.divider(),
       orderableDocumentListDeskItem({
         type: "focusArea",
         title: "Focus Areas",
@@ -62,6 +83,13 @@ export const structure: StructureResolver = (S, context) =>
         type: "impactStat",
         title: "Impact Stats",
         icon: BarChartIcon,
+        S,
+        context,
+      }),
+      orderableDocumentListDeskItem({
+        type: "projectPage",
+        title: "Project Pages",
+        icon: RocketIcon,
         S,
         context,
       }),

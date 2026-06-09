@@ -1,94 +1,10 @@
-"use client";
+import { notFound } from "next/navigation";
+import { ProjectPageView } from "@/components/projects/ProjectPageView";
+import { getProjectPageBySlug } from "@/sanity/lib/projects";
+import { CleanWaterVillages } from "@/components/projects/CleanWaterVillages";
 
-import React, { useState } from 'react';
-import { Section } from '@/components/ui/Section';
-import { motion } from 'framer-motion';
-import { Droplets, Play, ArrowLeft } from 'lucide-react';
-import Link from 'next/link';
-import { VideoModal } from '@/components/ui/VideoModal';
-import { ProjectHeroCarousel } from '@/components/projects/ProjectHeroCarousel';
-import { VillageGrid } from '@/components/projects/VillageGrid';
-import { VillageModal } from '@/components/projects/VillageModal';
-import { villages } from './villageData';
-
-export default function CleanWaterPage() {
-    const [currentVideoId, setCurrentVideoId] = useState<string | null>(null);
-    const [selectedVillageId, setSelectedVillageId] = useState<string | null>(null);
-
-    const selectedVillage = villages.find(v => v.id === selectedVillageId) || null;
-
-    return (
-        <main className="pt-20">
-            <VideoModal
-                isOpen={!!currentVideoId}
-                onClose={() => setCurrentVideoId(null)}
-                videoId={currentVideoId || ""}
-            />
-
-            <VillageModal
-                village={selectedVillage}
-                isOpen={!!selectedVillageId}
-                onClose={() => setSelectedVillageId(null)}
-                onVideoClick={(videoId) => setCurrentVideoId(videoId)}
-            />
-
-            <Section className="bg-water/5 min-h-screen">
-                <div className="max-w-5xl mx-auto py-12 md:py-20">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="mb-8"
-                    >
-                        <Link href="/projects" className="inline-flex items-center gap-2 text-forest hover:text-water transition-colors mb-6 font-medium">
-                            <ArrowLeft className="w-4 h-4" />
-                            Back to Projects
-                        </Link>
-
-                        <div className="flex items-center gap-4 mb-6">
-                            <div className="p-3 bg-water/10 rounded-xl text-water">
-                                <Droplets className="w-8 h-8" />
-                            </div>
-                            <h1 className="text-4xl md:text-5xl font-display font-bold text-charcoal">Clean Water</h1>
-                        </div>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
-                        className="prose prose-lg text-charcoal/80 max-w-none bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100"
-                    >
-                        <h3 className="text-xl font-bold text-forest mb-4">Water for Life: A Holistic Approach</h3>
-                        <p>
-                            EnviroOne believes that a healthy community is multidimensional. In rural Sierra Leone, access to clean water emerges as the most urgent foundation for physical health and economic vitality.
-                        </p>
-                        <p>
-                            Since 2017, EnviroOne has dug <strong>over 30 water wells</strong>, providing clean drinking water to over <strong>105,000 individuals</strong> across the Tonkolili, Port Loko, and Bombali districts, as well as the Western Rural Area (Waterloo).
-                        </p>
-                        <p>
-                            Our site selection prioritizes community need, hydrogeologic suitability, and strong community ownership to ensure sustainability.
-                        </p>
-
-                        <h4 className="text-lg font-bold text-forest mt-8 mb-4">Program Impact</h4>
-                        <ul className="list-disc pl-5 space-y-2">
-                            <li><strong>Health:</strong> Significant decrease in waterborne illnesses (cholera, typhoid) and improved maternal/child health.</li>
-                            <li><strong>Social:</strong> Reduced water collection burden on women and girls, leading to higher school attendance.</li>
-                            <li><strong>Economic:</strong> Lower household medical spending and new opportunities for small-scale water-fed businesses.</li>
-                            <li><strong>Agricultural:</strong> Year-round access for medicinal plants, agroforestry, and regenerative agriculture.</li>
-                            <li><strong>Environmental:</strong> Reduced riverbank degradation and support for ecosystem health.</li>
-                        </ul>
-
-
-
-                    </motion.div>
-
-                    {/* Village Bento Grid */}
-                    <VillageGrid
-                        villages={villages}
-                        onVillageClick={(villageId) => setSelectedVillageId(villageId)}
-                    />
-                </div>
-            </Section>
-        </main>
-    );
+export default async function CleanWaterPage() {
+    const post = await getProjectPageBySlug("clean-water");
+    if (!post) notFound();
+    return <ProjectPageView post={post} extraContent={<CleanWaterVillages />} />;
 }
