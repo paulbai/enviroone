@@ -7,6 +7,8 @@ import { focusAreasIntro } from "./focusAreasIntro";
 import { impactDownload } from "./impactDownload";
 import { focusArea } from "./focusArea";
 import { impactStat } from "./impactStat";
+import { projectsIndex } from "./projectsIndex";
+import { projectPage } from "./projectPage";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -17,5 +19,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     impactDownload,
     focusArea,
     impactStat,
+    projectsIndex,
+    projectPage,
   ],
 };
