@@ -3,18 +3,38 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { urlFor } from "@/sanity/lib/image";
 
-export const VolunteerHero = () => {
+export type HeroImage = {
+    asset?: unknown;
+    alt: string;
+    _type: "image";
+} | null | undefined;
+
+export type VolunteerHeroProps = {
+    heading?: string | null;
+    subheading?: string | null;
+    image?: HeroImage;
+};
+
+export const VolunteerHero = ({ heading, subheading, image }: VolunteerHeroProps = {}) => {
+    const imgSrc =
+        image && image.asset
+            ? urlFor(image as any).width(1600).height(900).fit("max").url()
+            : "/images/volunteer_hero_new.png";
+    const imgAlt = (image && image.alt) || "Volunteer";
+
     return (
         <section className="relative h-[50vh] min-h-[400px] w-full overflow-hidden flex items-center justify-center">
             {/* Background */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/images/volunteer_hero_new.png"
-                    alt="Volunteer"
+                    src={imgSrc}
+                    alt={imgAlt}
                     fill
                     className="object-cover brightness-[0.6]"
                     priority
+                    unoptimized
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-forest-dark/70 via-forest-dark/40 to-forest-dark/80" />
             </div>
@@ -27,10 +47,10 @@ export const VolunteerHero = () => {
                 className="relative z-10 max-w-4xl px-4 text-center"
             >
                 <h1 className="text-5xl md:text-7xl font-display font-bold text-cream mb-6 drop-shadow-lg">
-                    Join Our Team
+                    {heading ?? "Join Our Team"}
                 </h1>
                 <p className="text-xl md:text-2xl text-cream/90 font-light max-w-2xl mx-auto">
-                    Whether you have hours, days, or months to give, your time and skills can change lives.
+                    {subheading ?? "Whether you have hours, days, or months to give, your time and skills can change lives."}
                 </p>
             </motion.div>
         </section>

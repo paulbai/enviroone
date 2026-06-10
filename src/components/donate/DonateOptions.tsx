@@ -6,7 +6,67 @@ import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Heart, Shield, Globe } from "lucide-react";
 
-export const DonateOptions = () => {
+export type DonationOption = {
+    _key: string;
+    title: string;
+    description: string;
+    amount: string | null;
+    link: string;
+};
+
+export type DonateOptionsProps = {
+    heading?: string | null;
+    intro?: string | null;
+    options?: DonationOption[] | null;
+};
+
+const FALLBACK_MAIN: DonationOption = {
+    _key: "main",
+    title: "Make Your Donation Today",
+    description:
+        "Your secure donation provides clean water, sustainable agriculture, and education to communities in Sierra Leone. Every contribution makes a lasting impact.",
+    amount: null,
+    link: "https://www.zeffy.com/en-US/donation-form/your-generosity-transforms-lives",
+};
+
+const FALLBACK_TILES: { _key: string; title: string; description: string; emoji: string }[] = [
+    {
+        _key: "farm",
+        title: "Sustainable Farming",
+        description:
+            "Support regenerative agriculture practices that restore soil health and food security",
+        emoji: "🌱",
+    },
+    {
+        _key: "water",
+        title: "Clean Water Access",
+        description:
+            "Provide safe drinking water to entire villages, reducing disease and saving lives",
+        emoji: "💧",
+    },
+    {
+        _key: "edu",
+        title: "Education Programs",
+        description:
+            "Give children the gift of knowledge and a brighter future through quality education",
+        emoji: "📚",
+    },
+];
+
+const TILE_EMOJIS = ["🌱", "💧", "📚", "❤️"];
+
+export const DonateOptions = ({ options }: DonateOptionsProps = {}) => {
+    const list = options ?? [];
+    const main = list.length > 0 ? list[0] : FALLBACK_MAIN;
+    const tiles = list.length > 1
+        ? list.slice(1).map((o, i) => ({
+              _key: o._key,
+              title: o.title,
+              description: o.description,
+              emoji: TILE_EMOJIS[i % TILE_EMOJIS.length],
+          }))
+        : FALLBACK_TILES;
+
     return (
         <Section className="bg-cream relative z-10 py-24">
             <div className="max-w-5xl mx-auto px-4">
@@ -34,10 +94,10 @@ export const DonateOptions = () => {
                         </motion.div>
 
                         <h2 className="text-3xl md:text-5xl font-display font-bold text-cream mb-6">
-                            Make Your Donation Today
+                            {main.title}
                         </h2>
                         <p className="text-xl text-cream/90 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-                            Your secure donation provides clean water, sustainable agriculture, and education to communities in Sierra Leone. Every contribution makes a lasting impact.
+                            {main.description}
                         </p>
 
                         {/* Trust Indicators */}
@@ -58,11 +118,11 @@ export const DonateOptions = () => {
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                             <Button
-                                href="https://www.zeffy.com/en-US/donation-form/your-generosity-transforms-lives"
+                                href={main.link}
                                 variant="primary"
                                 className="bg-golden text-forest-dark hover:bg-white hover:text-forest-dark font-bold text-lg px-10 py-5 h-auto min-w-[240px] shadow-xl hover:shadow-2xl transition-all"
                             >
-                                Donate Securely Now
+                                {main.amount ?? "Donate Securely Now"}
                             </Button>
                         </div>
                         <p className="mt-6 text-cream/50 text-sm">
@@ -73,47 +133,20 @@ export const DonateOptions = () => {
 
                 {/* Impact Information */}
                 <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="bg-white p-6 rounded-xl shadow-sm text-center"
-                    >
-                        <div className="text-3xl mb-3">🌱</div>
-                        <h3 className="text-lg font-bold text-forest-dark mb-2">Sustainable Farming</h3>
-                        <p className="text-charcoal/70 text-sm">
-                            Support regenerative agriculture practices that restore soil health and food security
-                        </p>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="bg-white p-6 rounded-xl shadow-sm text-center"
-                    >
-                        <div className="text-3xl mb-3">💧</div>
-                        <h3 className="text-lg font-bold text-forest-dark mb-2">Clean Water Access</h3>
-                        <p className="text-charcoal/70 text-sm">
-                            Provide safe drinking water to entire villages, reducing disease and saving lives
-                        </p>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3 }}
-                        className="bg-white p-6 rounded-xl shadow-sm text-center"
-                    >
-                        <div className="text-3xl mb-3">📚</div>
-                        <h3 className="text-lg font-bold text-forest-dark mb-2">Education Programs</h3>
-                        <p className="text-charcoal/70 text-sm">
-                            Give children the gift of knowledge and a brighter future through quality education
-                        </p>
-                    </motion.div>
+                    {tiles.map((tile, i) => (
+                        <motion.div
+                            key={tile._key}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.1 + i * 0.1 }}
+                            className="bg-white p-6 rounded-xl shadow-sm text-center"
+                        >
+                            <div className="text-3xl mb-3">{tile.emoji}</div>
+                            <h3 className="text-lg font-bold text-forest-dark mb-2">{tile.title}</h3>
+                            <p className="text-charcoal/70 text-sm">{tile.description}</p>
+                        </motion.div>
+                    ))}
                 </div>
 
                 {/* Other Ways to Give - text link */}
