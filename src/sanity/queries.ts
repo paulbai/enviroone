@@ -105,3 +105,87 @@ export const projectPageBySlugQuery = defineQuery(`
     body, carousel, featuredVideoId, featuredVideoLabel
   }
 `);
+
+export const aboutPageQuery = defineQuery(`
+  *[_id == "aboutPage"][0] {
+    heroHeading,
+    heroSubheading,
+    heroImage,
+    missionHeading,
+    missionBody,
+    philosophyHeading,
+    philosophyItems[] { _key, title, description, icon },
+    accomplishmentsHeading,
+    accomplishmentsItems[] { _key, year, title, description }
+  }
+`);
+
+export const donatePageQuery = defineQuery(`
+  *[_id == "donatePage"][0] {
+    heroHeading,
+    heroSubheading,
+    heroImage,
+    optionsHeading,
+    optionsIntro,
+    donationOptions[] { _key, title, description, amount, link }
+  }
+`);
+
+export const getInvolvedPageQuery = defineQuery(`
+  *[_id == "getInvolvedPage"][0] {
+    heroHeading,
+    heroSubheading,
+    heroImage,
+    waysHeading,
+    waysIntro,
+    waysToGive[] { _key, title, description, image, href, align }
+  }
+`);
+
+export const volunteerPageQuery = defineQuery(`
+  *[_id == "volunteerPage"][0] {
+    heroHeading,
+    heroSubheading,
+    heroImage,
+    rolesHeading,
+    rolesIntro,
+    roles[] { _key, title, description, tasks, image, align }
+  }
+`);
+
+export const sponsorshipPageQuery = defineQuery(`
+  *[_id == "sponsorshipPage"][0] {
+    heroHeading,
+    heroSubheading,
+    heroImage,
+    tiersHeading,
+    tiersIntro,
+    tiers[] { _key, title, problem, solution, impact, cost, image, donateLink, align }
+  }
+`);
+
+export const churchMinistryPageQuery = defineQuery(`
+  *[_id == "churchMinistryPage"][0] {
+    heroHeading,
+    heroSubheading,
+    heroImage,
+    body
+  }
+`);
+
+export const siteSettingsQuery = defineQuery(`
+  *[_id == "siteSettings"][0] {
+    orgName,
+    primaryEmail,
+    sierraLeoneOffice,
+    usaOffice,
+    socials,
+    footerResources[] {
+      _key,
+      title,
+      description,
+      openInNewTab,
+      "fileUrl": file.asset->url
+    }
+  }
+`);
