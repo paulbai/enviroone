@@ -1,10 +1,25 @@
 "use client";
 
 import React from "react";
-import NextImage from "next/image";
 import { motion } from "framer-motion";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
+import { urlFor } from "@/sanity/lib/image";
+
+export type SanityImage = {
+    asset?: unknown;
+    alt: string;
+    _type: "image";
+};
+
+export type WayToGive = {
+    _key: string;
+    title: string;
+    description: string;
+    image: SanityImage;
+    href: string;
+    align: "left" | "right";
+};
 
 interface WayToGiveItemProps {
     title: string;
@@ -67,30 +82,47 @@ const WayToGiveItem = ({ title, description, image, href, align, index, target }
     );
 };
 
-export const WaysToGive = () => {
-    const ways = [
-        {
-            title: "Become a Sponsor",
-            description: "Partner with us to provide sustainable solutions to communities in need. Your sponsorship directly impacts lives through clean water, agriculture, and education projects.",
-            image: "/images/get_involved_sponsor_new.jpg",
-            href: "/get-involved/sponsor",
-            align: "left" as const
-        },
-        {
-            title: "Volunteer",
-            description: "Join our global network of passionate individuals. Whether on the ground in Sierra Leone or remotely, your skills and time can help drive our mission forward.",
-            image: "/images/get_involved_volunteer_new.png",
-            href: "/get-involved/volunteer",
-            align: "right" as const
-        },
-        {
-            title: "Church Ministry",
-            description: "Connect your congregation with a cause that matters. We partner with churches to bring faith and works together for transformative community development.",
-            image: "/images/church_ministry_new.png",
-            href: "/get-involved/church-ministry",
-            align: "left" as const
-        }
-    ];
+export type WaysToGiveProps = {
+    heading?: string | null;
+    intro?: string | null;
+    ways?: WayToGive[] | null;
+};
+
+const FALLBACK_WAYS: { title: string; description: string; image: string; href: string; align: "left" | "right" }[] = [
+    {
+        title: "Become a Sponsor",
+        description: "Partner with us to provide sustainable solutions to communities in need. Your sponsorship directly impacts lives through clean water, agriculture, and education projects.",
+        image: "/images/get_involved_sponsor_new.jpg",
+        href: "/get-involved/sponsor",
+        align: "left",
+    },
+    {
+        title: "Volunteer",
+        description: "Join our global network of passionate individuals. Whether on the ground in Sierra Leone or remotely, your skills and time can help drive our mission forward.",
+        image: "/images/get_involved_volunteer_new.png",
+        href: "/get-involved/volunteer",
+        align: "right",
+    },
+    {
+        title: "Church Ministry",
+        description: "Connect your congregation with a cause that matters. We partner with churches to bring faith and works together for transformative community development.",
+        image: "/images/church_ministry_new.png",
+        href: "/get-involved/church-ministry",
+        align: "left",
+    },
+];
+
+export const WaysToGive = ({ heading, intro, ways }: WaysToGiveProps = {}) => {
+    const list =
+        ways && ways.length > 0
+            ? ways.map((w) => ({
+                  title: w.title,
+                  description: w.description,
+                  image: urlFor(w.image as any).width(1200).height(800).fit("max").url(),
+                  href: w.href,
+                  align: w.align,
+              }))
+            : FALLBACK_WAYS;
 
     return (
         <Section className="bg-cream relative z-10 py-32 overflow-hidden">
@@ -99,16 +131,16 @@ export const WaysToGive = () => {
 
             <div className="mb-24 md:mb-32 max-w-3xl">
                 <h2 className="text-5xl md:text-7xl font-display font-bold text-charcoal mb-8 leading-[0.9] tracking-tight">
-                    Make an Impact.
+                    {heading ?? "Make an Impact."}
                 </h2>
                 <div className="h-1 w-24 bg-terracotta mb-8" />
                 <p className="text-charcoal/70 text-xl font-light leading-relaxed max-w-2xl">
-                    There are many ways to support our mission. Find the path that resonates with you and join us in building a better future.
+                    {intro ?? "There are many ways to support our mission. Find the path that resonates with you and join us in building a better future."}
                 </p>
             </div>
 
             <div className="flex flex-col">
-                {ways.map((way, i) => (
+                {list.map((way, i) => (
                     <WayToGiveItem key={way.title} {...way} index={i} />
                 ))}
             </div>

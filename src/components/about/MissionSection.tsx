@@ -5,9 +5,26 @@ import { Section } from "@/components/ui/Section";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { CertificationsModal } from "@/components/ui/CertificationsModal";
+import { PortableText } from "@portabletext/react";
 
-export const MissionSection = () => {
+export type MissionBlocks = Array<{
+    _key: string;
+    _type: "block";
+    children?: Array<{ _key: string; _type: "span"; text?: string; marks?: Array<string> }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{ _key: string; _type: "link"; href?: string }>;
+    level?: number;
+}>;
+
+export type MissionSectionProps = {
+    heading?: string | null;
+    body?: MissionBlocks | null;
+};
+
+export const MissionSection = ({ heading, body }: MissionSectionProps = {}) => {
     const [isCertModalOpen, setIsCertModalOpen] = React.useState(false);
+    const hasCmsBody = Array.isArray(body) && body.length > 0;
 
     return (
         <Section className="bg-cream text-charcoal">
@@ -20,18 +37,24 @@ export const MissionSection = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                 >
-                    <h2 className="text-4xl font-display font-bold text-forest mb-6">Our Mission</h2>
+                    <h2 className="text-4xl font-display font-bold text-forest mb-6">{heading ?? "Our Mission"}</h2>
                     <div className="prose prose-lg text-charcoal/80">
-                        <p className="mb-4">
-                            EnviroOne is a 501 (c)(3) non-profit company organized in 2007 to promote sustainable environmental and agricultural activities in the US and the world.
-                            There are numerous aid programs to lift the underprivileged out of poverty. Yet, many of these programs have not fully achieved their intended purposes.
-                        </p>
-                        <p className="font-medium text-forest/90 italic border-l-4 border-golden pl-4 py-2 bg-golden/10 rounded-r-lg">
-                            "Our mission is to demonstrate that a systems approach that integrates the three main components of human development (health/environment, food, and knowledge) is not only needed to improve the lives of people successfully, but also achievable."
-                        </p>
-                        <p className="mt-4">
-                            This is a paradigm shift from the current piecemeal approach to human development. It is the basis of our "All It Takes Is Three" strategy.
-                        </p>
+                        {hasCmsBody ? (
+                            <PortableText value={body!} />
+                        ) : (
+                            <>
+                                <p className="mb-4">
+                                    EnviroOne is a 501 (c)(3) non-profit company organized in 2007 to promote sustainable environmental and agricultural activities in the US and the world.
+                                    There are numerous aid programs to lift the underprivileged out of poverty. Yet, many of these programs have not fully achieved their intended purposes.
+                                </p>
+                                <p className="font-medium text-forest/90 italic border-l-4 border-golden pl-4 py-2 bg-golden/10 rounded-r-lg">
+                                    "Our mission is to demonstrate that a systems approach that integrates the three main components of human development (health/environment, food, and knowledge) is not only needed to improve the lives of people successfully, but also achievable."
+                                </p>
+                                <p className="mt-4">
+                                    This is a paradigm shift from the current piecemeal approach to human development. It is the basis of our "All It Takes Is Three" strategy.
+                                </p>
+                            </>
+                        )}
                     </div>
                 </motion.div>
 

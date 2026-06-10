@@ -2,13 +2,19 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { VideoModal } from "@/components/ui/VideoModal";
 
-export const AboutHero = () => {
+type AboutHeroProps = {
+    heading?: string | null;
+    subheading?: string | null;
+};
+
+export const AboutHero = ({ heading, subheading }: AboutHeroProps = {}) => {
     const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
     const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
+    const hasOverlay = Boolean(heading || subheading);
 
     return (
         <section className="relative h-[60vh] min-h-[500px] w-full overflow-hidden flex items-center justify-center">
@@ -45,15 +51,39 @@ export const AboutHero = () => {
                 <div className="absolute inset-0 bg-black/40 z-20" />
             </div>
 
-            <div className="relative z-30 w-full h-full flex flex-col justify-end items-end p-8 md:p-12 pb-16">
-                <Button
-                    onClick={() => setIsVideoModalOpen(true)}
-                    variant="outline"
-                    icon="play"
-                    className="bg-white/10 backdrop-blur-md border border-white/40 text-white hover:bg-white/20 hover:border-white font-medium"
+            {hasOverlay && (
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="absolute inset-0 z-30 flex items-center justify-center px-4 text-center pointer-events-none"
                 >
-                    Watch Video About Us
-                </Button>
+                    <div className="max-w-3xl">
+                        {heading && (
+                            <h1 className="text-4xl md:text-6xl font-display font-bold text-cream drop-shadow-lg mb-4">
+                                {heading}
+                            </h1>
+                        )}
+                        {subheading && (
+                            <p className="text-lg md:text-xl text-cream/90 font-light max-w-2xl mx-auto drop-shadow-md">
+                                {subheading}
+                            </p>
+                        )}
+                    </div>
+                </motion.div>
+            )}
+
+            <div className="relative z-30 w-full h-full flex flex-col justify-end items-end p-8 md:p-12 pb-16 pointer-events-none">
+                <div className="pointer-events-auto">
+                    <Button
+                        onClick={() => setIsVideoModalOpen(true)}
+                        variant="outline"
+                        icon="play"
+                        className="bg-white/10 backdrop-blur-md border border-white/40 text-white hover:bg-white/20 hover:border-white font-medium"
+                    >
+                        Watch Video About Us
+                    </Button>
+                </div>
             </div>
 
             <VideoModal

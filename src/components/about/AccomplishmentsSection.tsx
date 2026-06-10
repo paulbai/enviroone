@@ -3,9 +3,39 @@
 import React from "react";
 import { Section } from "@/components/ui/Section";
 import { motion } from "framer-motion";
-import { CheckCircle2, TrendingUp, Users, Heart } from "lucide-react";
+import { CheckCircle2, TrendingUp, Users, Heart, Sprout } from "lucide-react";
 
-export const AccomplishmentsSection = () => {
+export type AccomplishmentItem = {
+    _key: string;
+    year: string | null;
+    title: string;
+    description: string | null;
+};
+
+export type AccomplishmentsSectionProps = {
+    heading?: string | null;
+    items?: AccomplishmentItem[] | null;
+};
+
+const FALLBACK_ITEMS: AccomplishmentItem[] = [
+    { _key: "f1", year: null, title: "Educating farmers on modern farming techniques and value chain improvement.", description: null },
+    { _key: "f2", year: null, title: "Helping farmers adapt to climate change impacts and move to large-scale business farming.", description: null },
+    { _key: "f3", year: null, title: "Drilling water wells to improve health and environment.", description: null },
+    { _key: "f4", year: null, title: "Empowering women with livelihood skills in fruit and vegetable gardening.", description: null },
+    { _key: "f5", year: null, title: "Implementing micro-finance loan programs for farmers, traders, and teachers.", description: null },
+];
+
+const ICON_CYCLE = [
+    { Icon: TrendingUp, color: "text-golden" },
+    { Icon: Sprout, color: "text-forest" },
+    { Icon: CheckCircle2, color: "text-water" },
+    { Icon: Users, color: "text-terracotta" },
+    { Icon: Heart, color: "text-warmGray" },
+];
+
+export const AccomplishmentsSection = ({ heading, items }: AccomplishmentsSectionProps = {}) => {
+    const data = items && items.length > 0 ? items : FALLBACK_ITEMS;
+
     return (
         <Section className="bg-white">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -47,48 +77,33 @@ export const AccomplishmentsSection = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-4xl font-display font-bold text-forest mb-8">What We Are Doing</h2>
+                        <h2 className="text-4xl font-display font-bold text-forest mb-8">{heading ?? "What We Are Doing"}</h2>
                         <div className="space-y-6">
-                            {[
-                                {
-                                    text: "Educating farmers on modern farming techniques and value chain improvement.",
-                                    icon: TrendingUp,
-                                    color: "text-golden"
-                                },
-                                {
-                                    text: "Helping farmers adapt to climate change impacts and move to large-scale business farming.",
-                                    icon: Sprout, // Need import or reuse CheckCircle
-                                    color: "text-forest"
-                                },
-                                {
-                                    text: "Drilling water wells to improve health and environment.",
-                                    icon: CheckCircle2,
-                                    color: "text-water"
-                                },
-                                {
-                                    text: "Empowering women with livelihood skills in fruit and vegetable gardening.",
-                                    icon: Users,
-                                    color: "text-terracotta"
-                                },
-                                {
-                                    text: "Implementing micro-finance loan programs for farmers, traders, and teachers.",
-                                    icon: Heart,
-                                    color: "text-warmGray"
-                                }
-                            ].map((item, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, y: 10 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: i * 0.1 }}
-                                    className="flex gap-4 p-4 rounded-xl bg-gray-50 hover:bg-white hover:shadow-md transition-all border border-transparent hover:border-gray-100"
-                                >
-                                    <div className={`mt-1 ${item.color}`}>
-                                        <item.icon className="w-6 h-6" />
-                                    </div>
-                                    <p className="text-charcoal/90 font-medium">{item.text}</p>
-                                </motion.div>
-                            ))}
+                            {data.map((item, i) => {
+                                const { Icon, color } = ICON_CYCLE[i % ICON_CYCLE.length];
+                                return (
+                                    <motion.div
+                                        key={item._key}
+                                        initial={{ opacity: 0, y: 10 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: i * 0.1 }}
+                                        className="flex gap-4 p-4 rounded-xl bg-gray-50 hover:bg-white hover:shadow-md transition-all border border-transparent hover:border-gray-100"
+                                    >
+                                        <div className={`mt-1 ${color}`}>
+                                            <Icon className="w-6 h-6" />
+                                        </div>
+                                        <div className="flex-1">
+                                            {item.year && (
+                                                <p className="text-xs uppercase tracking-wider font-bold text-forest/60 mb-1">{item.year}</p>
+                                            )}
+                                            <p className="text-charcoal/90 font-medium">{item.title}</p>
+                                            {item.description && (
+                                                <p className="text-charcoal/70 text-sm mt-1">{item.description}</p>
+                                            )}
+                                        </div>
+                                    </motion.div>
+                                );
+                            })}
                         </div>
                     </motion.div>
                 </div>
@@ -97,23 +112,3 @@ export const AccomplishmentsSection = () => {
     );
 };
 
-// Simple Sprout placeholder if not imported from lucide-react in main file
-const Sprout = ({ className }: { className?: string }) => (
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className={className}
-    >
-        <path d="M7 20h10" />
-        <path d="M10 20c5.5-2.5.8-6.4 3-10" />
-        <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.2.4-4.8-.3-1.1-.6-2.3-1.9-2-3.9.4-1.8 2.5-2.1 4.5.5z" />
-        <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1.7-1.3 2.9-3.3 2.2-5.5-.6-1.9-3.2-2-5.4.4z" />
-    </svg>
-);

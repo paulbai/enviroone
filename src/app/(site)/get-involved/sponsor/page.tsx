@@ -1,12 +1,32 @@
 import React from 'react';
-import { SponsorshipHero } from '@/components/get-involved/SponsorshipHero';
-import { SponsorshipOptions } from '@/components/get-involved/SponsorshipOptions';
+import { SponsorshipHero, type HeroImage } from '@/components/get-involved/SponsorshipHero';
+import { SponsorshipOptions, type Tier } from '@/components/get-involved/SponsorshipOptions';
+import { getSponsorshipPage } from '@/sanity/lib/pages';
 
-export default function SponsorPage() {
+type SponsorshipData = {
+    heroHeading?: string | null;
+    heroSubheading?: string | null;
+    heroImage?: HeroImage;
+    tiersHeading?: string | null;
+    tiersIntro?: string | null;
+    tiers?: Tier[] | null;
+};
+
+export default async function SponsorPage() {
+    const data = (await getSponsorshipPage()) as SponsorshipData | null;
+
     return (
         <main className="flex flex-col min-h-screen">
-            <SponsorshipHero />
-            <SponsorshipOptions />
+            <SponsorshipHero
+                heading={data?.heroHeading ?? null}
+                subheading={data?.heroSubheading ?? null}
+                image={data?.heroImage ?? null}
+            />
+            <SponsorshipOptions
+                heading={data?.tiersHeading ?? null}
+                intro={data?.tiersIntro ?? null}
+                tiers={data?.tiers ?? null}
+            />
         </main>
     );
 }

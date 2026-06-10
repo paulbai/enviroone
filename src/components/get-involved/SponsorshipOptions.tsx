@@ -4,6 +4,25 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
+import { urlFor } from "@/sanity/lib/image";
+
+export type SanityImage = {
+    asset?: unknown;
+    alt: string;
+    _type: "image";
+};
+
+export type Tier = {
+    _key: string;
+    title: string;
+    problem: string;
+    solution: string;
+    impact: string;
+    cost: string;
+    image: SanityImage;
+    donateLink: string;
+    align: "left" | "right";
+};
 
 interface SponsorshipOptionProps {
     title: string;
@@ -75,44 +94,64 @@ const SponsorshipItem = ({ title, problem, solution, impact, cost, image, donate
     );
 };
 
-export const SponsorshipOptions = () => {
-    const options = [
-        {
-            title: "Sponsor A Farm",
-            problem: "Agriculture provides about half of Sierra Leone's GDP, yet 44% of people remain food-poor. Poverty forces many children to work on family farms instead of attending school.",
-            solution: "EnviroOne helps farmers organize as Climate Smart Communities (CSCs), providing inputs, greenhouses with drip irrigation, and training to move from subsistence to business farming.",
-            impact: "Your support increases crop production, creates jobs, and shifts farming from survival to a sustainable business, allowing parents to afford education for their children.",
-            cost: "Consider a gift of at least $20/month to sponsor a farmer. Greenhouses packages start at $7,000.",
-            image: "/images/sponsor-a-farm-new.jpg",
-            donateLink: "https://secure.squarespace.com/commerce/donate?donatePageId=57f5bb46e58c62bd11184dbd",
-            align: "left" as const
-        },
-        {
-            title: "Sponsor A Village",
-            problem: "Piecemeal development approaches often fail. Communities lack integrated access to nutritious food, good health, and quality education.",
-            solution: "We implement the 'All It Takes Is 3' strategy, integrating health, social, and economic well-being led by the communities themselves.",
-            impact: "You will join a community of supporters dedicated to lifting an entire village out of poverty, receiving regular progress updates.",
-            cost: "Consider a gift of at least $20/month. Full village sustainability projects can range up to $100,000.",
-            image: "/images/sponsor-a-village-new.jpg",
-            donateLink: "https://secure.squarespace.com/commerce/donate?donatePageId=57f5bb46e58c62bd11184dbd",
-            align: "right" as const
-        },
-        {
-            title: "Sponsor A Water Well",
-            problem: "Almost half of Sub-Saharan Africa lacks clean drinking water. Many rely on contaminated sources, leading to disease and forcing women and children to walk miles daily.",
-            solution: "We drill new wells and rehabilitate old ones, ensuring ongoing maintenance training and community ownership.",
-            impact: "You represent a lifeline. Clean water drastically reduces disease and liberates time for education and economic activity.",
-            cost: "Drilling a well averages $5,000. Monthly sponsorship of $20 helps maintain these lifelines.",
-            image: "/images/sponsor-a-water-well-new.png",
-            donateLink: "https://secure.squarespace.com/commerce/donate?donatePageId=57f5bb46e58c62bd11184dbd",
-            align: "left" as const
-        }
-    ];
+export type SponsorshipOptionsProps = {
+    heading?: string | null;
+    intro?: string | null;
+    tiers?: Tier[] | null;
+};
+
+const FALLBACK_OPTIONS: Omit<SponsorshipOptionProps, "index">[] = [
+    {
+        title: "Sponsor A Farm",
+        problem: "Agriculture provides about half of Sierra Leone's GDP, yet 44% of people remain food-poor. Poverty forces many children to work on family farms instead of attending school.",
+        solution: "EnviroOne helps farmers organize as Climate Smart Communities (CSCs), providing inputs, greenhouses with drip irrigation, and training to move from subsistence to business farming.",
+        impact: "Your support increases crop production, creates jobs, and shifts farming from survival to a sustainable business, allowing parents to afford education for their children.",
+        cost: "Consider a gift of at least $20/month to sponsor a farmer. Greenhouses packages start at $7,000.",
+        image: "/images/sponsor-a-farm-new.jpg",
+        donateLink: "https://secure.squarespace.com/commerce/donate?donatePageId=57f5bb46e58c62bd11184dbd",
+        align: "left",
+    },
+    {
+        title: "Sponsor A Village",
+        problem: "Piecemeal development approaches often fail. Communities lack integrated access to nutritious food, good health, and quality education.",
+        solution: "We implement the 'All It Takes Is 3' strategy, integrating health, social, and economic well-being led by the communities themselves.",
+        impact: "You will join a community of supporters dedicated to lifting an entire village out of poverty, receiving regular progress updates.",
+        cost: "Consider a gift of at least $20/month. Full village sustainability projects can range up to $100,000.",
+        image: "/images/sponsor-a-village-new.jpg",
+        donateLink: "https://secure.squarespace.com/commerce/donate?donatePageId=57f5bb46e58c62bd11184dbd",
+        align: "right",
+    },
+    {
+        title: "Sponsor A Water Well",
+        problem: "Almost half of Sub-Saharan Africa lacks clean drinking water. Many rely on contaminated sources, leading to disease and forcing women and children to walk miles daily.",
+        solution: "We drill new wells and rehabilitate old ones, ensuring ongoing maintenance training and community ownership.",
+        impact: "You represent a lifeline. Clean water drastically reduces disease and liberates time for education and economic activity.",
+        cost: "Drilling a well averages $5,000. Monthly sponsorship of $20 helps maintain these lifelines.",
+        image: "/images/sponsor-a-water-well-new.png",
+        donateLink: "https://secure.squarespace.com/commerce/donate?donatePageId=57f5bb46e58c62bd11184dbd",
+        align: "left",
+    },
+];
+
+export const SponsorshipOptions = ({ tiers }: SponsorshipOptionsProps = {}) => {
+    const list: Omit<SponsorshipOptionProps, "index">[] =
+        tiers && tiers.length > 0
+            ? tiers.map((t) => ({
+                  title: t.title,
+                  problem: t.problem,
+                  solution: t.solution,
+                  impact: t.impact,
+                  cost: t.cost,
+                  image: urlFor(t.image as any).width(1200).height(900).fit("max").url(),
+                  donateLink: t.donateLink,
+                  align: t.align,
+              }))
+            : FALLBACK_OPTIONS;
 
     return (
         <Section className="bg-cream relative z-10 py-24">
             <div className="flex flex-col">
-                {options.map((opt, i) => (
+                {list.map((opt, i) => (
                     <SponsorshipItem key={opt.title} {...opt} index={i} />
                 ))}
             </div>

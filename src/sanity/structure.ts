@@ -10,12 +10,37 @@ import {
   BarChartIcon,
   ProjectsIcon,
   RocketIcon,
+  CogIcon,
+  InfoOutlineIcon,
+  HeartIcon,
+  TagIcon,
+  CommentIcon,
+  UserIcon,
 } from "@sanity/icons";
 
 export const structure: StructureResolver = (S, context) =>
   S.list()
     .title("Content")
     .items([
+      S.listItem()
+        .title("Site")
+        .icon(CogIcon)
+        .child(
+          S.list()
+            .title("Site")
+            .items([
+              S.listItem()
+                .title("Site Settings")
+                .icon(CogIcon)
+                .child(
+                  S.editor()
+                    .id("siteSettings")
+                    .schemaType("siteSettings")
+                    .documentId("siteSettings"),
+                ),
+            ]),
+        ),
+      S.divider(),
       S.listItem()
         .title("Home Page")
         .icon(HomeIcon)
@@ -49,6 +74,70 @@ export const structure: StructureResolver = (S, context) =>
                     .id("impactDownload")
                     .schemaType("impactDownload")
                     .documentId("impactDownload"),
+                ),
+            ]),
+        ),
+      S.divider(),
+      S.listItem()
+        .title("Pages")
+        .icon(BookIcon)
+        .child(
+          S.list()
+            .title("Pages")
+            .items([
+              S.listItem()
+                .title("About")
+                .icon(InfoOutlineIcon)
+                .child(
+                  S.editor()
+                    .id("aboutPage")
+                    .schemaType("aboutPage")
+                    .documentId("aboutPage"),
+                ),
+              S.listItem()
+                .title("Donate")
+                .icon(HeartIcon)
+                .child(
+                  S.editor()
+                    .id("donatePage")
+                    .schemaType("donatePage")
+                    .documentId("donatePage"),
+                ),
+              S.listItem()
+                .title("Get Involved")
+                .icon(UsersIcon)
+                .child(
+                  S.editor()
+                    .id("getInvolvedPage")
+                    .schemaType("getInvolvedPage")
+                    .documentId("getInvolvedPage"),
+                ),
+              S.listItem()
+                .title("Volunteer")
+                .icon(UserIcon)
+                .child(
+                  S.editor()
+                    .id("volunteerPage")
+                    .schemaType("volunteerPage")
+                    .documentId("volunteerPage"),
+                ),
+              S.listItem()
+                .title("Sponsorship")
+                .icon(TagIcon)
+                .child(
+                  S.editor()
+                    .id("sponsorshipPage")
+                    .schemaType("sponsorshipPage")
+                    .documentId("sponsorshipPage"),
+                ),
+              S.listItem()
+                .title("Church Ministry")
+                .icon(CommentIcon)
+                .child(
+                  S.editor()
+                    .id("churchMinistryPage")
+                    .schemaType("churchMinistryPage")
+                    .documentId("churchMinistryPage"),
                 ),
             ]),
         ),
